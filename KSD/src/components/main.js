@@ -85,12 +85,6 @@ export function Navigation() {
     </div>
 }
 
-export function Home() {
-    return <main>
-
-    </main>
-}
-
 export function MainPage() {
     return <>
         <ScrollingText />

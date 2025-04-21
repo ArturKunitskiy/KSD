@@ -1,7 +1,8 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { MainPage, Home } from './components/main'
+import { MainPage } from './components/main'
+import {Home} from './components/home'
 import { ScrollingText } from './components/main'
 
 
