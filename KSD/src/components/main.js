@@ -85,20 +85,6 @@ export function Navigation() {
     </div>
 }
 
-export function CarouselCard(props) {
-    return <div className='carouselCard'>
-        <p style={{ fontSize: '14px', lineHeight: '12px', backgroundColor: '#B53535', color: '#FFFFFF', padding: '4px 14px', display: 'inline', borderRadius: '60px', zIndex: '2', position: 'absolute', marginTop: '-10px', marginLeft: '75px' }}>{props.special}</p>
-        <img src={props.cover} alt='book cover'></img>
-        <p style={{ color: '#B53535', margin: '0', height: '50px', display: 'flex', alignItems: 'flex-end' }}>{props.name}</p>
-        <p style={{ color: '#686868', marginTop: '10px', marginBottom: '24px' }}>{props.author}</p>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <p style={{ color: '#3C3C3B', textDecoration: 'line-through #3C3C3B', margin: '0' }}>{props.oldPrice}</p>
-            <p className='big' style={{ color: '#B53535', margin: '0' }}>{props.price} ГРН</p>
-
-        </div>
-    </div>
-}
-
 export function Separator(props) {
     return <div style={{ width: '100%', height: '89px', backgroundColor: props.color, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <h2 style={{ color: '#FFFFFF', margin: '0' }}>{props.text}</h2>
