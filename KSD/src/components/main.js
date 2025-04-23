@@ -81,11 +81,62 @@ export function Navigation() {
             <NavigationSection highlighted='Спецпропозиції' links={section4} top='17px'></NavigationSection>
         </nav>
         <p className='title' style={{ paddingLeft: '14px', marginTop: '32px' }}>Книгарні КСД</p>
-        <img src='shopsMap.png' style={{ width: '192px', marginTop: '32px', marginLeft: '14px' }}></img>
+        <img src='shopsMap.png' style={{ width: '192px', marginTop: '32px', marginLeft: '14px' }} alt='map'></img>
     </div>
 }
 
+export function CarouselCard(props) {
+    return <div className='carouselCard'>
+        <p style={{ fontSize: '14px', lineHeight: '12px', backgroundColor: '#B53535', color: '#FFFFFF', padding: '4px 14px', display: 'inline', borderRadius: '60px', zIndex: '2', position: 'absolute', marginTop: '-10px', marginLeft: '75px' }}>{props.special}</p>
+        <img src={props.cover} alt='book cover'></img>
+        <p style={{ color: '#B53535', margin: '0', height: '50px', display: 'flex', alignItems: 'flex-end' }}>{props.name}</p>
+        <p style={{ color: '#686868', marginTop: '10px', marginBottom: '24px' }}>{props.author}</p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <p style={{ color: '#3C3C3B', textDecoration: 'line-through #3C3C3B', margin: '0' }}>{props.oldPrice}</p>
+            <p className='big' style={{ color: '#B53535', margin: '0' }}>{props.price} ГРН</p>
+
+        </div>
+    </div>
+}
+
+export function Separator(props) {
+    return <div style={{ width: '100%', height: '89px', backgroundColor: props.color, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <h2 style={{ color: '#FFFFFF', margin: '0' }}>{props.text}</h2>
+    </div>
+}
+
+export function NewsCard(props) {
+    return <div style={{ width: '944px', height: '130px', padding: '10px', display: 'flex', gap: '60px' }}>
+        <img src={props.image} alt='news image' style={{ border: '2px solid #B53535', borderRadius: '20px' }}></img>
+        <div>
+            <p className='newsText' style={{ margin: '0', marginBottom: '20px' }}>{props.date}</p>
+            <p className='newsTitle' style={{ margin: '0', marginBottom: '10px' }}>{props.title}</p>
+            <p className='newsText' style={{ margin: '0' }}>{props.description}</p>
+            <p className='newsRating' style={{ margin: '0', marginTop: '20px' }}>Всього оцінили: {props.raters} люд. Середня оцінка: {props.rating}</p>
+        </div>
+    </div>
+}
+
+export function News(props) {
+    return <section style={{ position: 'relative', marginTop: props.top }}>
+        <img src='newsPerson.png' alt='Person Shopping' style={{ position: 'absolute', top: '349px', left: '1300px', zIndex: '2' }}></img>
+        <Separator color='#B53535' text="Новини КСД"></Separator>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', justifyContent: 'center', width: '944px', margin: '0 auto', marginTop: '31px' }}>
+            {props.news.map((item) => <NewsCard image={item.image} date={item.date} title={item.title} description={item.description} raters={item.raters} rating={item.rating}></NewsCard>)}
+        </div>
+
+    </section>
+
+}
+
 export function MainPage() {
+    const news = [
+        { image: 'news1.png', date: '1 травня 2024 р.', title: 'Купуйте книги, вибирайте доставку Укрпоштою', description: 'Час для вигідних покупок! Вартість доставки знижено! Детальніше ...', raters: '6', rating: '5.0' },
+        { image: 'news2.png', date: '1 травня 2024 р.', title: 'Книжковий дайджест КСД: травневі новинки', description: 'Гортайте дайджест і вибирайте нові книжки до покупки. Нехай ці історії порадують вас весняними вечорами! ...', raters: '1', rating: '0.0' },
+        { image: 'news3.png', date: '18 квітня 2024 р.', title: 'День книги та авторського права: подвоюємо КСДкоїни на честь свята!', description: 'Купуйте книжки і отримуйте подвоєні КСДкоїни. Більше книжок — більше коїнів. Лише до 24 квітня, поспішайте! ...', raters: '32', rating: '4.5' },
+        { image: 'news4.png', date: '12 квітня 2024 р.', title: 'День книги та авторського права: подвоюємо КСДкоїни на честь свята!', description: 'Купуйте книжки і отримуйте подвоєні КСДкоїни. Більше книжок — більше коїнів. Лише до 24 квітня, поспішайте! ...', raters: '0' },
+        { image: 'news5.png', date: '21 березня 2024 р.', title: 'Нам 24 роки! День народження КСД', description: 'Хапайте знижку і святкуйте разом з нами: -24% на всі книжки видавництва КСД! ...', raters: '10', rating: '5.0' }
+    ]
     return <>
         <ScrollingText />
         <Header></Header>
@@ -102,8 +153,8 @@ export function MainPage() {
             <main>
                 <Outlet />
             </main>
+
         </div>
-
-
+        <News top='307px' news = {news}></News>
     </>
 }

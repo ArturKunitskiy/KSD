@@ -59,6 +59,10 @@ h3 {
     font-size: 13px;
 }
 
+.newsRating {
+    color: #686868;
+}
+
 p,
 .description,
 .offerTitle,
@@ -79,8 +83,13 @@ p,
     font-size: 14px;
 }
 
+.newsText {
+    color: #3C3C3B;
+}
+
 .newsTitle {
     font-size: 15px;
+    color: #B53535;
 }
 
 .scrolling {
