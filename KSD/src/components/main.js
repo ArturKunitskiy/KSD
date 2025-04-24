@@ -33,6 +33,7 @@ export function Category(props) {
     </Link>
 }
 
+
 function NavigationSection(props) {
     return <div style={{ marginTop: props.top }}><Link to='#' className='highlightedNav'>{props.highlighted}</Link>
         {props.links.map((item, index) => <Link key={index} to={item.link} className="navA">{item.name}</Link>)}
@@ -112,7 +113,82 @@ export function News(props) {
         </div>
 
     </section>
+}
 
+
+
+export function Footer() {
+    return <footer style={{position: 'relative', marginTop: '69px'}}>
+        <img src='Bag.png' alt='Bag' style={{position: 'absolute', top: '100px', left: '1421px'}}></img>
+        <div className='footerTopContainer'>
+            <div className='footerContainer'>
+                <div className='footerSection' style={{width: '411px'}}>
+                    <div style = {{display: 'flex', alignItems: 'center', height: '50px'}}>
+                        <img src= 'tabler-icon-truck-delivery.png' alt = 'iconTruck' style={{marginRight: '10px'}}></img>
+                        <h3>Способи доставки</h3>
+                    </div>
+                    <p><Link to='/' className='footerLink'>Відділення Нової пошти</Link></p>
+                    <p><Link to='/' className='footerLink'>Поштомат Нової пошти</Link></p>
+                    <p><Link to='/' className='footerLink'>Кур'єр Meest</Link></p>
+                    <p><Link to='/' className='footerLink'>Відділення Укрпошти</Link></p>
+                    <p><Link to='/' className='footerLink'>Безкоштовна доставка*</Link></p>
+                    <img src= 'UKR.png' alt = 'iconVisa' style={{marginTop: '46px', marginBottom: '95px'}}></img>
+                </div>
+
+                <div className='footerSection' style={{width: '240px'}}>
+                    <div style = {{display: 'flex', alignItems: 'center', height: '50px'}}>
+                        <img src= 'tabler-icon-home.png' alt = 'iconHome' style={{marginRight: '10px'}}></img>
+                        <h3>Про КСД</h3>
+                    </div>
+                    <p><Link to='/' className='footerLink'>Новини</Link></p>
+                    <p><Link to='/' className='footerLink'>Книжковий довіджест</Link></p>
+                    <p><Link to='/' className='footerLink'>Анонси</Link></p>
+                </div>
+
+                <div className='footerSection' style={{width: '386px'}}>
+                    <div style = {{display: 'flex', alignItems: 'center', height: '50px'}}>
+                        <img src= 'tabler-icon-address-book.png' alt = 'iconAddress' style={{marginRight: '10px'}}></img>
+                        <h3>Контакти</h3>
+                    </div>
+                    <p>Адреса: «Книжковий Клуб», а/с 84, Харків, 61001</p>
+                    <p>Тел.: <a href='tel:0800301090' className='footerLink'>0 800 301 090</a></p>
+                    <p>Web: <a href='https://bookclub.ua' target='_blank'>bookclub.ua</a></p>
+                    <p><Link to='/' className='footerLink'>Книгарні КСД</Link></p>
+                </div>
+            </div>
+        </div>
+
+        <div className='footerBottomContainer'>
+            <div className='footerContainer'>
+                <div className='footerSection' style={{width: '375px'}}>
+                    <div style = {{display: 'flex', alignItems: 'center', height: '50px'}}>
+                        <img src= 'tabler-icon-cash-banknote.png' alt = 'iconBanknote' style={{marginRight: '10px'}}></img>
+                        <h3>Способи оплати</h3>
+                    </div>
+                    <p><Link to='/' className='footerLink'>Оплата картою онлайн</Link></p>
+                    <p><Link to='/' className='footerLink'>Оплата на момент отримання</Link></p>
+                    <img src='Visa.png' alt='Visa'></img>
+                </div>
+
+                <div className='footerSection' style={{width: '326px'}}>
+                    <div style = {{display: 'flex', alignItems: 'center', height: '50px'}}>
+                        <img src= 'tabler-icon-question-mark.png' alt = 'iconQuestion' style={{marginRight: '10px'}}></img>
+                        <h3>Є питання?</h3>
+                    </div>
+                    <p><Link to='/' className='footerLink'>Як замовити?</Link></p>
+                    <p><Link to='/' className='footerLink'>Доставка, оплата</Link></p>
+                    <p><Link to='/' className='footerLink'>Налаштування</Link></p>
+                    <p><Link to='/' className='footerLink'>Порядок повернення товарів</Link></p>
+                    <p><Link to='/' className='footerLink'>Постійним клієнтом</Link></p>
+                </div>
+
+                <div className='footerSection' style={{width: '206px'}}>
+                    <img src= 'Icons.png' alt = 'icons' style={{display: 'block', marginBottom: '24px'}}></img>
+                    <img src='BottegaVerde.png' alt='BottegaVerde'/>
+                </div>
+            </div>
+        </div>
+    </footer>
 }
 
 export function MainPage() {
@@ -127,14 +203,8 @@ export function MainPage() {
             <Category link='#' name='eBooks'></Category>
             <Category link='#' name='Анонси КСД'></Category>
         </div>
-        <Outlet />
-        {/* <div className='wrapper'>
-            <Navigation></Navigation>
-            <main>
-                <Outlet />
-            </main>
-
-        </div> */}
+        <Outlet/>
+        <Footer></Footer>
         
     </>
 }
