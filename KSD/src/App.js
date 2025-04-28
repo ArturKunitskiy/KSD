@@ -5,6 +5,7 @@ import { MainPage } from './components/main'
 import { Home } from './components/home'
 import { ScrollingText } from './components/main'
 import { Cart, PsysicalCart, DigitalCart } from './components/cart';
+import { Profile, MyProfile, Orders, Wishlist, Authorize } from './components/profile';
 
 function App() {
   return (

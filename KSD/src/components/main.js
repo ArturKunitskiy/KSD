@@ -277,7 +277,7 @@ export function Footer() {
     </footer>
 }
 
-export function Path() {
+export function Path(props) {
     const location = useLocation();
 
     const pathMap = {
@@ -310,7 +310,7 @@ export function Path() {
     });
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center', width: '1520px', padding: '10px', margin: '24px auto 0 auto' }}>
+        <div style={{ display: 'flex', alignItems: 'center', width: props.width, padding: '10px', margin: '0 auto 0 auto', marginTop: props.mTop }}>
             <Link to="/" className='pathText'>{pathMap['']}</Link>
             {fullPath}
         </div>

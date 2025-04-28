@@ -69,7 +69,7 @@ export function Cart() {
             <Category link='#' name='eBooks'></Category>
             <Category link='#' name='Анонси КСД'></Category>
         </div>
-        <Path></Path>
+        <Path width='1520px' mTop='24px'></Path>
         <Outlet></Outlet>
         <News top='92px' news={news}></News>
         <ResentlyViewed></ResentlyViewed>
