@@ -16,12 +16,14 @@ export function ScrollingText() {
 
 export function Header() {
     return <header>
-        <Link to='/' style={{ width: '245px' }}><img src='/logo.png' alt='logo' /></Link>
+        <Link to='/' style={{ width: '245px' }}><img src='//logo.png' alt='logo' /></Link>
         <div className='search'>
             <input type='text' placeholder='Пошук товарів, категорій' style={{ height: '22px' }} />
-            <button style={{ width: '48px', height: '48px', backgroundColor: '#B53535', borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><img src='/search.png' alt='search icon' style={{ width: '18px', height: '18px' }} /></button>
+            <button style={{ width: '48px', height: '48px', backgroundColor: '#B53535', borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><img src='//search.png' alt='search icon' style={{ width: '18px', height: '18px' }} /></button>
         </div>
         <div>
+            <Link to='/Profile/' style={{ marginRight: '14px', display: 'inline-block', width: '30px', height: '30px' }}><img src='/user.png' alt='user icon' /></Link>
+            <Link to='/Cart' style={{ display: 'inline-block', width: '30px', height: '30px' }}><img src='/cart.png' alt='cart icon' /></Link>
             <Link to='/Profile/' style={{ marginRight: '14px', display: 'inline-block', width: '30px', height: '30px' }}><img src='/user.png' alt='user icon' /></Link>
             <Link to='/Cart' style={{ display: 'inline-block', width: '30px', height: '30px' }}><img src='/cart.png' alt='cart icon' /></Link>
         </div>
@@ -85,6 +87,7 @@ export function Navigation() {
         </nav>
         <p className='title' style={{ paddingLeft: '14px', marginTop: '32px' }}>Книгарні КСД</p>
         <img src='/shopsMap.png' style={{ width: '192px', marginTop: '32px', marginLeft: '14px' }} alt='map'></img>
+        <img src='/shopsMap.png' style={{ width: '192px', marginTop: '32px', marginLeft: '14px' }} alt='map'></img>
     </div>
 }
 
@@ -108,6 +111,7 @@ export function NewsCard(props) {
 
 export function News(props) {
     return <section style={{ position: 'relative', marginTop: props.top }}>
+        <img src='/newsPerson.png' alt='Person Shopping' style={{ position: 'absolute', top: '349px', left: '1300px', zIndex: '2' }}></img>
         <img src='/newsPerson.png' alt='Person Shopping' style={{ position: 'absolute', top: '349px', left: '1300px', zIndex: '2' }}></img>
         <Separator color='#B53535' text="Новини КСД"></Separator>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', justifyContent: 'center', width: '944px', margin: '0 auto', marginTop: '31px' }}>
@@ -253,6 +257,7 @@ export function Footer() {
                     </div>
                     <p><Link to='/' className='footerLink'>Оплата картою онлайн</Link></p>
                     <p><Link to='/' className='footerLink'>Оплата на момент отримання</Link></p>
+                    <img src='/Visa.png' alt='Visa'></img>
                     <img src='/Visa.png' alt='Visa'></img>
                 </div>
 

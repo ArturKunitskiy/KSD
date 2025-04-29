@@ -3,9 +3,12 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MainPage } from './components/main'
 import { Home } from './components/home'
+import { Home } from './components/home'
 import { ScrollingText } from './components/main'
 import { Cart, PsysicalCart, DigitalCart } from './components/cart';
 import { Profile, MyProfile, Orders, Wishlist, Authorize } from './components/profile';
+import { Authorize, MyProfile, Orders, Profile, Wishlist } from './components/profile';
+
 
 function App() {
   return (
@@ -28,6 +31,13 @@ function App() {
           <Route path="/Profile/Wishlist" element={<Wishlist></Wishlist>} />
           <Route path="/Profile/Authorize" element={<Authorize></Authorize>} />
         </Route> */}
+        {/* <Route path="/Cart" element={<></>} /> */}
+        <Route path="/Profile" element={<Profile></Profile>}>
+          <Route index element={<MyProfile></MyProfile>} />
+          <Route path="/Profile/Orders" element={<Orders></Orders>} />
+          <Route path="/Profile/Wishlist" element={<Wishlist></Wishlist>} />
+          <Route path="/Profile/Authorize" element={<Authorize></Authorize>} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
