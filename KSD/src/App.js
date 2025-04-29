@@ -1,13 +1,10 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { MainPage } from './components/main'
+import { MainPage, ScrollingText } from './components/main'
 import { Home } from './components/home'
-import { Home } from './components/home'
-import { ScrollingText } from './components/main'
 import { Cart, PsysicalCart, DigitalCart } from './components/cart';
 import { Profile, MyProfile, Orders, Wishlist, Authorize } from './components/profile';
-import { Authorize, MyProfile, Orders, Profile, Wishlist } from './components/profile';
 
 
 function App() {
