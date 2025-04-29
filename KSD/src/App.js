@@ -2,8 +2,9 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MainPage } from './components/main'
-import {Home} from './components/home'
+import { Home } from './components/home'
 import { ScrollingText } from './components/main'
+import { Authorize, MyProfile, Orders, Profile, Wishlist } from './components/profile';
 
 
 function App() {
@@ -17,10 +18,12 @@ function App() {
         </Route>
 
         {/* <Route path="/Cart" element={<></>} /> */}
-        {/* <Route path="/Profile/MyProfile" element={<></>} /> */}
-        {/* <Route path="/Profile/Orders" element={<></>} /> */}
-        {/* <Route path="/Profile/Wishlist" element={<></>} /> */}
-        {/* <Route path="/Profile/Authorize" element={<></>} /> */}
+        <Route path="/Profile" element={<Profile></Profile>}>
+          <Route index element={<MyProfile></MyProfile>} />
+          <Route path="/Profile/Orders" element={<Orders></Orders>} />
+          <Route path="/Profile/Wishlist" element={<Wishlist></Wishlist>} />
+          <Route path="/Profile/Authorize" element={<Authorize></Authorize>} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
