@@ -14,14 +14,14 @@ export function ScrollingText() {
 
 export function Header() {
     return <header>
-        <Link to='/' style={{ width: '245px' }}><img src='logo.png' alt='logo' /></Link>
+        <Link to='/' style={{ width: '245px' }}><img src='/logo.png' alt='logo' /></Link>
         <div className='search'>
             <input type='text' placeholder='Пошук товарів, категорій' style={{ lineHeight: '24px' }} />
-            <button style={{ width: '48px', height: '48px', backgroundColor: '#B53535', borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><img src='search.png' alt='search icon' style={{ width: '18px', height: '18px' }} /></button>
+            <button style={{ width: '48px', height: '48px', backgroundColor: '#B53535', borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><img src='/search.png' alt='search icon' style={{ width: '18px', height: '18px' }} /></button>
         </div>
         <div>
-            <Link to='/Profile/MyProfile' style={{ marginRight: '14px', display: 'inline-block', width: '30px', height: '30px' }}><img src='user.png' alt='user icon' /></Link>
-            <Link to='/Cart' style={{ display: 'inline-block', width: '30px', height: '30px' }}><img src='cart.png' alt='cart icon' /></Link>
+            <Link to='/Profile/' style={{ marginRight: '14px', display: 'inline-block', width: '30px', height: '30px' }}><img src='/user.png' alt='user icon' /></Link>
+            <Link to='/Cart' style={{ display: 'inline-block', width: '30px', height: '30px' }}><img src='/cart.png' alt='cart icon' /></Link>
         </div>
 
     </header>
@@ -82,7 +82,7 @@ export function Navigation() {
             <NavigationSection highlighted='Спецпропозиції' links={section4} top='17px'></NavigationSection>
         </nav>
         <p className='title' style={{ paddingLeft: '14px', marginTop: '32px' }}>Книгарні КСД</p>
-        <img src='shopsMap.png' style={{ width: '192px', marginTop: '32px', marginLeft: '14px' }} alt='map'></img>
+        <img src='/shopsMap.png' style={{ width: '192px', marginTop: '32px', marginLeft: '14px' }} alt='map'></img>
     </div>
 }
 
@@ -106,7 +106,7 @@ export function NewsCard(props) {
 
 export function News(props) {
     return <section style={{ position: 'relative', marginTop: props.top }}>
-        <img src='newsPerson.png' alt='Person Shopping' style={{ position: 'absolute', top: '349px', left: '1300px', zIndex: '2' }}></img>
+        <img src='/newsPerson.png' alt='Person Shopping' style={{ position: 'absolute', top: '349px', left: '1300px', zIndex: '2' }}></img>
         <Separator color='#B53535' text="Новини КСД"></Separator>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', justifyContent: 'center', width: '944px', margin: '0 auto', marginTop: '31px' }}>
             {props.news.map((item) => <NewsCard image={item.image} date={item.date} title={item.title} description={item.description} raters={item.raters} rating={item.rating}></NewsCard>)}
@@ -119,12 +119,12 @@ export function News(props) {
 
 export function Footer() {
     return <footer style={{position: 'relative', marginTop: '69px'}}>
-        <img src='Bag.png' alt='Bag' style={{position: 'absolute', top: '100px', left: '1421px'}}></img>
+        <img src='/Bag.png' alt='Bag' style={{position: 'absolute', top: '100px', left: '1421px'}}></img>
         <div className='footerTopContainer'>
             <div className='footerContainer'>
                 <div className='footerSection' style={{width: '411px'}}>
                     <div style = {{display: 'flex', alignItems: 'center', height: '50px'}}>
-                        <img src= 'tabler-icon-truck-delivery.png' alt = 'iconTruck' style={{marginRight: '10px'}}></img>
+                        <img src= '/tabler-icon-truck-delivery.png' alt = 'iconTruck' style={{marginRight: '10px'}}></img>
                         <h3>Способи доставки</h3>
                     </div>
                     <p><Link to='/' className='footerLink'>Відділення Нової пошти</Link></p>
@@ -132,12 +132,12 @@ export function Footer() {
                     <p><Link to='/' className='footerLink'>Кур'єр Meest</Link></p>
                     <p><Link to='/' className='footerLink'>Відділення Укрпошти</Link></p>
                     <p><Link to='/' className='footerLink'>Безкоштовна доставка*</Link></p>
-                    <img src= 'UKR.png' alt = 'iconVisa' style={{marginTop: '46px', marginBottom: '95px'}}></img>
+                    <img src= '/UKR.png' alt = 'iconVisa' style={{marginTop: '46px', marginBottom: '95px'}}></img>
                 </div>
 
                 <div className='footerSection' style={{width: '240px'}}>
                     <div style = {{display: 'flex', alignItems: 'center', height: '50px'}}>
-                        <img src= 'tabler-icon-home.png' alt = 'iconHome' style={{marginRight: '10px'}}></img>
+                        <img src= '/tabler-icon-home.png' alt = 'iconHome' style={{marginRight: '10px'}}></img>
                         <h3>Про КСД</h3>
                     </div>
                     <p><Link to='/' className='footerLink'>Новини</Link></p>
@@ -147,7 +147,7 @@ export function Footer() {
 
                 <div className='footerSection' style={{width: '386px'}}>
                     <div style = {{display: 'flex', alignItems: 'center', height: '50px'}}>
-                        <img src= 'tabler-icon-address-book.png' alt = 'iconAddress' style={{marginRight: '10px'}}></img>
+                        <img src= '/tabler-icon-address-book.png' alt = 'iconAddress' style={{marginRight: '10px'}}></img>
                         <h3>Контакти</h3>
                     </div>
                     <p>Адреса: «Книжковий Клуб», а/с 84, Харків, 61001</p>
@@ -162,17 +162,17 @@ export function Footer() {
             <div className='footerContainer'>
                 <div className='footerSection' style={{width: '375px'}}>
                     <div style = {{display: 'flex', alignItems: 'center', height: '50px'}}>
-                        <img src= 'tabler-icon-cash-banknote.png' alt = 'iconBanknote' style={{marginRight: '10px'}}></img>
+                        <img src= '/tabler-icon-cash-banknote.png' alt = 'iconBanknote' style={{marginRight: '10px'}}></img>
                         <h3>Способи оплати</h3>
                     </div>
                     <p><Link to='/' className='footerLink'>Оплата картою онлайн</Link></p>
                     <p><Link to='/' className='footerLink'>Оплата на момент отримання</Link></p>
-                    <img src='Visa.png' alt='Visa'></img>
+                    <img src='/Visa.png' alt='Visa'></img>
                 </div>
 
                 <div className='footerSection' style={{width: '326px'}}>
                     <div style = {{display: 'flex', alignItems: 'center', height: '50px'}}>
-                        <img src= 'tabler-icon-question-mark.png' alt = 'iconQuestion' style={{marginRight: '10px'}}></img>
+                        <img src= '/tabler-icon-question-mark.png' alt = 'iconQuestion' style={{marginRight: '10px'}}></img>
                         <h3>Є питання?</h3>
                     </div>
                     <p><Link to='/' className='footerLink'>Як замовити?</Link></p>
@@ -183,8 +183,8 @@ export function Footer() {
                 </div>
 
                 <div className='footerSection' style={{width: '206px'}}>
-                    <img src= 'Icons.png' alt = 'icons' style={{display: 'block', marginBottom: '24px'}}></img>
-                    <img src='BottegaVerde.png' alt='BottegaVerde'/>
+                    <img src= '/Icons.png' alt = 'icons' style={{display: 'block', marginBottom: '24px'}}></img>
+                    <img src='/BottegaVerde.png' alt='BottegaVerde'/>
                 </div>
             </div>
         </div>

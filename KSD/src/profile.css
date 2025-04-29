@@ -1,0 +1,191 @@
+.profileNav {
+    width: 170px;
+    height: 208px;
+    margin-right: 118px;
+    margin-top: 20px;
+}
+
+.profileNavItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    text-decoration: none;
+}
+
+.profileNavIcon {
+    margin-right: 10px;
+}
+
+.profileNavText {
+    font-size: 14px;
+    color: #000000;
+    margin: 0;
+}
+
+/*///////////////////////////////////////////*/
+
+.personalData {
+    height: 25px;
+    display: flex;
+    align-items: center;
+    color: #2C2C2C;
+    margin-top: 12px;
+    margin-bottom: 33px;
+}
+
+.imgIconUserGrey {
+    width: 24px;
+    height: 24px;
+}
+
+#nameLabel {
+    font-family: 'NAMU Pro';
+    font-size: 11px;
+    display: block;
+    width: 47px;
+    height: 16px;
+    background-color: #FFFFFF;
+    padding: 0 9px 0 10px;
+    color: #2C2C2C;
+    position: absolute;
+    top: -12px;
+    left: 64px;
+}
+
+.formInput {
+    width: 563.31px;
+    height: 37px;
+    padding: 9px 0px 9px 10px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    font-size: 13px;
+    font-family: 'Mazzard Soft M', sans-serif;
+    border: 1px solid #686868;
+    color: #2C2C2C;
+}
+
+.formInput::placeholder {
+    color: #2C2C2C;
+}
+
+.saveButton {
+    display: block;
+    width: 272px;
+    height: 37px;
+    background-color: #F6F6F6;
+    color: #2C2C2C;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 13px;
+    font-family: 'Mazzard Soft M', sans-serif;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.saveButton:hover {
+    color: #F6F6F6;
+    background-color: #2C2C2C;
+}
+
+/*///////////////////////////////////////////*/
+
+
+
+.subscribeBlock {
+    display: block;
+}
+
+.subscribeInputWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.subscribeGmail {
+    position: relative;
+}
+
+.iconGmail {
+    position: absolute;
+    margin-left: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.subscribeInput {
+    width: 752px;
+    height: 37px;
+    padding: 3px 0px 0px 38px;
+    margin-right: 16px;
+    border: 1px solid #686868;
+    color: #2C2C2C;
+    border-radius: 10px;
+    font-size: 13px;
+    font-family: 'Mazzard Soft M', sans-serif;
+}
+
+.subscribeInput::placeholder {
+    color: #2C2C2C;
+}
+
+.subscribeButton {
+    display: block;
+    width: 176px;
+    height: 37px;
+    background-color: #B53535;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 13px;
+    font-family: 'Mazzard Soft M', sans-serif;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.subscribeButton:hover {
+    color: #FFFFFF;
+    background-color: #2C2C2C;
+}
+
+/*////////////////////////////////////////////////*/
+.ordersText {
+    font-family: 'NAMU Pro';
+}
+
+/*////////////////////////////////////////////////*/
+.wishlist
+{
+    width: 560px;
+    padding: 10px;
+    border: 1px solid #686868;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    color: #2C2C2C;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    font-family: 'NAMU Pro';
+    font-size: 13px;
+}
+
+.wishlist::placeholder{
+    color: #2C2C2C;
+}
+
+.wishlist:hover
+{
+    border: 1px solid #B53535;
+    background-color: #B53535;
+    color: #FFFFFF;
+}
+.wishlist:hover::placeholder{
+    color: #FFFFFF;
+}
+
+.contactText
+{
+    font-family: 'NAMU Pro';
+    font-size: 20px;
+}
