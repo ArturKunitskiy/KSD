@@ -25,13 +25,6 @@ function App() {
           <Route path="/Cart/Physical" element={<PsysicalCart></PsysicalCart>} />
           <Route path="/Cart/Digital" element={<DigitalCart></DigitalCart>} />
         </Route>
-        {/* <Route path="/Profile" element={<Profile></Profile>}>
-          <Route index element={<MyProfile></MyProfile>} />
-          <Route path="/Profile/Orders" element={<Orders></Orders>} />
-          <Route path="/Profile/Wishlist" element={<Wishlist></Wishlist>} />
-          <Route path="/Profile/Authorize" element={<Authorize></Authorize>} />
-        </Route> */}
-        {/* <Route path="/Cart" element={<></>} /> */}
         <Route path="/Profile" element={<Profile></Profile>}>
           <Route index element={<MyProfile></MyProfile>} />
           <Route path="/Profile/Orders" element={<Orders></Orders>} />
