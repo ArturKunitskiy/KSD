@@ -123,7 +123,7 @@ export function Profile() {
     return <>
         <ScrollingText />
         <Header></Header>
-        {/* <Path width='1424px' mTop='0'></Path> */}
+        <Path width='1424px' mTop='0'></Path>
         <Outlet />
         <Subscribe></Subscribe>
         <Footer></Footer>
