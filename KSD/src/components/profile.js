@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { ScrollingText, Header, Footer } from './main';
 import '../profile.css'
@@ -31,6 +31,56 @@ export function ProfileNav() {
 }
 
 export function MyProfile() {
+    const name = useRef(null);
+    const surname = useRef(null);
+    const phone = useRef(null);
+    const email = useRef(null);
+    const [validName, setValidName] = useState(false);
+    const [validSurname, setValidSurname] = useState(false);
+    const [validPhone, setValidPhone] = useState(false);
+    const [validEmail, setValidEmail] = useState(false);
+    const [showError, setShowError] = useState(false);
+    function handlePhoneNum() {
+        return /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(phone.current.value);
+    }
+    function handleEmail() {
+        return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.current.value);
+    }
+    function handleName() {
+        return /^[a-zA-Zа-яА-ЯіІїЇєЄ\']{2,}$/.test(name.current.value);
+    }
+    function handleSurname() {
+        return /^[a-zA-Zа-яА-ЯіІїЇєЄ\']{1,}$/.test(surname.current.value);
+    }
+    function onNameChange() {
+        setValidName(handleName());
+    }
+
+    function onSurnameChange() {
+        setValidSurname(handleSurname());
+    }
+
+    function onPhoneChange() {
+        setValidPhone(handlePhoneNum());
+    }
+
+    function onEmailChange() {
+        setValidEmail(handleEmail());
+    }
+    function handleSubmit(e) {
+        e.preventDefault();
+        if (validName === true && validSurname === true && validPhone === true && validEmail === true) {
+            setShowError(false);
+            alert(`Вхід виконано!`);
+        }
+        else {
+            console.log("Name: ", validName);
+            console.log("Surname: ", validSurname);
+            console.log("Phone: ", validPhone);
+            console.log("Email: ", validEmail);
+            setShowError(true);
+        }
+    }
     return <div className='wrapper' style={{ width: '1424px', marginTop: '12.5px' }}>
         <ProfileNav></ProfileNav>
         <section style={{ marginBottom: '109px' }}>
@@ -42,13 +92,15 @@ export function MyProfile() {
             <form style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                 <div style={{ position: 'relative' }}>
                     <label id='nameLabel' for="#name">Ім’я <span style={{ color: '#B53535' }}>*</span></label>
-                    <input type='text' className='formInput' placeholder="Ім'я" id='name'></input>
+                    <input type='text' className='formInput' placeholder="Ім'я" id='name' ref={name} onChange={onNameChange} required></input>
                 </div>
-
-                <input type='text' className='formInput' placeholder='Прізвище'></input>
-                <input type='tel' className='formInput' placeholder='+380 (861 111-111) 01'></input>
-                <input type='email' className='formInput' placeholder='Електронна пошта'></input>
-                <button className='saveButton'> Зберегти </button>
+                <input type='text' className='formInput' placeholder='Прізвище' id='surname' ref={surname} onChange={onSurnameChange} required></input>
+                <input type='tel' className='formInput' placeholder='+380 (861 111-111) 01' id='phone' ref={phone} onChange={onPhoneChange} required></input>
+                <input type='email' className='formInput' placeholder='Електронна пошта' id='email' ref={email} onChange={onEmailChange} required></input>
+                <div>
+                    <p style={{ fontSize: '13px', margin: '0 0 10px 0', color: '#B53535', display: showError ? 'block' : 'none' }}>*Перевірте правильність введених даних.</p>
+                    <button className='saveButton' onClick={handleSubmit}> Зберегти </button>
+                </div>
             </form>
         </section>
     </div>
@@ -56,18 +108,42 @@ export function MyProfile() {
 }
 
 export function Subscribe() {
+    const email = useRef(null);
+    const [validEmail, setValidEmail] = useState(false);
+    const [showError, setShowError] = useState(false);
+    function handleEmail() {
+        return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.current.value);
+    }
+    function onEmailChange() {
+        setValidEmail(handleEmail());
+    }
+    function handleSubmit(e) {
+        e.preventDefault();
+        if (validEmail === true) {
+            setShowError(false);
+            alert(`Підписку оформлено!`);
+        }
+        else {
+            console.log("Email: ", validEmail);
+            setShowError(true);
+        }
+    }
     return <section className='wrapper' style={{ width: '1424px' }}>
         <div className='subscribeBlock' style={{ display: 'block' }}>
             <p className='subTitle' style={{ color: '#3C3C3B', margin: '0' }}>Підписуйтесь на знижки та рекомендації</p>
             <p className='inputText' style={{ color: '#3C3C3B', margin: '0' }}>Не турбуйтесь, ніякого спаму та нав’язливої реклами ;)</p>
         </div>
-        <div className='subscribeInputWrapper'>
-            <form className='subscribeGmail'>
-                <img src='/tabler-icon-mail.png' alt='iconGmail' className="iconGmail"></img>
-                <input type='email' className='subscribeInput' placeholder='Електронна пошта'></input>
-            </form>
-            <button className='subscribeButton'>Підписатися</button>
-        </div>
+        <form className='subscribeInputWrapper'>
+            <div>
+                <div className='subscribeGmail'>
+                    <img src='/tabler-icon-mail.png' alt='iconGmail' className="iconGmail"></img>
+                    <input type='email' className='subscribeInput' placeholder='Електронна пошта' ref={email} onChange={onEmailChange} required></input>
+                </div>
+                <p style={{ fontSize: '13px', margin: '10px 0 0 0', color: '#B53535', display: showError ? 'block' : 'none' }}>*Перевірте правильність введених даних.</p>
+            </div>
+
+            <button className='subscribeButton' onClick={handleSubmit}>Підписатися</button>
+        </form>
     </section>
 }
 

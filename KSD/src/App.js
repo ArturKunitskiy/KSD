@@ -5,7 +5,7 @@ import { MainPage, ScrollingText } from './components/main'
 import { Home } from './components/home'
 import { Cart, PsysicalCart, DigitalCart } from './components/cart';
 import { Profile, MyProfile, Orders, Wishlist, Authorize } from './components/profile';
-
+import { Genre } from './components/genre';
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />}>
           <Route index element={<Home></Home>} />
-          {/* <Route path="/ProgrammingBooks" element={<></>} /> */}
-          {/* <Route path="/Hobbit" element={<></>} /> */}
+          <Route path="/Fiction/Thrillers" element={<Genre></Genre>} />
+          {/* <Route path="/ContemporaryAuthors/OrdinaryMonsters" element={<></>} /> */}
         </Route>
 
         <Route path="/Cart" element={<Cart></Cart>}>
