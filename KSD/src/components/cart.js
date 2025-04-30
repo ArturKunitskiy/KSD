@@ -16,7 +16,7 @@ export function CartNav(props) {
 }
 
 export function AddToCart(props) {
-    return <button style={{ border: '1px solid #B53535', height: '50px', borderRadius: '10px', cursor: 'pointer', marginLeft: '10px', marginRight: '10px', backgroundColor: '#FFFFFF', display: 'flex', alignItems: 'center', padding: '0 0 0 10px' }}>
+    return <button style={{ border: '1px solid #B53535', height: '50px', borderRadius: '10px', cursor: 'pointer', marginLeft: props.mLeft, marginRight: props.mRight, backgroundColor: '#FFFFFF', display: 'flex', alignItems: 'center', padding: '0 0 0 10px', width: '179.5px' }}>
         <img src={props.image} alt='cart icon' style={{ marginRight: '9.72px' }}></img>
         <p className='cartButtonP'>{props.text}</p>
     </button>
@@ -25,7 +25,7 @@ export function AddToCart(props) {
 export function EmptyCart(props) {
     return <div style={{ width: '1520px', margin: '0 auto' }}>
         <h3 style={{ color: '#2C2C2C', marginTop: '77px', marginBottom: '14px' }}>У Вашому «Кошику» ще немає жодного товару.</h3>
-        <p className='small' style={{ color: '#686868', padding: '10px', display: 'flex', alignItems: 'center', margin: '0' }}>Щоб додати будь-який товар до «Кошика», необхідно натиснути на кнопку <AddToCart text={props.text} image={props.image} /> , яка розташована поруч з обраним Вами товаром.</p>
+        <p className='small' style={{ color: '#686868', padding: '10px', display: 'flex', alignItems: 'center', margin: '0' }}>Щоб додати будь-який товар до «Кошика», необхідно натиснути на кнопку <AddToCart text={props.text} image={props.image} mLeft='10px' mRight='10px'/> , яка розташована поруч з обраним Вами товаром.</p>
         <p style={{ color: '#2C2C2C', margin: '13px 0 25px 0' }}>Товарні розділи нашого магазину:</p>
         <ul style={{ color: '#2C2C2C', margin: '0 0 36px 0' }}>
             <li>Книги</li>
