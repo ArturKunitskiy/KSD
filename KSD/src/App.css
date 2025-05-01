@@ -309,3 +309,41 @@ button:focus {
 }
 
 /*//////////////////////////////////////////////////////////////////*/
+
+.genreBookCard{
+    border-top: 1px solid #2C2C2C;
+    padding: 40px 10px 10px 10px;
+    margin-bottom: 40px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.genreBookInfo
+{
+    width: 594px;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+
+.forAdultsIcon
+{
+    position: absolute;
+    top: 60px;
+    left: -30px;
+}
+
+.priceWrap
+{
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
+
+.infoPriceWrap
+{
+    display: flex;
+    align-items: flex-end;
+}
