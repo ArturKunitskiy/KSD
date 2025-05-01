@@ -46,7 +46,7 @@ export function Navigation() {
     const section1 = [{ name: 'Романтична проза', link: '#' },
     { name: 'Історична та пригодницька проза', link: '#' },
     { name: 'Детективи', link: '#' },
-    { name: 'Трилери та жахи', link: '#' },
+    { name: 'Трилери та жахи', link: '/Fiction/Thrillers' },
     { name: 'Фантастика', link: '#' },
     { name: 'Фентезі', link: '#' },
     { name: 'Класична література', link: '#' },

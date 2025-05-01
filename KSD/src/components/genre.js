@@ -1,9 +1,79 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { ResentlyViewed, Navigation, Separator, Path } from './main';
 import { AddToCart } from './cart';
 import Flickity from 'flickity';
 import 'flickity/css/flickity.css';
+
+export function Sort(props) {
+    const [activeName, setActiveName] = useState(null);
+
+    const handleClick = (name) => {
+        setActiveName(name === activeName ? null : name); // прибирає активність, якщо ще раз натиснути
+    };
+
+    return (
+        <div className='sortWrapper'>
+            {props.options.map((opt) => (
+                <button key={opt.name} name={opt.name} className={`sortButton ${activeName === opt.name ? 'active' : ''}`} onClick={() => handleClick(opt.name)} >
+                    {opt.text}
+                </button>
+            ))}
+        </div>
+    );
+}
+
+
+export function GenreTopThreeCard(props) {
+    return <div style={{maxWidth: '631px', cursor: 'pointer'}}>
+        <img src={props.image} alt={props.image} style={{ height: '392px' }}></img>
+        <div style={{ marginTop: '50px', paddingLeft: '6.35px' }}>
+            <p style={{ color: '#B53535', margin: "0 0 28px 0" }}>{props.title}</p>
+            <p style={{ color: '#686868', margin: "0 0 11px 0" }}>{props.author}</p>
+            <div style={{ display: 'flex', gap: '15.26px', alignItems: 'center' }}>
+                <p style={{ color: '#3C3C3B', textDecoration: 'line-through #3C3C3B', margin: '0' }}>{props.oldPrice}</p>
+                <p className='big' style={{ color: '#B53535', margin: '0' }}>{props.price} ГРН</p>
+            </div>
+        </div>
+        <AddToCart text='До кошика' image='/cartIcon.png' mLeft="0" mRight="0" />
+    </div>
+}
+const top3 = [
+    {
+        image: '/hollyTop3.png',
+        title: 'Голлі',
+        author: 'Кінг С.',
+        oldPrice: '490',
+        price: '440',
+        onSale: true
+    },
+    {
+        image: '/omanliveTop3.png',
+        title: 'Оманливе коло',
+        author: 'С. Пономаренко',
+        oldPrice: '240',
+        price: '220',
+        onSale: true
+    },
+    {
+        image: '/vorogTop3.png',
+        title: 'Ворог дуже близько. Книга 1',
+        author: 'К. Хантер',
+        oldPrice: '330',
+        price: '300',
+        onSale: true
+    }
+]
+
+export function TopThree(props) {
+    return <section id='topThree'>
+        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            {props.top3.map((item, index) => (
+                <GenreTopThreeCard key={index} image={item.image} title={item.title} author={item.author} oldPrice={item.oldPrice} price={item.price} onSale={item.onSale}></GenreTopThreeCard>
+            ))}
+        </div>
+    </section>
+}
 
 export function GenreBookCard(props) {
     return <div className='genreBookCard'>
@@ -123,11 +193,27 @@ export function GenreBooksPage(props) {
 
 export function Genre(props) {
     return <main>
-        {/* <img src='/booksBags.png' alt='bags' style={{ position: 'absolute', top: '2756px', left: '80px' }}></img> */}
+        <img src='/booksBags.png' alt='bags' style={{ position: 'absolute', top: '2686px', left: '80px' }}></img>
         <div className='wrapper'>
             <Navigation></Navigation>
             <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap' }}>
                 <Path width='1040px' mTop='0'></Path>
+                <TopThree top3={top3}></TopThree>
+                {/* <Sort
+                    options={[
+                        { name: '20', text: '20' },
+                        { name: '30', text: '30' },
+                        { name: '40', text: '40' },
+                    ]}
+                />
+                <Sort
+                    options={[
+                        { name: 'date', text: 'датою' },
+                        { name: 'popularity', text: 'популярністю' },
+                        { name: 'price', text: 'ціною' },
+                    ]}
+                /> */}
+
                 <GenreBooksPage cards={cards}></GenreBooksPage>
             </div>
         </div>

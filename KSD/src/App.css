@@ -16,7 +16,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     overflow-x: hidden;
 }
 
@@ -27,9 +27,11 @@ h3,
 .inputText,
 .offerTitle,
 .cartButtonP,
-.pathText {
+.pathText,
+.sortButton {
     font-family: 'NAMU Pro';
 }
+
 
 p,
 .small,
@@ -75,9 +77,11 @@ p,
 .description,
 .offerTitle,
 .navA,
-li {
+li,
+.sortButton {
     font-size: 24px;
 }
+
 
 .big,
 .categoryText,
@@ -242,7 +246,7 @@ footer {
 /*////////////////////////////////////////////////////////////////*/
 .carouselCard {
     width: auto;
-  /*////////////////////////////////////////////////////////////////*/
+    /*////////////////////////////////////////////////////////////////*/
 }
 
 .carouselCard img {
@@ -310,7 +314,7 @@ button:focus {
 
 /*//////////////////////////////////////////////////////////////////*/
 
-.genreBookCard{
+.genreBookCard {
     border-top: 1px solid #2C2C2C;
     padding: 40px 10px 10px 10px;
     margin-bottom: 40px;
@@ -318,32 +322,61 @@ button:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
-.genreBookInfo
-{
+.genreBookInfo {
     width: 594px;
     padding-left: 10px;
     margin-right: 10px;
 }
 
-.forAdultsIcon
-{
+.forAdultsIcon {
     position: absolute;
     top: 60px;
     left: -30px;
 }
 
-.priceWrap
-{
+.priceWrap {
     width: 180px;
     display: flex;
     flex-direction: column;
     justify-content: right;
 }
 
-.infoPriceWrap
-{
+.infoPriceWrap {
     display: flex;
     align-items: flex-end;
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+
+.sortButton {
+    background-color: transparent;
+    color: #686868;
+    border-radius: 10px;
+    border: 2px solid #686868;
+    display: block;
+    padding: 5px 20px;
+    line-height: 34px;
+    height: 44px;
+    min-width: 72px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.sortButton.active {
+    border: 2px solid #B53535;
+    color: #B53535;
+}
+
+.sortWrapper {
+    display: flex;
+    gap: 8px;
+}
+
+#topThree {
+    padding-top: 36px;
+    margin-bottom: 89px;
+    border-top: 1px solid #2C2C2C;
 }
