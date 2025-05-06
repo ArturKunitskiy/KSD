@@ -246,7 +246,6 @@ footer {
 /*////////////////////////////////////////////////////////////////*/
 .carouselCard {
     width: auto;
-    /*////////////////////////////////////////////////////////////////*/
 }
 
 .carouselCard img {
@@ -379,4 +378,46 @@ button:focus {
     padding-top: 36px;
     margin-bottom: 89px;
     border-top: 1px solid #2C2C2C;
+}
+
+/*////////////////////////////////////////////////////////////////*/
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 58px 40px;
+}
+
+.button {
+    width: 55px;
+    height: 44px;
+    padding: 3px 1px 0px 0px;
+    border: 2px solid #686868;
+    color: #686868;
+    background-color: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    font-family: 'NAMU Pro';
+}
+
+.button.active {
+    width: 49px;
+    height: 44px;
+    padding: 3px 1px 0px 0px;
+    background-color: #B53535;
+    color: #FFFFFF;
+    border: none;
+}
+
+.rightButton {
+    width: 44px;
+    margin-top: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.secondRightImg {
+    height: 20px;
 }

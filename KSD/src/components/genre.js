@@ -9,7 +9,7 @@ export function Sort(props) {
     const [activeName, setActiveName] = useState(null);
 
     const handleClick = (name) => {
-        setActiveName(name === activeName ? null : name); // прибирає активність, якщо ще раз натиснути
+        setActiveName(name === activeName ? null : name);
     };
 
     return (
@@ -23,9 +23,8 @@ export function Sort(props) {
     );
 }
 
-
 export function GenreTopThreeCard(props) {
-    return <div style={{maxWidth: '631px', cursor: 'pointer'}}>
+    return <div style={{ maxWidth: '631px', cursor: 'pointer' }}>
         <img src={props.image} alt={props.image} style={{ height: '392px' }}></img>
         <div style={{ marginTop: '50px', paddingLeft: '6.35px' }}>
             <p style={{ color: '#B53535', margin: "0 0 28px 0" }}>{props.title}</p>
@@ -38,6 +37,7 @@ export function GenreTopThreeCard(props) {
         <AddToCart text='До кошика' image='/cartIcon.png' mLeft="0" mRight="0" />
     </div>
 }
+
 const top3 = [
     {
         image: '/hollyTop3.png',
@@ -67,13 +67,16 @@ const top3 = [
 
 export function TopThree(props) {
     return <section id='topThree'>
-        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        <h1 className='title' style={{ color: '#B53535', margin: '0 0 8px 0' }}>Гостросюжетні трилери</h1>
+        <p style={{ width: '1040px', color: '#686868', margin: '0 0 55px 0' }}>Захоплюючі історії для тих, хто не проти полоскотати свої нерви. Психологічні, детективні та містичні трилери, хоррор, книги, за якими були зняті найкращі фільми жахів.</p>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             {props.top3.map((item, index) => (
                 <GenreTopThreeCard key={index} image={item.image} title={item.title} author={item.author} oldPrice={item.oldPrice} price={item.price} onSale={item.onSale}></GenreTopThreeCard>
             ))}
         </div>
     </section>
 }
+
 
 export function GenreBookCard(props) {
     return <div className='genreBookCard'>
@@ -191,6 +194,28 @@ export function GenreBooksPage(props) {
 
 }
 
+export const Button = () => {
+    const [activePage, setActivePage] = useState(1);
+
+    return (
+        <div className="pagination">
+            {[1, 2, 3, 4, 5].map((page) => (
+                <button
+                    key={page}
+                    className={activePage === page ? "button active" : "button"}
+                    onClick={() => setActivePage(page)}
+                >
+                    {page}
+                </button>
+            ))}
+            <button className="rightButton" onClick={() => setActivePage((prev) => Math.min(prev + 1, 5))}>
+                <img src="/rightSecond.png" alt="Next" className="secondRightImg" />
+            </button>
+        </div>
+    );
+};
+
+
 export function Genre(props) {
     return <main>
         <img src='/booksBags.png' alt='bags' style={{ position: 'absolute', top: '2686px', left: '80px' }}></img>
@@ -199,22 +224,28 @@ export function Genre(props) {
             <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap' }}>
                 <Path width='1040px' mTop='0'></Path>
                 <TopThree top3={top3}></TopThree>
-                {/* <Sort
-                    options={[
-                        { name: '20', text: '20' },
-                        { name: '30', text: '30' },
-                        { name: '40', text: '40' },
-                    ]}
-                />
-                <Sort
-                    options={[
-                        { name: 'date', text: 'датою' },
-                        { name: 'popularity', text: 'популярністю' },
-                        { name: 'price', text: 'ціною' },
-                    ]}
-                /> */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', alignItems: 'center', marginBottom: '30px' }}>
+                    <p className='subTitle' style={{ fontSize: '24px', color: '#3C3C3B' }}>Показувати:</p>
+                    <Sort
+                        options={[
+                            { name: '20', text: '20' },
+                            { name: '30', text: '30' },
+                            { name: '40', text: '40' },
+                        ]}
+                    />
+                    <p className='subTitle' style={{ fontSize: '24px', color: '#3C3C3B' }}>Сортувати за:</p>
+                    <Sort
+                        options={[
+                            { name: 'date', text: 'датою' },
+                            { name: 'popularity', text: 'популярністю' },
+                            { name: 'price', text: 'ціною' },
+                        ]}
+                    />
+
+                </div>
 
                 <GenreBooksPage cards={cards}></GenreBooksPage>
+                <Button></Button>
             </div>
         </div>
         <ResentlyViewed></ResentlyViewed>
