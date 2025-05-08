@@ -28,7 +28,8 @@ h3,
 .offerTitle,
 .cartButtonP,
 .pathText,
-.sortButton {
+.sortButton,
+.addBonusText {
     font-family: 'NAMU Pro';
 }
 
@@ -45,7 +46,8 @@ p,
 .newsRating,
 .highlightedNav,
 .navA,
-li {
+li,
+td {
     font-family: 'Mazzard Soft M Light';
 }
 
@@ -65,7 +67,8 @@ h3 {
 
 .inputText,
 .newsRating,
-.pathText {
+.pathText,
+.addBonusText {
     font-size: 13px;
 }
 
@@ -74,6 +77,7 @@ h3 {
 }
 
 p,
+td,
 .description,
 .offerTitle,
 .navA,
@@ -81,7 +85,6 @@ li,
 .sortButton {
     font-size: 24px;
 }
-
 
 .big,
 .categoryText,
@@ -186,6 +189,12 @@ header {
     text-decoration: none;
     width: 386px;
     display: block;
+    transition: 0.2s ease-in-out;
+}
+
+.highlightedNav:hover {
+    color: #F6F6F6;
+    background-color: #2C2C2C;
 }
 
 .navA {
@@ -196,6 +205,11 @@ header {
     height: 35px;
     padding-top: 5px;
     color: #3C3C3B;
+    transition: 0.2s ease-in-out;
+}
+
+.navA:hover {
+    color: #B53535;
 }
 
 .wrapper {
@@ -246,6 +260,7 @@ footer {
 /*////////////////////////////////////////////////////////////////*/
 .carouselCard {
     width: auto;
+    /*////////////////////////////////////////////////////////////////*/
 }
 
 .carouselCard img {
@@ -380,7 +395,6 @@ button:focus {
     border-top: 1px solid #2C2C2C;
 }
 
-/*////////////////////////////////////////////////////////////////*/
 .pagination {
     display: flex;
     align-items: center;
@@ -418,6 +432,32 @@ button:focus {
     cursor: pointer;
 }
 
-.secondRightImg {
+.rightImg {
     height: 20px;
+}
+
+
+.bookDescription {
+    font-size: 18px;
+    color: #2C2C2C;
+    width: 1040px;
+    margin: 0;
+
+}
+
+.descriptionReview {
+    border-top: 1px solid #2C2C2C;
+    padding-top: 30px;
+    margin-bottom: 30px
+}
+
+td {
+    color: #2C2C2C;
+    width: 288px;
+}
+
+.addBonusText {
+    color: #2C2C2C;
+    display: inline-block;
+    margin: 0;
 }

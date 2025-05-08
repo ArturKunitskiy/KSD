@@ -30,7 +30,7 @@ function New() {
 
 export function CarouselCard(props) {
     return <div style={{ width: 'auto', marginRight: props.mRight || '0' }}>
-        <Link to='/' className='carouselCard' style={{ textDecoration: 'none' }}>
+        <Link to={props.link} className='carouselCard' style={{ textDecoration: 'none' }}>
             <p style={{ fontSize: '14px', lineHeight: '12px', backgroundColor: '#B53535', color: '#FFFFFF', padding: '4px 14px', display: props.specialDisplay, borderRadius: '60px', zIndex: '2', position: 'absolute', marginTop: '-10px', marginLeft: '75px' }}>{props.special}</p>
             <img src={props.cover} alt='book cover'></img>
             <p style={{
@@ -41,7 +41,6 @@ export function CarouselCard(props) {
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <p style={{ color: '#3C3C3B', textDecoration: 'line-through #3C3C3B', margin: '0', marginRight: '10px', display: props.oldPriceDisplay }}>{props.oldPrice}</p>
                 <p className='big' style={{ color: '#B53535', margin: '0' }}>{props.price} ГРН</p>
-
             </div>
         </Link>
     </div >
@@ -95,7 +94,7 @@ export function Carousel(props) {
 
             <div ref={carouselRef} className="carousel" style={{ height: '440px', width: '878px', overflow: 'hidden', background: 'transparent', margin: '0 auto' }}>
                 {props.cards.map((card, index) => (
-                    <CarouselCard key={index} mRight={card.mRight} special={card.special} specialDisplay={card.display} cover={card.cover} name={card.name} author={card.author} oldPrice={card.oldPrice} oldPriceDisplay={card.oldPriceDisplay} price={card.price} />
+                    <CarouselCard key={index} mRight={card.mRight} special={card.special} specialDisplay={card.display} cover={card.cover} name={card.name} author={card.author} oldPrice={card.oldPrice} oldPriceDisplay={card.oldPriceDisplay} price={card.price} link={card.link}/>
                 ))}
             </div>
 
@@ -135,7 +134,7 @@ const booksSections = [
             { mRight: '143px', special: 'НОВИНКА', display: 'inline', cover: '/holly.png', name: 'Голлі', author: 'Кінг. С', oldPrice: '490', oldPriceDisplay: 'block', price: '440' },
             { mRight: '143px', display: 'none', cover: '/notesOfHatred.png', name: 'Нотатки ненависті', author: 'В. Кіланд, П. Вард ', oldPrice: '330', oldPriceDisplay: 'block', price: '300' },
             { mRight: '146px', display: 'none', cover: '/forthWing.png', name: 'Четверте крило', author: 'Ребекка Яррос', oldPrice: '750', oldPriceDisplay: 'block', price: '680' },
-            { mRight: '147px', display: 'none', cover: '/fan.png', name: 'Фанат', author: 'Ню Горнбі', oldPrice: '350', oldPriceDisplay: 'block', price: '320' },
+            { mRight: '100px', display: 'none', cover: '/ordinaryMonstersCover.png', name: 'Звичайні монстри. Книга 1', author: 'Дж. М. Міро', oldPrice: '', oldPriceDisplay: 'none', price: '400', link: '/ContemporaryAuthors/OrdinaryMonsters' },
             { mRight: '147px', display: 'none', cover: '/murderIsEasy.png', name: 'Убивство - це легко', author: 'А. Крісті', oldPrice: '250', oldPriceDisplay: 'block', price: '230' }
         ]
     },

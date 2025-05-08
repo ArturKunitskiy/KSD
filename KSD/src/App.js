@@ -6,6 +6,8 @@ import { Home } from './components/home'
 import { Cart, PsysicalCart, DigitalCart } from './components/cart';
 import { Profile, MyProfile, Orders, Wishlist, Authorize } from './components/profile';
 import { Genre } from './components/genre';
+import { Book } from './components/book';
+import { NotFound } from './components/errorPage';
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
         <Route path="/" element={<MainPage />}>
           <Route index element={<Home></Home>} />
           <Route path="/Fiction/Thrillers" element={<Genre></Genre>} />
-          {/* <Route path="/ContemporaryAuthors/OrdinaryMonsters" element={<></>} /> */}
+          <Route path="/ContemporaryAuthors/OrdinaryMonsters" element={<Book></Book>} />
         </Route>
 
         <Route path="/Cart" element={<Cart></Cart>}>
@@ -28,6 +30,7 @@ function App() {
           <Route path="/Profile/Wishlist" element={<Wishlist></Wishlist>} />
           <Route path="/Profile/Authorize" element={<Authorize></Authorize>} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
