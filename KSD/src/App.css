@@ -177,6 +177,12 @@ header {
 
 .categoryText {
     text-decoration: none;
+    height: 60px;
+    background-color: #D6D9DC;
+    color: #3C3C3B;
+    padding: 10px 40px;
+    border-radius: 30px;
+    padding-top: 12px;
 }
 
 .highlightedNav {

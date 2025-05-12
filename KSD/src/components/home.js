@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useNavigate } from 'react-router-dom';
 import { Navigation, News } from './main';
 import Flickity from 'flickity';
 import 'flickity/css/flickity.css';
@@ -16,13 +16,18 @@ export function ForClients(props) {
 }
 
 function New() {
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = `Digest`;
+        navigate(path);
+    }
     return <div style={{ backgroundImage: "url('new.png')", backgroundRepeat: 'no-repeat', width: '1040px', height: '500px', borderRadius: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div>
             <h2 style={{ color: 'white', margin: '0', marginBottom: '7px', textAlign: 'center' }}>Книжковий дайджест КСД</h2>
             <p style={{ fontSize: '36px', color: 'white', display: 'block', margin: '0', textAlign: 'center' }}>Ваша щомісячна порція новинок ;)</p>
             <div style={{ width: '274px', height: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', margin: '0 auto', marginTop: '30px', position: 'relative' }}>
                 <img src='/hand.png' alt='hand' style={{ marginBottom: '-100px', marginLeft: '170px', zIndex: 2 }} ></img>
-                <button className='big' style={{ display: 'block', width: '274px', height: '60px', backgroundColor: '#FFFFFF', border: '2px solid #3C3C3B', outline: 'none', borderRadius: '60px', cursor: 'pointer' }}>Гортати</button>
+                <button className='big' onClick={routeChange} style={{ display: 'block', width: '274px', height: '60px', backgroundColor: '#FFFFFF', border: '2px solid #3C3C3B', outline: 'none', borderRadius: '60px', cursor: 'pointer' }}>Гортати</button>
             </div>
         </div>
     </div>
@@ -94,7 +99,7 @@ export function Carousel(props) {
 
             <div ref={carouselRef} className="carousel" style={{ height: '440px', width: '878px', overflow: 'hidden', background: 'transparent', margin: '0 auto' }}>
                 {props.cards.map((card, index) => (
-                    <CarouselCard key={index} mRight={card.mRight} special={card.special} specialDisplay={card.display} cover={card.cover} name={card.name} author={card.author} oldPrice={card.oldPrice} oldPriceDisplay={card.oldPriceDisplay} price={card.price} link={card.link}/>
+                    <CarouselCard key={index} mRight={card.mRight} special={card.special} specialDisplay={card.display} cover={card.cover} name={card.name} author={card.author} oldPrice={card.oldPrice} oldPriceDisplay={card.oldPriceDisplay} price={card.price} link={card.link} />
                 ))}
             </div>
 
@@ -214,11 +219,11 @@ const booksSections = [
 
 export function Home() {
     const news = [
-        { image: '/news1.png', date: '1 травня 2024 р.', title: 'Купуйте книги, вибирайте доставку Укрпоштою', description: 'Час для вигідних покупок! Вартість доставки знижено! Детальніше ...', raters: '6', rating: '5.0' },
-        { image: '/news2.png', date: '1 травня 2024 р.', title: 'Книжковий дайджест КСД: травневі новинки', description: 'Гортайте дайджест і вибирайте нові книжки до покупки. Нехай ці історії порадують вас весняними вечорами! ...', raters: '1', rating: '0.0' },
-        { image: '/news3.png', date: '18 квітня 2024 р.', title: 'День книги та авторського права: подвоюємо КСДкоїни на честь свята!', description: 'Купуйте книжки і отримуйте подвоєні КСДкоїни. Більше книжок — більше коїнів. Лише до 24 квітня, поспішайте! ...', raters: '32', rating: '4.5' },
-        { image: '/news4.png', date: '12 квітня 2024 р.', title: 'День книги та авторського права: подвоюємо КСДкоїни на честь свята!', description: 'Купуйте книжки і отримуйте подвоєні КСДкоїни. Більше книжок — більше коїнів. Лише до 24 квітня, поспішайте! ...', raters: '0' },
-        { image: '/news5.png', date: '21 березня 2024 р.', title: 'Нам 24 роки! День народження КСД', description: 'Хапайте знижку і святкуйте разом з нами: -24% на всі книжки видавництва КСД! ...', raters: '10', rating: '5.0' }
+        { image: '/news1.png', date: '1 травня 2024 р.', title: 'Купуйте книги, вибирайте доставку Укрпоштою', description: 'Час для вигідних покупок! Вартість доставки знижено! Детальніше ...', raters: '6', rating: '5.0', link: '/News1' },
+        { image: '/news2.png', date: '1 травня 2024 р.', title: 'Книжковий дайджест КСД: травневі новинки', description: 'Гортайте дайджест і вибирайте нові книжки до покупки. Нехай ці історії порадують вас весняними вечорами! ...', raters: '1', rating: '0.0', link: '/News2' },
+        { image: '/news3.png', date: '18 квітня 2024 р.', title: 'День книги та авторського права: подвоюємо КСДкоїни на честь свята!', description: 'Купуйте книжки і отримуйте подвоєні КСДкоїни. Більше книжок — більше коїнів. Лише до 24 квітня, поспішайте! ...', raters: '32', rating: '4.5', link: '/News3' },
+        { image: '/news4.png', date: '12 квітня 2024 р.', title: 'День книги та авторського права: подвоюємо КСДкоїни на честь свята!', description: 'Купуйте книжки і отримуйте подвоєні КСДкоїни. Більше книжок — більше коїнів. Лише до 24 квітня, поспішайте! ...', raters: '0', link: '/News4' },
+        { image: '/news5.png', date: '21 березня 2024 р.', title: 'Нам 24 роки! День народження КСД', description: 'Хапайте знижку і святкуйте разом з нами: -24% на всі книжки видавництва КСД! ...', raters: '10', rating: '5.0', link: '/News5' }
     ]
     return <main>
         <img src='/homeBags.png' alt='bags' style={{ position: 'absolute', top: '2756px', left: '80px' }}></img>

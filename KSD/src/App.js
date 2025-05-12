@@ -1,4 +1,5 @@
 import './App.css';
+import './adaptive.css'
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MainPage, ScrollingText } from './components/main'
