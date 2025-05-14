@@ -1,0 +1,29 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+    .cartButton {
+        width: 9.45vw !important;
+    }
+}
+
+/* @media (max-width: 767px) {
+    
+} */
+
+
+@media (min-width: 663px) and (max-width: 767px) {
+    .cartButton {
+        width: 9.75vw !important;
+    }
+}
+
+@media (min-width: 468px) and (max-width: 662px) {
+    .cartButton {
+        width: 9.55vw !important;
+    }
+}
+
+
+@media (max-width: 467px) {
+    .cartButton {
+        width: 9.75vw !important;
+    }
+}

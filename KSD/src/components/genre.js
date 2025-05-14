@@ -24,12 +24,12 @@ export function Sort(props) {
 }
 
 export function GenreTopThreeCard(props) {
-    return <div style={{ maxWidth: '631px', cursor: 'pointer' }}>
-        <img src={props.image} alt={props.image} style={{ height: '392px' }}></img>
-        <div style={{ marginTop: '50px', paddingLeft: '6.35px' }}>
-            <p style={{ color: '#B53535', margin: "0 0 28px 0" }}>{props.title}</p>
-            <p style={{ color: '#686868', margin: "0 0 11px 0" }}>{props.author}</p>
-            <div style={{ display: 'flex', gap: '15.26px', alignItems: 'center' }}>
+    return <div style={{ maxWidth: '32.864vw', cursor: 'pointer' }}>
+        <img src={props.image} alt={props.image} style={{ height: '20.416vw' }}></img>
+        <div style={{ marginTop: '2.6vw', paddingLeft: '0.33vw' }}>
+            <p style={{ color: '#B53535', margin: "0 0 1.4583vw 0" }}>{props.title}</p>
+            <p style={{ color: '#686868', margin: "0 0 0.5729vw 0" }}>{props.author}</p>
+            <div style={{ display: 'flex', gap: '0.7947vw', alignItems: 'center' }}>
                 <p style={{ color: '#3C3C3B', textDecoration: 'line-through #3C3C3B', margin: '0' }}>{props.oldPrice}</p>
                 <p className='big' style={{ color: '#B53535', margin: '0' }}>{props.price} ГРН</p>
             </div>
@@ -67,8 +67,8 @@ const top3 = [
 
 export function TopThree(props) {
     return <section id='topThree'>
-        <h1 className='title' style={{ color: '#B53535', margin: '0 0 8px 0' }}>Гостросюжетні трилери</h1>
-        <p style={{ width: '1040px', color: '#686868', margin: '0 0 55px 0' }}>Захоплюючі історії для тих, хто не проти полоскотати свої нерви. Психологічні, детективні та містичні трилери, хоррор, книги, за якими були зняті найкращі фільми жахів.</p>
+        <h1 className='title' style={{ color: '#B53535', margin: '0 0 0.416vw 0' }}>Гостросюжетні трилери</h1>
+        <p style={{ width: '54.16vw', color: '#686868', margin: '0 0 2.864vw 0' }}>Захоплюючі історії для тих, хто не проти полоскотати свої нерви. Психологічні, детективні та містичні трилери, хоррор, книги, за якими були зняті найкращі фільми жахів.</p>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             {props.top3.map((item, index) => (
                 <GenreTopThreeCard key={index} image={item.image} title={item.title} author={item.author} oldPrice={item.oldPrice} price={item.price} onSale={item.onSale}></GenreTopThreeCard>
@@ -83,28 +83,28 @@ export function GenreBookCard(props) {
         {props.forAdults && (
             <img src='/forAdults.png' alt="icon for adults" className='forAdultsIcon' />
         )}
-        <img src={props.image} alt={props.image} style={{ height: '280px' }}></img>
+        <img src={props.image} alt={props.image} style={{ height: '14.583vw' }}></img>
         <div className='infoPriceWrap'>
             <div className='genreBookInfo'>
-                <p style={{ color: '#686868', margin: "0 0 14px 0" }}>{props.author}</p>
-                <p style={{ color: '#B53535', margin: "0 0 14px 0" }}>{props.title}</p>
-                <div style={{ padding: '15px 0px', display: 'flex', gap: '10px', width: '323px', height: '60px', alignItems: 'center' }}>
-                    <div style={{ width: '182px', display: 'flex', justifyContent: 'space-between' }}>
+                <p style={{ color: '#686868', margin: "0 0 0.7291vw 0" }}>{props.author}</p>
+                <p style={{ color: '#B53535', margin: "0 0 0.7291vw 0" }}>{props.title}</p>
+                <div style={{ padding: '0.78125vw 0', display: 'flex', gap: '0.52vw', width: '16.82vw', height: '3.125vw', alignItems: 'center' }}>
+                    <div style={{ width: '9.47916vw', display: 'flex', justifyContent: 'space-between' }}>
                         {props.stars.map((item) => (
-                            <img src={item} alt={item} style={{ width: '30px', height: '30px' }}></img>
+                            <img src={item} alt={item} style={{ width: '1.5625vw', height: '1.5625vw' }}></img>
                         ))}
                     </div>
-                    <p style={{ color: '#686868', margin: '0', height: '25px' }}>{props.ratings} оцінок</p>
+                    <p style={{ color: '#686868', margin: '0', height: '1.3vw' }}>{props.ratings} оцінок</p>
                 </div>
                 {props.forAdults && (
-                    <p style={{ fontSize: '20px', color: '#B53535', width: '569px', margin: '4px 0 0 0' }}>
+                    <p style={{ fontSize: '1vw', color: '#B53535', width: '29.6354vw', margin: '0.2vw 0 0 0' }}>
                         Увага! Продукція сексуального характеру або інша продукція з віковим обмеженням. Продаж неповнолітнім заборонено. Продаж відповідно до вікового обмеження.
                     </p>
                 )}
                 <p style={{ color: '#686868', width: '594px', margin: '19px 0 0 0' }}>{props.decsription}<span style={{ color: '#B53535', cursor: 'pointer' }}>   Читати далі »</span></p>
             </div>
             <div className='priceWrap'>
-                <p style={{ color: '#3C3C3B', textDecoration: 'line-through #3C3C3B', textAlign: 'right', margin: '0 0 4px 0' }}>{props.oldPrice}</p>
+                <p style={{ color: '#3C3C3B', textDecoration: 'line-through #3C3C3B', textAlign: 'right', margin: '0 0 0.2vw 0' }}>{props.oldPrice}</p>
                 <p className='big' style={{ color: '#B53535', margin: '0 0 17.65px 0', textAlign: 'right' }}>{props.price} ГРН</p>
                 <AddToCart text='До кошика' image='/cartIcon.png' mLeft="0" mRight="0" />
             </div>
@@ -115,8 +115,8 @@ export function GenreBookCard(props) {
 
 export function Question(props) {
     return <div style={{ marginTop: props.mTop }}>
-        <h3 className='title' style={{ color: '#B53535', width: '1520px', margin: '0' }}>{props.question}</h3>
-        <p style={{ color: '#686868', width: '1520px', margin: '14px 0 0 0', whiteSpace: 'pre-line' }}>{props.answer}</p>
+        <h3 className='title' style={{ color: '#B53535', width: '79.16vw', margin: '0' }}>{props.question}</h3>
+        <p style={{ color: '#686868', width: '79.16vw', margin: '0.7291vw 0 0 0', whiteSpace: 'pre-line' }}>{props.answer}</p>
     </div>
 }
 
@@ -222,10 +222,10 @@ export function Genre(props) {
         <div className='wrapper'>
             <Navigation></Navigation>
             <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap' }}>
-                <Path width='1040px' mTop='0'></Path>
+                <Path width='54.16vw' mTop='0'></Path>
                 <TopThree top3={top3}></TopThree>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', alignItems: 'center', marginBottom: '30px' }}>
-                    <p className='subTitle' style={{ fontSize: '24px', color: '#3C3C3B' }}>Показувати:</p>
+                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.52vw 0', alignItems: 'center', marginBottom: '1.5625vw' }}>
+                    <p className='subTitle' style={{ fontSize: '1.25vw', color: '#3C3C3B' }}>Показувати:</p>
                     <Sort
                         options={[
                             { name: '20', text: '20' },
@@ -233,7 +233,7 @@ export function Genre(props) {
                             { name: '40', text: '40' },
                         ]}
                     />
-                    <p className='subTitle' style={{ fontSize: '24px', color: '#3C3C3B' }}>Сортувати за:</p>
+                    <p className='subTitle' style={{ fontSize: '1.25vw', color: '#3C3C3B' }}>Сортувати за:</p>
                     <Sort
                         options={[
                             { name: 'date', text: 'датою' },
@@ -249,10 +249,10 @@ export function Genre(props) {
             </div>
         </div>
         <ResentlyViewed></ResentlyViewed>
-        <section style={{ marginTop: '100px', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '81px' }}>
+        <section style={{ marginTop: '5.2vw', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '81px' }}>
             <Separator color='#D6D9DC'></Separator>
             <Question question="Психологічні трилери: для тих, хто хоче полоскотати нерви" answer="Трилер — популярний різновид літератури, головна мета якого — змусити читача відчути тривожне очікування, нервове хвилювання та неконтрольований страх. Попри те, що страшні сюжети викликають у людини негативні емоції, коло шанувальників подібного літературного жанру постійно розширюється. Все тому, що цікаві книги трилери — це завжди динамічно, непередбачувано та неймовірно цікаво." mTop="82px"></Question>
-            <Question question="Страшні внутрішні демони роду Homo sapiens" answer="Не слід плутати трилери з класичними жахами. Дуже часто містичний складник зовсім відсутній у психологічній літературі. Сюжети, що описують страшні книги трилери, — це, як правило, реальні та правдиві історії з життя звичайних людей. Сутінки нашої підсвідомості приховують багато таємниць. Іноді ми самі не здогадуємося, як далеко можемо зайти заради власних бажань." mTop="100px"></Question>
+            <Question question="Страшні внутрішні демони роду Homo sapiens" answer="Не слід плутати трилери з класичними жахами. Дуже часто містичний складник зовсім відсутній у психологічній літературі. Сюжети, що описують страшні книги трилери, — це, як правило, реальні та правдиві історії з життя звичайних людей. Сутінки нашої підсвідомості приховують багато таємниць. Іноді ми самі не здогадуємося, як далеко можемо зайти заради власних бажань." mTop="5.2vw"></Question>
             <Question
                 question="Чому ж не почати читати трилери українською мовою?"
                 answer={`Варто хоч раз купити психологічні трилери, і ви більше не зможете зупинитися. Динамічний розвиток подій ні на хвилину не дає читачеві розслабитися, а фінал трилерів завжди важко передбачити. Психологічні романи описують потаємні закутки людської душі. І ніби з хірургічною точністю розкривають усі приховані там таємниці та загадки.
@@ -262,7 +262,7 @@ export function Genre(props) {
 Також ви можете купити українські книги трилери, наприклад, романи письменника Макса Кідрука. Шанувальникам класичних історій, які екранізували голлівудські режисери, обов'язково сподобається роман «Екзорцист» В. Пітера Блетті або «Адвокат диявола» Е. Нейдермана.
 
 В нашому інтернет-магазині широкий вибір трилерів різної цінової категорії. Ми постійно проводимо акції, щоб зробити книги доступними кожному українцю. Тож чекаємо на ваші замовлення!`}
-                mTop="100px"
+                mTop="5.2vw"
             />
         </section>
 

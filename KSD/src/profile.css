@@ -2,22 +2,22 @@
     width: 170px;
     height: 208px;
     margin-right: 118px;
-    margin-top: 20px;
+    margin-top: 1vw;
 }
 
 .profileNavItem {
     display: flex;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 1.25vw;
     text-decoration: none;
 }
 
 .profileNavIcon {
-    margin-right: 10px;
+    margin-right: 0.52vw;
 }
 
 .profileNavText {
-    font-size: 14px;
+    font-size: 0.7291vw;
     color: #000000;
     margin: 0;
 }
@@ -25,43 +25,42 @@
 /*///////////////////////////////////////////*/
 
 .personalData {
-    height: 25px;
+    height: 1.3vw;
     display: flex;
     align-items: center;
     color: #2C2C2C;
-    margin-top: 12px;
-    margin-bottom: 33px;
+    margin-top: 0.652vw;
+    margin-bottom: 1.718vw;
 }
 
 .imgIconUserGrey {
-    width: 24px;
-    height: 24px;
+    width: 1.25vw;
+    height: 1.25vw;
 }
 
 #nameLabel {
     font-family: 'NAMU Pro';
-    font-size: 11px;
+    font-size: 0.5729vw;
     display: block;
     width: 47px;
     height: 16px;
     background-color: #FFFFFF;
-    padding: 0 9px 0 10px;
+    padding: 0 9px 0 0.52vw;
     color: #2C2C2C;
     position: absolute;
-    top: -12px;
+    top: -0.652vw;
     left: 64px;
 }
 
 .formInput {
     width: 563.31px;
     height: 37px;
-    padding: 9px 0px 9px 10px;
-    margin-bottom: 10px;
-    border: 1px solid;
-    border-radius: 10px;
-    font-size: 13px;
+    padding: 9px 0.52vw 9px 0.52vw;
+    margin-bottom: 0.52vw;
+    border-radius: 0.52vw;
+    font-size: 0.677vw;
     font-family: 'Mazzard Soft M', sans-serif;
-    border: 1px solid #686868;
+    border: 0.052vw solid #686868;
     color: #2C2C2C;
 }
 
@@ -76,9 +75,9 @@
     background-color: #F6F6F6;
     color: #2C2C2C;
     border: none;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 13px;
+    border-radius: 0.52vw;
+    padding: 0.52vw;
+    font-size: 0.677vw;
     font-family: 'Mazzard Soft M', sans-serif;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -117,12 +116,12 @@
 .subscribeInput {
     width: 752px;
     height: 37px;
-    padding: 3px 0px 0px 38px;
+    padding: 0.156vw 0 0 38px;
     margin-right: 16px;
-    border: 1px solid #686868;
+    border: 0.052vw solid #686868;
     color: #2C2C2C;
-    border-radius: 10px;
-    font-size: 13px;
+    border-radius: 0.52vw;
+    font-size: 0.677vw;
     font-family: 'Mazzard Soft M', sans-serif;
 }
 
@@ -137,9 +136,9 @@
     background-color: #B53535;
     color: #FFFFFF;
     border: none;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 13px;
+    border-radius: 0.52vw;
+    padding: 0.52vw;
+    font-size: 0.677vw;
     font-family: 'Mazzard Soft M', sans-serif;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -159,15 +158,15 @@
 .wishlist
 {
     width: 560px;
-    padding: 10px;
-    border: 1px solid #686868;
+    padding: 0.52vw;
+    border: 0.052vw solid #686868;
     background-color: #FFFFFF;
-    border-radius: 10px;
+    border-radius: 0.52vw;
     color: #2C2C2C;
     cursor: pointer;
     transition: 0.3s ease-in-out;
     font-family: 'NAMU Pro';
-    font-size: 13px;
+    font-size: 0.677vw;
 }
 
 .wishlist::placeholder{
@@ -176,7 +175,7 @@
 
 .wishlist:hover
 {
-    border: 1px solid #B53535;
+    border: 0.052vw solid #B53535;
     background-color: #B53535;
     color: #FFFFFF;
 }
@@ -187,5 +186,5 @@
 .contactText
 {
     font-family: 'NAMU Pro';
-    font-size: 20px;
+    font-size: 1vw;
 }

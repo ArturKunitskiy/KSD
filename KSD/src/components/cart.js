@@ -3,7 +3,7 @@ import { Outlet, Link } from 'react-router-dom';
 import { ScrollingText, Header, Footer, Category, News, ResentlyViewed, Path } from './main';
 
 export function CartCategory(props) {
-    return <Link to={props.link} style={{ color: props.color, backgroundColor: props.background, width: '752px', height: '62px', borderRadius: '60px', border: 'none', outline: 'none', padding: '14px 30px', cursor: 'pointer', textDecoration: 'none', textAlign: 'center' }}>
+    return <Link to={props.link} style={{ color: props.color, backgroundColor: props.background, width: '39.16vw', height: '3.23vw', borderRadius: '60px', border: 'none', outline: 'none', padding: '0.72916vw 1.5625vw', cursor: 'pointer', textDecoration: 'none', textAlign: 'center' }}>
         <p className='big' style={{ margin: '0' }}>{props.text}</p>
     </Link>
 }
@@ -16,18 +16,18 @@ export function CartNav(props) {
 }
 
 export function AddToCart(props) {
-    return <button style={{ border: '1px solid #B53535', height: '50px', borderRadius: '10px', cursor: 'pointer', marginLeft: props.mLeft, marginRight: props.mRight, backgroundColor: '#FFFFFF', display: 'flex', alignItems: 'center', padding: '0 0 0 10px', width: '179.5px' }}>
-        <img src={props.image} alt='cart icon' style={{ marginRight: '9.72px' }}></img>
+    return <button style={{ border: '1px solid #B53535', height: '2.6041vw', borderRadius: '0.52vw', cursor: 'pointer', marginLeft: props.mLeft, marginRight: props.mRight, backgroundColor: '#FFFFFF', display: 'flex', alignItems: 'center', padding: '0 0 0 0.52vw', width: '9.3678vw' }} className='cartButton'>
+        <img src={props.image} alt='cart icon' style={{ marginRight: '0.5vw', width: '1.614vw' }}></img>
         <p className='cartButtonP'>{props.text}</p>
     </button>
 }
 
 export function EmptyCart(props) {
-    return <div style={{ width: '1520px', margin: '0 auto' }}>
-        <h3 style={{ color: '#2C2C2C', marginTop: '77px', marginBottom: '14px' }}>У Вашому «Кошику» ще немає жодного товару.</h3>
-        <p className='small' style={{ color: '#686868', padding: '10px', display: 'flex', alignItems: 'center', margin: '0' }}>Щоб додати будь-який товар до «Кошика», необхідно натиснути на кнопку <AddToCart text={props.text} image={props.image} mLeft='10px' mRight='10px' /> , яка розташована поруч з обраним Вами товаром.</p>
-        <p style={{ color: '#2C2C2C', margin: '13px 0 25px 0' }}>Товарні розділи нашого магазину:</p>
-        <ul style={{ color: '#2C2C2C', margin: '0 0 36px 0' }}>
+    return <div className='emptyCart'>
+        <h3 style={{ color: '#2C2C2C', marginTop: '4vw', marginBottom: '0.72916vw' }}>У Вашому «Кошику» ще немає жодного товару.</h3>
+        <p className='small' style={{ color: '#686868', padding: '0.52vw', margin: '0' }}>Щоб додати будь-який товар до «Кошика», необхідно натиснути на кнопку <span style={{display: 'inline-block', verticalAlign: 'middle'}}><AddToCart text={props.text} image={props.image} mLeft='0.52vw' mRight='0.52vw' /></span> , яка розташована поруч з обраним Вами товаром.</p>
+        <p style={{ color: '#2C2C2C', margin: '0.677vw 0 1.2wv 0' }}>Товарні розділи нашого магазину:</p>
+        <ul style={{ color: '#2C2C2C', margin: '0 0 1.875vw 0' }}>
             <li>Книги</li>
             <li>Електронні книги</li>
             <li>Спецпропозиції</li>
@@ -69,9 +69,9 @@ export function Cart() {
             <Category link='#' name='eBooks'></Category>
             <Category link='#' name='Анонси КСД'></Category>
         </div>
-        <Path width='1520px' mTop='24px'></Path>
+        <Path width='79.16vw' mTop='1.25vw'></Path>
         <Outlet></Outlet>
-        <News top='92px' news={news}></News>
+        <News top='4.7916vw' news={news}></News>
         <ResentlyViewed></ResentlyViewed>
         <Footer></Footer>
 

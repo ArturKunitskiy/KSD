@@ -20,6 +20,11 @@ body {
     overflow-x: hidden;
 }
 
+
+#root {
+    overflow-x: hidden;
+}
+
 h2,
 h3,
 .title,
@@ -52,24 +57,24 @@ td {
 }
 
 h2 {
-    font-size: 48px;
+    font-size: 2.5vw;
 }
 
 h3 {
-    font-size: 36px;
+    font-size: 1.875vw;
 }
 
 .subTitle,
 .small,
 .cartButtonP {
-    font-size: 20px;
+    font-size: 1.0417vw;
 }
 
 .inputText,
 .newsRating,
 .pathText,
 .addBonusText {
-    font-size: 13px;
+    font-size: 0.677vw;
 }
 
 .newsRating {
@@ -83,7 +88,7 @@ td,
 .navA,
 li,
 .sortButton {
-    font-size: 24px;
+    font-size: 1.25vw;
 }
 
 .big,
@@ -91,12 +96,12 @@ li,
 .navCategory,
 .title,
 .highlightedNav {
-    font-size: 32px;
+    font-size: 1.6667vw;
 }
 
 .profileMenu,
 .newsText {
-    font-size: 14px;
+    font-size: 0.7292vw;
 }
 
 .newsText {
@@ -104,7 +109,7 @@ li,
 }
 
 .newsTitle {
-    font-size: 15px;
+    font-size: 0.78125vw;
     color: #B53535;
 }
 
@@ -112,7 +117,7 @@ li,
     background-color: #B53535;
     color: #FFFFFF;
     width: 100%;
-    height: 45px;
+    height: 4.16%;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -124,7 +129,7 @@ li,
 
 .scroll div {
     display: flex;
-    gap: 14px;
+    gap: 0.7%;
 }
 
 
@@ -132,7 +137,11 @@ li,
     animation: LeftToRight 60s infinite linear;
     display: flex;
     align-items: center;
-    height: 45px;
+    height: 3.7%;
+}
+
+.leftToRight p {
+    margin: 0.2% 0;
 }
 
 @keyframes LeftToRight {
@@ -145,13 +154,17 @@ li,
     }
 }
 
+#logo {
+    width: 16.9%;
+}
+
 .search {
-    width: 1038px;
-    height: 68px;
-    padding-right: 20px;
-    padding-left: 31px;
-    border: 1px solid #2C2C2C;
-    border-radius: 60px;
+    width: 54vw;
+    height: 3.541vw;
+    padding-right: 1vw;
+    padding-left: 1.61vw;
+    border: 0.052vw solid #2C2C2C;
+    border-radius: 3.125vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -159,41 +172,47 @@ li,
 
 .search input {
     font-family: 'Mazzard Soft M Light';
-    font-size: 24px;
+    font-size: 1.25vw;
     color: #3C3C3B;
-    width: 950px;
+    width: 49.479vw;
     border: none;
     outline: none;
 }
 
-header {
-    width: 1452px;
+#headerIcons {
     display: flex;
-    justify-content: space-between;
+    gap: 18.91%;
+    width: 4.9%;
+}
+
+header {
+    width: 79.16%;
+    display: flex;
     align-items: center;
     margin: 0 auto;
-    margin-top: 35px;
+    margin-top: 1.82%;
+    gap: 2.76%
 }
 
 .categoryText {
     text-decoration: none;
-    height: 60px;
+    height: 54%;
     background-color: #D6D9DC;
     color: #3C3C3B;
-    padding: 10px 40px;
-    border-radius: 30px;
-    padding-top: 12px;
+    padding: 0.65% 2.69%;
+    border-radius: 1.5625vw;
+    padding-top: 0.8%;
 }
 
 .highlightedNav {
     background-color: #B53535;
     color: #FFFFFF;
-    height: 62px;
-    border-radius: 31px;
-    line-height: 34px;
-    padding: 14px 30px;
+    height: 3.23vw;
+    border-radius: 1.614vw;
+    line-height: 1.77vw;
+    padding: 0.73vw 1.5625vw;
     text-decoration: none;
-    width: 386px;
+    width: 20.1vw;
     display: block;
     transition: 0.2s ease-in-out;
 }
@@ -205,11 +224,11 @@ header {
 
 .navA {
     text-decoration: none;
-    padding-left: 14px;
-    margin-top: 18px;
+    padding-left: 0.73vw;
+    margin-top: 0.9375vw;
     display: block;
-    height: 35px;
-    padding-top: 5px;
+    height: 1.82vw;
+    padding-top: 0.26vw;
     color: #3C3C3B;
     transition: 0.2s ease-in-out;
 }
@@ -219,11 +238,11 @@ header {
 }
 
 .wrapper {
-    width: 1520px;
+    width: 79.16vw;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    margin-top: 36px;
+    margin-top: 1.875vw;
 }
 
 /*/////////////////////////////////////////////////*/
@@ -231,25 +250,25 @@ header {
 footer {
     background-color: #D6D9DC;
     color: #3C3C3B;
-    padding: 90px 0;
+    padding: 4.6875vw 0;
     width: 100%;
 }
 
 .footerContainer {
     display: flex;
     flex-wrap: wrap;
-    width: 1285px;
+    width: 66.927vw;
     margin: 0 auto;
-    gap: 124px;
+    gap: 6.4583vw;
 }
 
 .footerSection h3 {
-    margin-top: 42px;
+    margin-top: 2.1875vw;
     color: #3C3C3B;
 }
 
 .footerSection p {
-    margin: 11px 0;
+    margin: 0.57vw 0;
 }
 
 .footerSection a {
@@ -266,21 +285,16 @@ footer {
 /*////////////////////////////////////////////////////////////////*/
 .carouselCard {
     width: auto;
-    /*////////////////////////////////////////////////////////////////*/
 }
 
 .carouselCard img {
-    margin-bottom: 55px;
+    margin-bottom: 3.86vw;
 }
-
-
-/*---------*/
-
 
 .carousel-cell {
     width: auto;
     height: 100%;
-    margin-right: 30px;
+    margin-right: 1.5625vw;
     background: transparent;
     counter-increment: carousel-cell;
     display: inline-block;
@@ -289,7 +303,7 @@ footer {
 .book-cover-cell {
     width: auto;
     height: 100%;
-    margin-right: 30px;
+    margin-right: 1.5625vw;
     background: transparent;
     counter-increment: carousel-cell;
     display: inline-block;
@@ -300,13 +314,13 @@ button:focus {
 }
 
 .flickity-slider {
-    height: 440px !important;
+    height: 22.916vw !important;
     display: flex;
     align-items: center;
 }
 
 .flickity-viewport {
-    height: 440px !important;
+    height: 22.916vw !important;
 
 }
 
@@ -314,12 +328,17 @@ button:focus {
     display: block;
     color: #FFFFFF;
     background-color: #B53535;
-    padding: 10px 10px 10px 8.56px;
-    border-radius: 0 10px 10px 0;
+    padding: 0.52vw 0.52vw 0.52vw 0.4458vw;
+    border-radius: 0 0.52vw 0.52vw 0;
     margin: 0;
-    height: 50px;
-    width: 127px;
-    line-height: 29px;
+    height: 2.6vw;
+    width: 6.615vw;
+    line-height: 1.51vw;
+}
+
+.emptyCart {
+    width: 79.16%;
+    margin: 0 auto;
 }
 
 .pathText {
@@ -335,9 +354,9 @@ button:focus {
 /*//////////////////////////////////////////////////////////////////*/
 
 .genreBookCard {
-    border-top: 1px solid #2C2C2C;
-    padding: 40px 10px 10px 10px;
-    margin-bottom: 40px;
+    border-top: 0.052vw solid #2C2C2C;
+    padding: 2vw 0.52vw 0.52vw 0.52vw;
+    margin-bottom: 2vw;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -346,19 +365,19 @@ button:focus {
 }
 
 .genreBookInfo {
-    width: 594px;
-    padding-left: 10px;
-    margin-right: 10px;
+    width: 30.9375vw;
+    padding-left: 0.52vw;
+    margin-right: 0.52vw;
 }
 
 .forAdultsIcon {
     position: absolute;
-    top: 60px;
-    left: -30px;
+    top: 3.125vw;
+    left: -1.5625vw;
 }
 
 .priceWrap {
-    width: 180px;
+    width: 9.375vw;
     display: flex;
     flex-direction: column;
     justify-content: right;
@@ -374,96 +393,101 @@ button:focus {
 .sortButton {
     background-color: transparent;
     color: #686868;
-    border-radius: 10px;
-    border: 2px solid #686868;
+    border-radius: 0.52vw;
+    border: 0.1vw solid #686868;
     display: block;
-    padding: 5px 20px;
-    line-height: 34px;
-    height: 44px;
-    min-width: 72px;
+    padding: 0.26vw 1vw;
+    line-height: 1.77vw;
+    height: 1.5625vw;
+    min-width: 3.75vw;
     transition: 0.2s ease-in-out;
     cursor: pointer;
 }
 
 .sortButton.active {
-    border: 2px solid #B53535;
+    border: 0.1vw solid #B53535;
     color: #B53535;
 }
 
 .sortWrapper {
     display: flex;
-    gap: 8px;
+    gap: 0.416vw;
 }
 
 #topThree {
-    padding-top: 36px;
-    margin-bottom: 89px;
-    border-top: 1px solid #2C2C2C;
+    padding-top: 1.875vw;
+    margin-bottom: 4.6354vw;
+    border-top: 0.052vw solid #2C2C2C;
 }
 
 .pagination {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin: 58px 40px;
+    gap: 0.416vw;
+    margin: 3vw 2vw;
 }
 
 .button {
-    width: 55px;
-    height: 44px;
-    padding: 3px 1px 0px 0px;
-    border: 2px solid #686868;
+    width: 2.864vw;
+    height: 1.5625vw;
+    padding: 0.156vw 0.052vw 0 0;
+    border: 0.1vw solid #686868;
     color: #686868;
     background-color: transparent;
-    border-radius: 10px;
+    border-radius: 0.52vw;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 1.25vw;
     font-family: 'NAMU Pro';
 }
 
 .button.active {
-    width: 49px;
-    height: 44px;
-    padding: 3px 1px 0px 0px;
+    width: 2.552vw;
+    height: 1.5625vw;
+    padding: 0.156vw 0.052vw 0 0;
     background-color: #B53535;
     color: #FFFFFF;
     border: none;
 }
 
 .rightButton {
-    width: 44px;
-    margin-top: 4px;
+    width: 1.5625vw;
+    margin-top: 0.2vw;
     background: transparent;
     border: none;
     cursor: pointer;
 }
 
 .rightImg {
-    height: 20px;
+    height: 1vw;
 }
 
 
 .bookDescription {
-    font-size: 18px;
+    font-size: 0.9375vw;
     color: #2C2C2C;
-    width: 1040px;
+    width: 54.16vw;
     margin: 0;
 
 }
 
 .descriptionReview {
-    border-top: 1px solid #2C2C2C;
-    padding-top: 30px;
-    margin-bottom: 30px
+    border-top: 0.052vw solid #2C2C2C;
+    padding-top: 1.5625vw;
+    margin-bottom: 1.5625vw;
 }
 
 td {
     color: #2C2C2C;
-    width: 288px;
+    width: 15vw;
 }
 
 .addBonusText {
     color: #2C2C2C;
     display: inline-block;
     margin: 0;
+}
+
+#ufo {
+    margin-bottom: 1.042vw;
+    width: 20.83vw;
 }
