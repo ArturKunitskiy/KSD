@@ -101,11 +101,11 @@ export function GenreBookCard(props) {
                         Увага! Продукція сексуального характеру або інша продукція з віковим обмеженням. Продаж неповнолітнім заборонено. Продаж відповідно до вікового обмеження.
                     </p>
                 )}
-                <p style={{ color: '#686868', width: '594px', margin: '19px 0 0 0' }}>{props.decsription}<span style={{ color: '#B53535', cursor: 'pointer' }}>   Читати далі »</span></p>
+                <p style={{ color: '#686868', width: '30.9375vw', margin: '0.9895vw 0 0 0' }}>{props.decsription}<span style={{ color: '#B53535', cursor: 'pointer' }}>   Читати далі »</span></p>
             </div>
             <div className='priceWrap'>
                 <p style={{ color: '#3C3C3B', textDecoration: 'line-through #3C3C3B', textAlign: 'right', margin: '0 0 0.2vw 0' }}>{props.oldPrice}</p>
-                <p className='big' style={{ color: '#B53535', margin: '0 0 17.65px 0', textAlign: 'right' }}>{props.price} ГРН</p>
+                <p className='big' style={{ color: '#B53535', margin: '0 0 0.91927vw 0', textAlign: 'right' }}>{props.price} ГРН</p>
                 <AddToCart text='До кошика' image='/cartIcon.png' mLeft="0" mRight="0" />
             </div>
         </div>
@@ -209,7 +209,7 @@ export const Button = () => {
                 </button>
             ))}
             <button className="rightButton" onClick={() => setActivePage((prev) => Math.min(prev + 1, 5))}>
-                <img src="/rightSecond.png" alt="Next" className="secondRightImg" />
+                <img src="/rightSecond.png" alt="Next" className="secondRightImg"/>
             </button>
         </div>
     );
@@ -218,9 +218,9 @@ export const Button = () => {
 
 export function Genre(props) {
     return <main>
-        <img src='/booksBags.png' alt='bags' style={{ position: 'absolute', top: '2686px', left: '80px' }}></img>
+        <img src='/booksBags.png' alt='bags' style={{ position: 'absolute', top: '139.8958vw', left: '4.166vw', width: '25.7291vw' }} className='bagsImg'></img>
         <div className='wrapper'>
-            <Navigation></Navigation>
+            <Navigation id='menu'></Navigation>
             <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap' }}>
                 <Path width='54.16vw' mTop='0'></Path>
                 <TopThree top3={top3}></TopThree>
@@ -249,9 +249,9 @@ export function Genre(props) {
             </div>
         </div>
         <ResentlyViewed></ResentlyViewed>
-        <section style={{ marginTop: '5.2vw', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '81px' }}>
+        <section style={{ marginTop: '5.2vw', display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '4.218vw' }}>
             <Separator color='#D6D9DC'></Separator>
-            <Question question="Психологічні трилери: для тих, хто хоче полоскотати нерви" answer="Трилер — популярний різновид літератури, головна мета якого — змусити читача відчути тривожне очікування, нервове хвилювання та неконтрольований страх. Попри те, що страшні сюжети викликають у людини негативні емоції, коло шанувальників подібного літературного жанру постійно розширюється. Все тому, що цікаві книги трилери — це завжди динамічно, непередбачувано та неймовірно цікаво." mTop="82px"></Question>
+            <Question question="Психологічні трилери: для тих, хто хоче полоскотати нерви" answer="Трилер — популярний різновид літератури, головна мета якого — змусити читача відчути тривожне очікування, нервове хвилювання та неконтрольований страх. Попри те, що страшні сюжети викликають у людини негативні емоції, коло шанувальників подібного літературного жанру постійно розширюється. Все тому, що цікаві книги трилери — це завжди динамічно, непередбачувано та неймовірно цікаво." mTop="4.27vw"></Question>
             <Question question="Страшні внутрішні демони роду Homo sapiens" answer="Не слід плутати трилери з класичними жахами. Дуже часто містичний складник зовсім відсутній у психологічній літературі. Сюжети, що описують страшні книги трилери, — це, як правило, реальні та правдиві історії з життя звичайних людей. Сутінки нашої підсвідомості приховують багато таємниць. Іноді ми самі не здогадуємося, як далеко можемо зайти заради власних бажань." mTop="5.2vw"></Question>
             <Question
                 question="Чому ж не почати читати трилери українською мовою?"

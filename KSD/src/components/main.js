@@ -22,8 +22,15 @@ export function Header() {
             <button style={{ width: '2.5vw', aspectRatio: '1 / 1', backgroundColor: '#B53535', borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><img src='/search.png' alt='search icon' style={{ width: '0.9375vw', aspectRatio: '1 / 1' }} /></button>
         </div>
         <div id='headerIcons'>
-            <Link to='/Profile/' style={{ width: '40.55%' }}><img src='/user.png' alt='user icon' style={{ width: '100%' }} /></Link>
-            <Link to='/Cart' style={{ width: '40.55%' }}><img src='/cart.png' alt='cart icon' style={{ width: '100%' }} /></Link>
+            <Link to='/Profile/' style={{ width: '1.5625vw' }}><img src='/user.png' alt='user icon' style={{ width: '100%' }} /></Link>
+            <Link to='/Cart' style={{ width: '1.5625vw' }}><img src='/cart.png' alt='cart icon' style={{ width: '100%' }} /></Link>
+            <div class="menuDiv">
+                <input id="menuToggle" type="checkbox" />
+                <label class="menuButton" for="menuToggle">
+                    <span></span>
+                </label>
+                <Navigation id='burgerMenu'></Navigation>
+            </div>
         </div>
 
     </header>
@@ -42,7 +49,7 @@ function NavigationSection(props) {
     </div>
 }
 
-export function Navigation() {
+export function Navigation(props) {
     const section1 = [{ name: 'Романтична проза', link: '/Fiction//Romance' },
     { name: 'Історична та пригодницька проза', link: '/Fiction/HistoryAndAdventures' },
     { name: 'Детективи', link: '/Fiction/Detectives' },
@@ -75,7 +82,7 @@ export function Navigation() {
     { name: 'Розпродаж', link: '/Special/Sale' },
     { name: 'Останні примірники', link: '/Special/LastCopies' },
     { name: 'Тимчасово немає у продажу', link: '/Special/TemporarilyOutOfStock' }]
-    return <div>
+    return <div id={props.id}>
         <nav>
             <Link to='/Fiction' className='highlightedNav'>Художні</Link>
             <NavigationSection highlighted='Сучасні автори' highligtedLink='/ContemporaryAuthors' links={section1} top='0.52vw'></NavigationSection>

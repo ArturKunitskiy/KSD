@@ -1,7 +1,7 @@
 .profileNav {
-    width: 170px;
-    height: 208px;
-    margin-right: 118px;
+    width: 8.8542vw;
+    height: 10.83vw;
+    margin-right: 6.1458vw;
     margin-top: 1vw;
 }
 
@@ -14,6 +14,7 @@
 
 .profileNavIcon {
     margin-right: 0.52vw;
+    width: 1.25vw;
 }
 
 .profileNavText {
@@ -42,20 +43,20 @@
     font-family: 'NAMU Pro';
     font-size: 0.5729vw;
     display: block;
-    width: 47px;
-    height: 16px;
+    width: 2.4479vw;
+    height: 0.83vw;
     background-color: #FFFFFF;
-    padding: 0 9px 0 0.52vw;
+    padding: 0 0.468vw 0 0.52vw;
     color: #2C2C2C;
     position: absolute;
     top: -0.652vw;
-    left: 64px;
+    left: 3.3vw;
 }
 
 .formInput {
-    width: 563.31px;
-    height: 37px;
-    padding: 9px 0.52vw 9px 0.52vw;
+    width: 29.339vw;
+    height: 1.927vw;
+    padding: 0.468vw 0.52vw 0.468vw 0.52vw;
     margin-bottom: 0.52vw;
     border-radius: 0.52vw;
     font-size: 0.677vw;
@@ -70,8 +71,8 @@
 
 .saveButton {
     display: block;
-    width: 272px;
-    height: 37px;
+    width: 14.166vw;
+    height: 1.927vw;
     background-color: #F6F6F6;
     color: #2C2C2C;
     border: none;
@@ -107,17 +108,18 @@
 
 .iconGmail {
     position: absolute;
-    margin-left: 9px;
+    margin-left: 0.468vw;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
+    width: 1vw;
 }
 
 .subscribeInput {
-    width: 752px;
-    height: 37px;
-    padding: 0.156vw 0 0 38px;
-    margin-right: 16px;
+    width: 39.166vw;
+    height: 1.927vw;
+    padding: 0.156vw 0 0 1.979vw;
+    margin-right: 0.83vw;
     border: 0.052vw solid #686868;
     color: #2C2C2C;
     border-radius: 0.52vw;
@@ -131,8 +133,8 @@
 
 .subscribeButton {
     display: block;
-    width: 176px;
-    height: 37px;
+    width: 9.166vw;
+    height: 1.927vw;
     background-color: #B53535;
     color: #FFFFFF;
     border: none;
@@ -157,7 +159,7 @@
 /*////////////////////////////////////////////////*/
 .wishlist
 {
-    width: 560px;
+    width: 29.166vw;
     padding: 0.52vw;
     border: 0.052vw solid #686868;
     background-color: #FFFFFF;

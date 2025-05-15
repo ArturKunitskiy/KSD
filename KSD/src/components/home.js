@@ -226,10 +226,10 @@ export function Home() {
         { image: '/news5.png', date: '21 березня 2024 р.', title: 'Нам 24 роки! День народження КСД', description: 'Хапайте знижку і святкуйте разом з нами: -24% на всі книжки видавництва КСД! ...', raters: '10', rating: '5.0', link: '/News5' }
     ]
     return <main>
-        <img src='/homeBags.png' alt='bags' style={{ position: 'absolute', top: '143.54vw', left: '4.16vw', width: '26.6vw' }}></img>
+        <img src='/homeBags.png' alt='bags' style={{ position: 'absolute', top: '143.54vw', left: '4.16vw', width: '26.6vw' }} className='bagsImg'></img>
         <img src='/womanShopping.png' alt='woman shopping' style={{ position: 'absolute', top: '238.54vw', left: '21.979vw', width: '22.6vw' }}></img>
         <div className='wrapper'>
-            <Navigation></Navigation>
+            <Navigation id='menu'></Navigation>
             <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap' }}>
                 <New></New>
                 <section style={{ marginTop: '1.5652vw', position: 'relative' }}>

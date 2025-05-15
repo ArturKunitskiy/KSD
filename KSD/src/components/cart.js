@@ -3,7 +3,7 @@ import { Outlet, Link } from 'react-router-dom';
 import { ScrollingText, Header, Footer, Category, News, ResentlyViewed, Path } from './main';
 
 export function CartCategory(props) {
-    return <Link to={props.link} style={{ color: props.color, backgroundColor: props.background, width: '39.16vw', height: '3.23vw', borderRadius: '60px', border: 'none', outline: 'none', padding: '0.72916vw 1.5625vw', cursor: 'pointer', textDecoration: 'none', textAlign: 'center' }}>
+    return <Link to={props.link} style={{ color: props.color, backgroundColor: props.background, width: '39.16vw', height: '3.23vw', borderRadius: '3.125vw', border: 'none', outline: 'none', padding: '0.72916vw 1.5625vw', cursor: 'pointer', textDecoration: 'none', textAlign: 'center' }}>
         <p className='big' style={{ margin: '0' }}>{props.text}</p>
     </Link>
 }
@@ -16,7 +16,7 @@ export function CartNav(props) {
 }
 
 export function AddToCart(props) {
-    return <button style={{ border: '1px solid #B53535', height: '2.6041vw', borderRadius: '0.52vw', cursor: 'pointer', marginLeft: props.mLeft, marginRight: props.mRight, backgroundColor: '#FFFFFF', display: 'flex', alignItems: 'center', padding: '0 0 0 0.52vw', width: '9.3678vw' }} className='cartButton'>
+    return <button style={{ border: '0.052vw solid #B53535', height: '2.6041vw', borderRadius: '0.52vw', cursor: 'pointer', marginLeft: props.mLeft, marginRight: props.mRight, backgroundColor: '#FFFFFF', display: 'flex', alignItems: 'center', padding: '0 0 0 0.52vw', width: '9.3678vw' }} className='cartButton'>
         <img src={props.image} alt='cart icon' style={{ marginRight: '0.5vw', width: '1.614vw' }}></img>
         <p className='cartButtonP'>{props.text}</p>
     </button>

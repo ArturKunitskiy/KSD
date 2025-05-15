@@ -1,15 +1,112 @@
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .cartButton {
         width: 9.45vw !important;
     }
 }
 
-/* @media (max-width: 767px) {
-    
-} */
+@media (min-width: 769px) {
+    .menuDiv {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .bagsImg {
+        display: none;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    .menuDiv {
+        height: 0;
+        display: flex;
+        flex-direction: column;
+        margin-top: -0.52vw;
+    }
+
+    #headerIcons {
+        width: 8vw;
+    }
+
+    #headerInput:focus {
+        outline: none;
+    }
+
+    #menuToggle {
+        opacity: 0;
+    }
+
+    #menuToggle:checked~.menuButton>span {
+        transform: rotate(-45deg);
+    }
+
+    #menuToggle:checked~.menuButton>span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    #menuToggle:checked~.menuButton>span::after {
+        top: 0;
+        transform: rotate(-90deg);
+    }
+
+    #menuToggle:checked~#burgerMenu {
+        visibility: visible;
+        left: 0;
+    }
+
+    .menuButton {
+        display: flex;
+        align-items: center;
+        width: 1.5625vw;
+        height: 1.5625vw;
+        cursor: pointer;
+        z-index: 12;
+        transition: top .2s ease-in-out, left .2s ease-in-out;
+    }
+
+    .menuButton>span,
+    .menuButton>span::before,
+    .menuButton>span::after {
+        display: block;
+        position: absolute;
+        width: 1.5625vw;
+        height: 0.052vw;
+        background-color: #686868;
+        transition-duration: 0.5s;
+    }
+
+    .menuButton>span::before {
+        content: "";
+        top: -0.391134vw;
+    }
+
+    .menuButton>span::after {
+        content: "";
+        top: 0.4563vw;
+    }
+
+    #burgerMenu {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 1vw;
+        width: 100%;
+        background-color: #FFFFFF;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 13vw;
+        z-index: 11;
+        visibility: hidden;
+        transition: .5s ease-in-out;
+    }
+
+}
 
 
-@media (min-width: 663px) and (max-width: 767px) {
+@media (min-width: 663px) and (max-width: 768px) {
     .cartButton {
         width: 9.75vw !important;
     }

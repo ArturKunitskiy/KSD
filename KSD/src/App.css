@@ -181,27 +181,28 @@ li,
 
 #headerIcons {
     display: flex;
-    gap: 18.91%;
-    width: 4.9%;
+    gap: 1.25vw;
+    width: 3.854vw;
 }
 
 header {
-    width: 79.16%;
+    width: 75.625vw;
     display: flex;
+    /* justify-content: space-between; */
     align-items: center;
     margin: 0 auto;
-    margin-top: 1.82%;
-    gap: 2.76%
+    margin-top: 1.82vw;
+    gap: 2.76vw;
 }
 
 .categoryText {
     text-decoration: none;
-    height: 54%;
+    height: 3.125vw;
     background-color: #D6D9DC;
     color: #3C3C3B;
-    padding: 0.65% 2.69%;
+    padding: 0.52vw 2vw;
     border-radius: 1.5625vw;
-    padding-top: 0.8%;
+    padding-top: 0.625vw;
 }
 
 .highlightedNav {
@@ -374,6 +375,7 @@ button:focus {
     position: absolute;
     top: 3.125vw;
     left: -1.5625vw;
+    width: 4.166vw;
 }
 
 .priceWrap {
@@ -455,6 +457,10 @@ button:focus {
     background: transparent;
     border: none;
     cursor: pointer;
+}
+
+.secondRightImg {
+    width: 0.5729vw;
 }
 
 .rightImg {
