@@ -8,7 +8,7 @@ export function ScrollingText() {
     return <div className='scrolling'>
         <div className='scroll'>
             <div className='leftToRight'>
-                {discountArray.map((item) => <p>{item}</p>)}
+                {discountArray.map((item) => <p className='scrollText'>{item}</p>)}
             </div>
         </div>
     </div>
@@ -18,12 +18,12 @@ export function Header() {
     return <header>
         <Link to='/' id='logo'><img src='/logo.png' alt='logo' style={{ width: '100%' }} /></Link>
         <div className='search'>
-            <input type='text' placeholder='Пошук товарів, категорій' style={{ height: '1.1458vw' }} />
-            <button style={{ width: '2.5vw', aspectRatio: '1 / 1', backgroundColor: '#B53535', borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><img src='/search.png' alt='search icon' style={{ width: '0.9375vw', aspectRatio: '1 / 1' }} /></button>
+            <input type='text' placeholder='Пошук товарів, категорій' style={{ height: '1.1458vw' }} id='searchInput' />
+            <button id='searchButton' style={{ width: '2.5vw', aspectRatio: '1 / 1', backgroundColor: '#B53535', borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><img src='/search.png' alt='search icon' style={{ width: '0.9375vw', aspectRatio: '1 / 1' }} id='searchImg'/></button>
         </div>
         <div id='headerIcons'>
-            <Link to='/Profile/' style={{ width: '1.5625vw' }}><img src='/user.png' alt='user icon' style={{ width: '100%' }} /></Link>
-            <Link to='/Cart' style={{ width: '1.5625vw' }}><img src='/cart.png' alt='cart icon' style={{ width: '100%' }} /></Link>
+            <Link to='/Profile/' style={{ width: '1.5625vw' }} className='headerIcon'><img src='/user.png' alt='user icon' style={{ width: '100%' }} /></Link>
+            <Link to='/Cart' style={{ width: '1.5625vw' }} className='headerIcon'><img src='/cart.png' alt='cart icon' style={{ width: '100%' }} /></Link>
             <div class="menuDiv">
                 <input id="menuToggle" type="checkbox" />
                 <label class="menuButton" for="menuToggle">
@@ -91,7 +91,7 @@ export function Navigation(props) {
             <NavigationSection highlighted='Спецпропозиції' highligtedLink='/Special' links={section4} top='0.89vw'></NavigationSection>
         </nav>
         <Link to='/BookShops' style={{ textDecoration: 'none', color: '#3C3C3B' }}><p className='title' style={{ paddingLeft: '0.73vw', marginTop: '1.66vw' }}>Книгарні КСД</p>
-            <img src='/shopsMap.png' style={{ width: '10vw', marginTop: '1.66vw', marginLeft: '0.73vw' }} alt='map'></img></Link>
+            <img src='/shopsMap.png' style={{ width: '10vw', marginTop: '1.66vw', marginLeft: '0.73vw' }} alt='map' className='mapImg'></img></Link>
     </div>
 }
 
@@ -211,7 +211,7 @@ export function ResentlyViewed() {
 }
 
 export function Footer() {
-    return <footer style={{ position: 'relative', marginTop: '3.593vw' }}>
+    return <footer style={{ position: 'relative', marginTop: '3.593vw'}}>
         <img src='/Bag.png' alt='Bag' style={{ position: 'absolute', bottom: '0', right: '0', width: '24.21875vw' }}></img>
         <div className='footerTopContainer' style={{ marginBottom: '4.6875vw' }}>
             <div className='footerContainer'>
@@ -346,7 +346,7 @@ export function MainPage() {
     return <>
         <ScrollingText />
         <Header></Header>
-        <div className='wrapper'>
+        <div className='categoriesWrapper'>
             <Category link='/Fiction' name='Художні'></Category>
             <Category link='/Practical' name='Прикладні'></Category>
             <Category link='/Children' name='Дитячі'></Category>

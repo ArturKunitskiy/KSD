@@ -23,11 +23,17 @@
         height: 0;
         display: flex;
         flex-direction: column;
-        margin-top: -0.52vw;
+        margin-top: 0;
     }
 
     #headerIcons {
-        width: 8vw;
+        width: 28.68vw;
+        gap: 5.997vw;
+        align-items: center;
+    }
+
+    .headerIcon {
+        width: 5.6vw !important;
     }
 
     #headerInput:focus {
@@ -36,6 +42,7 @@
 
     #menuToggle {
         opacity: 0;
+        margin-top: -14px;
     }
 
     #menuToggle:checked~.menuButton>span {
@@ -54,14 +61,14 @@
 
     #menuToggle:checked~#burgerMenu {
         visibility: visible;
-        left: 0;
+        left: 34.81vw;
     }
 
     .menuButton {
         display: flex;
         align-items: center;
-        width: 1.5625vw;
-        height: 1.5625vw;
+        width: 5.6vw;
+        height: 5.6vw;
         cursor: pointer;
         z-index: 12;
         transition: top .2s ease-in-out, left .2s ease-in-out;
@@ -72,37 +79,128 @@
     .menuButton>span::after {
         display: block;
         position: absolute;
-        width: 1.5625vw;
-        height: 0.052vw;
+        width: 5.6vw;
+        height: 0.26vw;
         background-color: #686868;
         transition-duration: 0.5s;
     }
 
     .menuButton>span::before {
         content: "";
-        top: -0.391134vw;
+        top: -1.3vw;
     }
 
     .menuButton>span::after {
         content: "";
-        top: 0.4563vw;
+        top: 1.3vw;
     }
 
     #burgerMenu {
         display: flex;
         position: absolute;
         top: 0;
-        left: 1vw;
-        width: 100%;
+        left: 100vw;
+        width: 65.18vw;
         background-color: #FFFFFF;
         flex-direction: column;
-        align-items: center;
-        padding-top: 13vw;
+        align-items: left;
+        padding-left: 9.9vw;
+        padding-top: 27.249vw;
         z-index: 11;
         visibility: hidden;
         transition: .5s ease-in-out;
     }
 
+    .scrollText {
+        font-size: 2.8683vw;
+    }
+
+    header {
+        width: 91.2646vw;
+        margin-top: 5.4758vw;
+        gap: 3.9113vw;
+    }
+
+    #logo {
+        width: 15.6453vw;
+    }
+
+    .search {
+        width: 39.113vw;
+        height: 6.518vw;
+        padding-left: 2.6vw;
+        padding-right: 1.3vw;
+    }
+
+    #searchInput {
+        width: 29.2vw;
+        font-size: 3.129vw;
+        height: 3.129vw !important;
+        text-overflow: ellipsis;
+    }
+
+    #searchButton {
+        width: 4.693vw !important;
+    }
+
+    #searchImg {
+        width: 2.346vw !important;
+    }
+
+    .highlightedNav {
+        font-size: 4.172vw !important;
+        line-height: 4.2vw !important;
+        padding: 1.825vw 3.9113vw;
+        width: 47.3272vw;
+        height: 8vw;
+        border-radius: 7.82268vw;
+    }
+
+    nav div {
+        margin-top: 2.2164vw !important;
+    }
+
+    nav div:first-of-type {
+        margin-top: 1.3vw !important;
+    }
+
+    .navA {
+        font-size: 3.129vw;
+        height: 4.5632vw;
+        margin-top: 2.3468vw;
+        padding-left: 1.82529vw;
+    }
+
+    .title {
+        font-size: 3.9113vw;
+        margin-top: 4.172vw !important;
+        margin-bottom: 4.5632vw;
+        padding: 0 !important;
+    }
+
+    .mapImg {
+        margin: 0 !important;
+        width: 25vw !important;
+    }
+
+    .categoriesWrapper {
+        width: auto;
+        gap: 1.955vw;
+        margin-left: 4.954vw;
+        margin-top: 3.259vw;
+        overflow-x: scroll;
+    }
+
+    .categoryText {
+        font-size: 3.65vw;
+        height: 6.3885vw;
+        border-radius: 7.82268vw;
+        padding: 1.3vw 5.2151vw;
+    }
+
+   .categoriesWrapper .categoryText:last-of-type{
+        width: 39.6818vw;
+    }
 }
 
 

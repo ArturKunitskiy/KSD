@@ -18,6 +18,7 @@
 
 body {
     overflow-x: hidden;
+    
 }
 
 
@@ -238,7 +239,7 @@ header {
     color: #B53535;
 }
 
-.wrapper {
+.wrapper, .categoriesWrapper {
     width: 79.16vw;
     display: flex;
     justify-content: space-between;
@@ -399,7 +400,7 @@ button:focus {
     border: 0.1vw solid #686868;
     display: block;
     padding: 0.26vw 1vw;
-    line-height: 1.77vw;
+    /* line-height: 1.77vw;f */
     height: 1.5625vw;
     min-width: 3.75vw;
     transition: 0.2s ease-in-out;

@@ -61,7 +61,7 @@ export function Cart() {
     return <>
         <ScrollingText />
         <Header></Header>
-        <div className='wrapper'>
+        <div className='categoriesWrapper'>
             <Category link='#' name='Художні'></Category>
             <Category link='#' name='Прикладні'></Category>
             <Category link='#' name='Дитячі'></Category>
