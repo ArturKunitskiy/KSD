@@ -27,7 +27,7 @@ export function GenreTopThreeCard(props) {
     return <div style={{ maxWidth: '32.864vw', cursor: 'pointer' }}>
         <img src={props.image} alt={props.image} style={{ height: '20.416vw' }}></img>
         <div style={{ marginTop: '2.6vw', paddingLeft: '0.33vw' }}>
-            <p style={{ color: '#B53535', margin: "0 0 1.4583vw 0" }}>{props.title}</p>
+            <p style={{ color: '#B53535', margin: "0 0 1.4583vw 0" }} className='topThreeTitle'>{props.title}</p>
             <p style={{ color: '#686868', margin: "0 0 0.5729vw 0" }}>{props.author}</p>
             <div style={{ display: 'flex', gap: '0.7947vw', alignItems: 'center' }}>
                 <p style={{ color: '#3C3C3B', textDecoration: 'line-through #3C3C3B', margin: '0' }}>{props.oldPrice}</p>
@@ -68,7 +68,7 @@ const top3 = [
 export function TopThree(props) {
     return <section id='topThree'>
         <h1 className='title' style={{ color: '#B53535', margin: '0 0 0.416vw 0' }}>Гостросюжетні трилери</h1>
-        <p style={{ width: '54.16vw', color: '#686868', margin: '0 0 2.864vw 0' }}>Захоплюючі історії для тих, хто не проти полоскотати свої нерви. Психологічні, детективні та містичні трилери, хоррор, книги, за якими були зняті найкращі фільми жахів.</p>
+        <p style={{ width: '54.16vw', color: '#686868', margin: '0 0 2.864vw 0' }} id='topThreeP'>Захоплюючі історії для тих, хто не проти полоскотати свої нерви. Психологічні, детективні та містичні трилери, хоррор, книги, за якими були зняті найкращі фільми жахів.</p>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             {props.top3.map((item, index) => (
                 <GenreTopThreeCard key={index} image={item.image} title={item.title} author={item.author} oldPrice={item.oldPrice} price={item.price} onSale={item.onSale}></GenreTopThreeCard>
@@ -83,25 +83,25 @@ export function GenreBookCard(props) {
         {props.forAdults && (
             <img src='/forAdults.png' alt="icon for adults" className='forAdultsIcon' />
         )}
-        <img src={props.image} alt={props.image} style={{ height: '14.583vw' }}></img>
+        <img src={props.image} alt={props.image} style={{ height: '14.583vw' }} className='genreBookImg'></img>
         <div className='infoPriceWrap'>
             <div className='genreBookInfo'>
                 <p style={{ color: '#686868', margin: "0 0 0.7291vw 0" }}>{props.author}</p>
                 <p style={{ color: '#B53535', margin: "0 0 0.7291vw 0" }}>{props.title}</p>
-                <div style={{ padding: '0.78125vw 0', display: 'flex', gap: '0.52vw', width: '16.82vw', height: '3.125vw', alignItems: 'center' }}>
-                    <div style={{ width: '9.47916vw', display: 'flex', justifyContent: 'space-between' }}>
+                <div style={{ padding: '0.78125vw 0', display: 'flex', gap: '0.52vw', width: '16.82vw', height: '3.125vw', alignItems: 'center' }} className='bookRatingGenre'>
+                    <div style={{ width: '9.47916vw', display: 'flex', justifyContent: 'space-between' }} className='starsWrapper'>
                         {props.stars.map((item) => (
                             <img src={item} alt={item} style={{ width: '1.5625vw', height: '1.5625vw' }}></img>
                         ))}
                     </div>
-                    <p style={{ color: '#686868', margin: '0', height: '1.3vw' }}>{props.ratings} оцінок</p>
+                    <p style={{ color: '#686868', margin: '0', height: '1.3vw' }} className='genreRatingP'>{props.ratings} оцінок</p>
                 </div>
                 {props.forAdults && (
-                    <p style={{ fontSize: '1vw', color: '#B53535', width: '29.6354vw', margin: '0.2vw 0 0 0' }}>
+                    <p style={{ fontSize: '1vw', color: '#B53535', width: '29.6354vw', margin: '0.2vw 0 0 0' }} className='forAdultsWarning'>
                         Увага! Продукція сексуального характеру або інша продукція з віковим обмеженням. Продаж неповнолітнім заборонено. Продаж відповідно до вікового обмеження.
                     </p>
                 )}
-                <p style={{ color: '#686868', width: '30.9375vw', margin: '0.9895vw 0 0 0' }}>{props.decsription}<span style={{ color: '#B53535', cursor: 'pointer' }}>   Читати далі »</span></p>
+                <p style={{ color: '#686868', width: '30.9375vw', margin: '0.9895vw 0 0 0' }} className='genreBookDescription'>{props.decsription}<span style={{ color: '#B53535', cursor: 'pointer' }}>   Читати далі »</span></p>
             </div>
             <div className='priceWrap'>
                 <p style={{ color: '#3C3C3B', textDecoration: 'line-through #3C3C3B', textAlign: 'right', margin: '0 0 0.2vw 0' }}>{props.oldPrice}</p>
@@ -114,9 +114,9 @@ export function GenreBookCard(props) {
 }
 
 export function Question(props) {
-    return <div style={{ marginTop: props.mTop }}>
-        <h3 className='title' style={{ color: '#B53535', width: '79.16vw', margin: '0' }}>{props.question}</h3>
-        <p style={{ color: '#686868', width: '79.16vw', margin: '0.7291vw 0 0 0', whiteSpace: 'pre-line' }}>{props.answer}</p>
+    return <div style={{ marginTop: props.mTop }} className='questionAnswer'>
+        <h3 className='questionTitle' style={{ color: '#B53535', width: '79.16vw', margin: '0' }}>{props.question}</h3>
+        <p className='answer' style={{ color: '#686868', width: '79.16vw', margin: '0.7291vw 0 0 0', whiteSpace: 'pre-line' }}>{props.answer}</p>
     </div>
 }
 
@@ -209,7 +209,7 @@ export const Button = () => {
                 </button>
             ))}
             <button className="rightButton" onClick={() => setActivePage((prev) => Math.min(prev + 1, 5))}>
-                <img src="/rightSecond.png" alt="Next" className="secondRightImg"/>
+                <img src="/rightSecond.png" alt="Next" className="secondRightImg" />
             </button>
         </div>
     );
@@ -224,7 +224,7 @@ export function Genre(props) {
             <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap' }}>
                 <Path width='54.16vw' mTop='0'></Path>
                 <TopThree top3={top3}></TopThree>
-                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.52vw 0', alignItems: 'center', marginBottom: '1.5625vw' }}>
+                <div id='showAndSort' style={{ display: 'flex', justifyContent: 'space-between', padding: '0.52vw 0', alignItems: 'center', marginBottom: '1.5625vw' }}>
                     <p className='subTitle' style={{ fontSize: '1.25vw', color: '#3C3C3B' }}>Показувати:</p>
                     <Sort
                         options={[

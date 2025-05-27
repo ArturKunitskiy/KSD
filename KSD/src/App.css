@@ -35,7 +35,7 @@ h3,
 .cartButtonP,
 .pathText,
 .sortButton,
-.addBonusText {
+.addBonusText, .questionTitle {
     font-family: 'NAMU Pro';
 }
 
@@ -96,7 +96,7 @@ li,
 .categoryText,
 .navCategory,
 .title,
-.highlightedNav {
+.highlightedNav, .questionTitle {
     font-size: 1.6667vw;
 }
 

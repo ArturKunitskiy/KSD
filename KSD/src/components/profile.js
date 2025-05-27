@@ -81,7 +81,7 @@ export function MyProfile() {
             setShowError(true);
         }
     }
-    return <div className='wrapper' style={{ width: '74.16vw', marginTop: '0.651vw' }}>
+    return <div className='wrapper' style={{ width: '74.16vw', marginTop: '0.651vw' }} id='profileWrapper'>
         <ProfileNav></ProfileNav>
         <section style={{ marginBottom: '5.677vw' }}>
             <h2 style={{ color: '#3C3C3B', margin: '0' }}>Профіль</h2>
@@ -98,7 +98,7 @@ export function MyProfile() {
                 <input type='tel' className='formInput' placeholder='+380 (861 111-111) 01' id='phone' ref={phone} onChange={onPhoneChange} required></input>
                 <input type='email' className='formInput' placeholder='Електронна пошта' id='email' ref={email} onChange={onEmailChange} required></input>
                 <div>
-                    <p style={{ fontSize: '0.677vw', margin: '0 0 0.52vw 0', color: '#B53535', display: showError ? 'block' : 'none' }}>*Перевірте правильність введених даних.</p>
+                    <p style={{ fontSize: '0.677vw', margin: '0 0 0.52vw 0', color: '#B53535', display: showError ? 'block' : 'none' }} className='checkInput'>*Перевірте правильність введених даних.</p>
                     <button className='saveButton' onClick={handleSubmit}> Зберегти </button>
                 </div>
             </form>
@@ -128,7 +128,7 @@ export function Subscribe() {
             setShowError(true);
         }
     }
-    return <section className='wrapper' style={{ width: '74.16vw' }}>
+    return <section className='wrapper' style={{ width: '74.16vw' }} id='subscription'>
         <div className='subscribeBlock' style={{ display: 'block' }}>
             <p className='subTitle' style={{ color: '#3C3C3B', margin: '0' }}>Підписуйтесь на знижки та рекомендації</p>
             <p className='inputText' style={{ color: '#3C3C3B', margin: '0' }}>Не турбуйтесь, ніякого спаму та нав’язливої реклами ;)</p>
@@ -136,10 +136,10 @@ export function Subscribe() {
         <form className='subscribeInputWrapper'>
             <div>
                 <div className='subscribeGmail'>
-                    <img src='/tabler-icon-mail.png' alt='iconGmail' className="iconGmail"></img>
+                    <img src='/tabler-icon-mail.png' alt='iconGmail' className="iconGmail" id='iconGmail'></img>
                     <input type='email' className='subscribeInput' placeholder='Електронна пошта' ref={email} onChange={onEmailChange} required></input>
                 </div>
-                <p style={{ fontSize: '0.677vw', margin: '0.52vw 0 0 0', color: '#B53535', display: showError ? 'block' : 'none' }}>*Перевірте правильність введених даних.</p>
+                <p style={{ fontSize: '0.677vw', margin: '0.52vw 0 0 0', color: '#B53535', display: showError ? 'block' : 'none' }} className='checkInput'>*Перевірте правильність введених даних.</p>
             </div>
 
             <button className='subscribeButton' onClick={handleSubmit}>Підписатися</button>
@@ -150,15 +150,15 @@ export function Subscribe() {
 
 
 export function Orders() {
-    return <div className='wrapper' style={{ width: '74.16vw', marginTop: '0.651vw' }}>
+    return <div className='wrapper' style={{ width: '74.16vw', marginTop: '0.651vw' }} id='profileWrapper'>
         <ProfileNav></ProfileNav>
         <section style={{ width: '74.16vw', marginBottom: '2.6vw' }}>
-            <h2 style={{ color: '#3C3C3B' }}>Мої замовлення</h2>
-            <div style={{ marginTop: '1.718vw', margin: '0 auto', width: '18.3854vw', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <img src='/ufo.png' alt='ufo image' style={{ width: '18.3854vw', margin: '0 0 1.25vw 0' }}></img>
-                <p className='ordersText' style={{ fontSize: '1.25vw', margin: '0', color: '#000000' }}>Список замовлень порожній</p>
-                <p className='ordersText' style={{ fontSize: '0.652vw', margin: '0 0 0.52vw 0', color: '#3C3C3B' }}>Додайте товари в кошик та оформіть замовлення</p>
-                <Link to='/' className='subscribeButton' style={{ width: '7.447vw', textDecoration: 'none', textAlign: 'center', paddingTop: '0.652vw' }}>Прейти на головну</Link>
+            <h2 style={{ color: '#3C3C3B' }} id='ordersH'>Мої замовлення</h2>
+            <div id='ordersWrapper' style={{ marginTop: '1.718vw', margin: '0 auto', width: '18.3854vw', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <img src='/ufo.png' alt='ufo image' style={{ width: '18.3854vw', margin: '0 0 1.25vw 0' }} id='orderUfo'></img>
+                <p className='ordersText' style={{ fontSize: '1.25vw', margin: '0', color: '#000000' }} id='orderPTitle'>Список замовлень порожній</p>
+                <p className='ordersText' style={{ fontSize: '0.652vw', margin: '0 0 0.52vw 0', color: '#3C3C3B' }} id='orderP'>Додайте товари в кошик та оформіть замовлення</p>
+                <Link to='/' className='subscribeButton' style={{ width: '7.447vw', textDecoration: 'none', textAlign: 'center', paddingTop: '0.652vw' }} id='orderButton'>Прейти на головну</Link>
             </div>
         </section>
     </div>
@@ -166,11 +166,11 @@ export function Orders() {
 }
 
 export function Wishlist() {
-    return <div className='wrapper' style={{ width: '74.16vw', marginTop: '0.651vw', marginBottom: '7.6vw' }}>
+    return <div className='wrapper' style={{ width: '74.16vw', marginTop: '0.651vw', marginBottom: '7.6vw' }} id='profileWrapper'>
         <ProfileNav></ProfileNav>
         <section style={{ width: '74.16vw', position: 'relative' }}>
             <h2 style={{ color: '#3C3C3B', margin: '0 0 0.78125vw 0' }}>Список бажаного</h2>
-            <img src='/plus.png' alt='plus' style={{ width: ' 0.9375vw', position: 'absolute', top: '1.5625vw', left: '30vw', cursor: 'pointer' }}></img>
+            <img src='/plus.png' alt='plus' style={{ width: ' 0.9375vw', position: 'absolute', top: '1.5625vw', left: '30vw', cursor: 'pointer' }} id='wishlistPlus'></img>
             <input className='wishlist' placeholder='Створити новий список'></input>
         </section>
     </div>
@@ -178,7 +178,7 @@ export function Wishlist() {
 
 export function Contact(props) {
     return <a href={props.href} style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', cursor: 'pointer', textDecoration: 'none', color: '#3C3C3B' }}>
-        <img src={props.image} alt={props.image} style={{ width: '2.6vw', margin: '0' }}></img>
+        <img src={props.image} alt={props.image} style={{ width: '2.6vw', margin: '0' }} className='contactImage'></img>
         <p className='contactText' style={{ margin: '0.3125vw 0 0 0' }}>{props.text}</p>
     </a>
 
@@ -186,8 +186,8 @@ export function Contact(props) {
 
 export function Authorize() {
     return <section style={{ width: '79.16vw', margin: '5.781vw auto 5.729vw auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <h3 style={{ fontSize: '1.25vw', color: '#3C3C3B', margin: '0 0 2.3437vw 0' }}>Авторизуйтесь або зареєструйтесь, щоб оформляти замовлення, додавати товари у бажане та залишати відгуки.</h3>
-        <div style={{ width: '17.18vw', display: 'flex', justifyContent: 'space-between' }}>
+        <h3 style={{ fontSize: '1.25vw', color: '#3C3C3B', margin: '0 0 2.3437vw 0' }} id='authorizeTitle'>Авторизуйтесь або зареєструйтесь, щоб оформляти замовлення, додавати товари у бажане та залишати відгуки.</h3>
+        <div style={{ width: '17.18vw', display: 'flex', justifyContent: 'space-between' }} id='contactsWrapper'>
             <Contact image='/tg.png' text='Telegram' href='https://web.telegram.org'></Contact>
             <Contact image='/viber.png' text='Viber' href='https://www.viber.com'></Contact>
             <Contact image='/sms.png' text='SMS'></Contact>

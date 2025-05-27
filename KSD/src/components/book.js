@@ -7,36 +7,36 @@ import Flickity from 'flickity';
 import 'flickity/css/flickity.css';
 
 export function AddBonus(props) {
-    return <div style={{ padding: '0.52vw', border: '0.052vwsolid #686868', borderRadius: '0.52vw', display: 'flex', height: '1.927vw', gap: '0.52vw', alignItems: 'center', width: '7.9166vw', marginBottom: '1.3541vw' }}>
+    return <div className='addBonus' style={{ padding: '0.52vw', border: '0.052vw solid #686868', borderRadius: '0.52vw', display: 'flex', height: '1.927vw', gap: '0.52vw', alignItems: 'center', width: '7.9166vw', marginBottom: '1.3541vw' }}>
         <p className='addBonusText'>+{props.amount}</p>
-        <img src='/coin.png' alt='coin' style={{ height: '1vw', width: '1vw' }}></img>
+        <img src='/coin.png' alt='coin' id='coin' style={{ height: '1vw', width: '1vw' }}></img>
         <p className='addBonusText'>на рахунок</p>
     </div>
 }
 
 export function BookCard(props) {
-    return <section style={{ borderTop: '0.052vw solid #2C2C2C', marginBottom: '2.9166vw', paddingTop: '2.1875vw', paddingLeft: '0.468vw', display: 'flex', justifyContent: 'space-between' }}>
+    return <section style={{ borderTop: '0.052vw solid #2C2C2C', marginBottom: '2.9166vw', paddingTop: '2.1875vw', paddingLeft: '0.468vw', display: 'flex', justifyContent: 'space-between' }} className='oneBookSection'>
         <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-            <img src={props.image} alt={props.image} style={{ marginBottom: ' 0.9375vw', width: '11.3vw' }}></img>
-            <div style={{ display: 'flex', padding: '0.52vw', justifyContent: 'space-between', width: '12.29166vw', alignItems: 'center' }}>
+            <img src={props.image} alt={props.image} style={{ marginBottom: ' 0.9375vw', width: '11.3vw' }} className='oneBookImg'></img>
+            <div style={{ display: 'flex', padding: '0.52vw', justifyContent: 'space-between', width: '12.29166vw', alignItems: 'center' }} className='tools'>
                 <div style={{ display: 'flex', gap: '0.416vw', alignItems: 'center' }}>
-                    <img src='/enlarge.png' style={{width: '0.7291vw'}}></img>
-                    <p style={{ fontSize: '0.625vw', color: '#686868', margin: '0', lineHeight: '0.652vw' }}>Збільшити</p>
+                    <img src='/enlarge.png' style={{ width: '0.7291vw' }} className='toolImg'></img>
+                    <p style={{ fontSize: '0.625vw', color: '#686868', margin: '0', lineHeight: '0.652vw' }} className='tool'>Збільшити</p>
                 </div>
-                <div style={{ display: 'flex', gap: '0.416vw', alignItems: 'center' }}>
-                    <img src='/size.png' style={{width: '0.7291vw'}}></img>
-                    <p style={{ fontSize: '0.625vw', color: '#686868', margin: '0', lineHeight: '0.652vw' }}>Дізнатися розмір</p>
+                <div style={{ display: 'flex', gap: '0.416vw', alignItems: 'center' }} >
+                    <img src='/size.png' style={{ width: '0.7291vw' }} className='toolImg'></img>
+                    <p style={{ fontSize: '0.625vw', color: '#686868', margin: '0', lineHeight: '0.652vw' }} className='tool'>Дізнатися розмір</p>
                 </div>
             </div>
         </div>
-        <div style={{ width: '39.166vw' }}>
+        <div style={{ width: '39.166vw' }} className='bookInfo'>
             <AddBonus amount='4'></AddBonus>
             <h1 className='title' style={{ color: '#B53535', margin: '0 0 0.416vw 0' }}>{props.title}</h1>
             <p style={{ color: '#686868', margin: '0 0 1.718vw 0.052vw' }}>{props.author}</p>
             <div style={{ padding: '1.3541vw 0.052vw', borderTop: '0.052vw solid #2C2C2C', borderBottom: '0.052vw solid #2C2C2C', display: 'flex', alignItems: 'center' }}>
-                <div style={{ marginRight: '4vw' }}>
+                <div style={{ marginRight: '4vw' }} id='yourAndKsd'>
                     <p style={{ color: '#686868', margin: '0 0 0.416vw 0' }}>Ваша ціна</p>
-                    <p style={{ fontSize: '0.83wv', color: '#686868', margin: '0' }}>Ціна в КСД</p>
+                    <p style={{ fontSize: '0.83wv', color: '#686868', margin: '0' }} id='ksdPrice'>Ціна в КСД</p>
                 </div>
                 <p className='title' style={{ color: '#B53535', marginRight: '3.33vw' }}>{props.price} грн</p>
                 <AddToCart text='До кошика' image='/cartIcon.png' mLeft="0" mRight="0" />
@@ -151,7 +151,7 @@ export function Characteristics(props) {
 }
 
 export function ShareProduct(props) {
-    return <section style={{ borderTop: '0.052vw solid #2C2C2C', paddingTop: '2.5vw', marginBottom: '7.1875vw' }}>
+    return <section style={{ borderTop: '0.052vw solid #2C2C2C', paddingTop: '2.5vw', marginBottom: '7.1875vw' }} className='shareProducts'>
         <p style={{ color: '#B53535', marginBottom: '0.7291vw' }}>СПОДОБАВСЯ ТОВАР? РОЗКАЖІТЬ ДРУЗЯМ:</p>
         <div style={{ display: 'flex', gap: '1.5625vw' }}>
             <a href='https://instagram.com'><img src='/instagram.png' alt='instagram' style={{ height: '2.3437vw ', width: '2.3437vw ' }}></img></a>
@@ -162,7 +162,7 @@ export function ShareProduct(props) {
 }
 
 export function Review(props) {
-    return <div style={{ marginBottom: '1.5625vw', backgroundColor: '#D6D9DC', borderRadius: '1vw', padding: '0.7291vw 2vw' }}>
+    return <div style={{ marginBottom: '1.5625vw', backgroundColor: '#D6D9DC', borderRadius: '1vw', padding: '0.7291vw 2vw' }} className='review'>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '1.5625vw' }}>
             <p style={{ color: '#686868', fontSize: '0.83wv' }}>{props.name}</p>
             <div style={{ display: 'flex', gap: '0.2vw', alignItems: 'center' }}>
@@ -171,7 +171,7 @@ export function Review(props) {
                 <p style={{ color: '#B53535', fontSize: '0.83wv' }}>Оцінка товару: {props.rating}</p>
             </div>
         </div>
-        <p style={{ color: '#2C2C2C', margin: '1.5625vw 0' }}>
+        <p style={{ color: '#2C2C2C', margin: '1.5625vw 0' }} className='reviewText'>
             {props.reviewText}
         </p>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '2.968vw' }}>
@@ -183,19 +183,19 @@ export function Review(props) {
 
 export function Reviews(props) {
     return <section style={{ marginBottom: '2.1875vw' }}>
-        <div style={{ width: '54.16vw', padding: '0.52vw', borderBottom: '0.052vw solid #2C2C2C', display: 'flex', justifyContent: 'space-between', marginBottom: '1.5625vw' }}>
+        <div style={{ width: '54.16vw', padding: '0.52vw', borderBottom: '0.052vw solid #2C2C2C', display: 'flex', justifyContent: 'space-between', marginBottom: '1.5625vw' }} className='reviewsHeadline'>
             <p className='subTitle' style={{ color: '#686868', margin: '0' }}>Відгуки: {props.reviews}</p>
             <p className='small' style={{ color: '#2C2C2C', margin: '0' }}>Оцінка товару: {props.rating}</p>
         </div>
         <Review name='Віталій' rating='5' reviewText='По анотації схоже на «Дім дивних дітей». Дуже цікаво буде почитати!' date='1 квітня 2024р. в 16:31' reviewRating='15'></Review>
         <Review name='Анастасія' rating='0' reviewText='Придбала сьогодні книгу у вашому фізичному магазині, перше враження трішки зіпсоване через очевидний дефект, який можна побачити лише після зняття плівки' date='7 травня 2024 р. в 15:18' reviewRating='1'></Review>
-        <div style={{ width: '54.16vw', padding: '0.52vw', borderBottom: '0.052vw solid #2C2C2C', display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{ width: '54.16vw', padding: '0.52vw', borderBottom: '0.052vw solid #2C2C2C', display: 'flex', justifyContent: 'space-between' }}  className='reviewsHeadline'>
             <p className='subTitle' style={{ color: '#686868', margin: '0' }}>Усього відгуків: {props.reviews}</p>
             <p className='small' style={{ color: '#2C2C2C', margin: '0' }}>Показано з 1 по  {props.reviews}</p>
         </div>
         <div style={{ display: 'flex', gap: '2.3437vw ', alignItems: 'center', justifyContent: 'center', marginTop: '2.7vw' }}>
-            <img src='/warningcircle.png' alt='warningCircle' style={{ width: '1.5625vw', height: '1.5625vw' }}></img>
-            <p className='small' style={{ color: '#2C2C2C', width: '41.25vw', margin: '0' }}>Тільки постійні клієнти КСД мають можливість залишати коментарі. Якщо ви постійний клієнт КСД, будь ласка, авторизуйтеся.</p>
+            <img src='/warningcircle.png' alt='warningCircle' style={{ width: '1.5625vw', height: '1.5625vw' }} className='warningImg'></img>
+            <p className='small' style={{ color: '#2C2C2C', width: '41.25vw', margin: '0' }} id='warningText'>Тільки постійні клієнти КСД мають можливість залишати коментарі. Якщо ви постійний клієнт КСД, будь ласка, авторизуйтеся.</p>
         </div>
     </section>
 }
@@ -212,15 +212,15 @@ export function Book(props) {
         <img src='/booksBags.png' alt='bags' style={{ position: 'absolute', top: '139.8958vw', left: '4.166vw', width: '25.7291vw' }} className='bagsImg'></img>
         <div className='wrapper'>
             <Navigation id='menu'></Navigation>
-            <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap', width: '54.16vw' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap', width: '54.16vw' }} className='oneBookwrapper'>
                 <Path width='54.16vw' mTop='0'></Path>
                 <BookCard image='/ordinaryMonsters.png' title='Звичайні монстри. Книга 1' author='Дж. М. Міро' price='400'></BookCard>
                 <p className='subTitle' style={{ color: '#686868', margin: '0 0 0.52vw 0.52vw' }}>З цим товаром часто купують</p>
                 <section style={{ borderTop: '0.052vw solid #2C2C2C' }}>
-                    <BooksCoversCarousel info={resentBooks[0]}></BooksCoversCarousel>
+                    <BooksCoversCarousel info={resentBooks[0]} id='recommend'></BooksCoversCarousel>
                 </section>
                 <p className='subTitle' style={{ color: '#686868', margin: '0 0 0.52vw 0.52vw' }}>Опис книги</p>
-                <section style={{ borderTop: '0.052vw solid #2C2C2C', paddingTop: '1.5625vw', width: '54.16vw' }}>
+                <section style={{ borderTop: '0.052vw solid #2C2C2C', paddingTop: '1.5625vw', width: '54.16vw' }} className='descriptionSection'>
                     <p className='bookDescription' style={{ marginBottom: '1.1979vw' }}>Початок циклу темного фентезі про вікторіанську Англію </p>
                     <ul style={{ marginBottom: '1.1979vw' }}>
                         <li className='bookDescription'>НАЙКРАЩА КНИГА ЛІТА 2022 від SheReads, Book Riot, Goodreads, Gizmodo, Daily Beast, Paste Magazine та інших</li>
@@ -237,15 +237,15 @@ export function Book(props) {
                     <Characteristics></Characteristics>
                 </section>
                 <p className='subTitle' style={{ color: '#686868', margin: '0 0 0.52vw 0.52vw' }}>Про автора</p>
-                <section style={{ borderTop: '0.052vw solid #2C2C2C', paddingTop: '2.135vw', marginBottom: '2vw' }}>
+                <section style={{ borderTop: '0.052vw solid #2C2C2C', paddingTop: '2.135vw', marginBottom: '2vw' }} className='aboutAuthorSection'>
                     <p className='small' style={{ width: '54.16vw', color: '#2C2C2C', margin: '0' }}>Дж. М. Міро - канадський прозаїк, поет і викладач Університету Вікторії. Його твори вишукано готичні й похмуро меланхолійні. Часто Міро порушує складні теми бідності, горя, балансування на межі життя і смерті, - цим його творчість нагадує поєднання романів Чарльза Дікенса з режисерськими роботами Джосса Відона.</p>
                 </section>
                 <Reviews reviews='3' rating='5'></Reviews>
                 <ShareProduct></ShareProduct>
             </div>
         </div>
-        <p className='subTitle' style={{ color: '#B53535', width: '79.16vw', margin: '0 auto', paddingLeft: '0.52vw', borderBottom: '0.052vw solid #2C2C2C', paddingBottom: '0.52vw' }}>Нещодавно ви дивилися</p>
-        <BooksCoversCarousel info={resentBooks[1]}></BooksCoversCarousel>
+        <p className='subTitle' style={{ color: '#B53535', width: '79.16vw', margin: '0 auto', paddingLeft: '0.52vw', borderBottom: '0.052vw solid #2C2C2C', paddingBottom: '0.52vw' }} id='booksRecentTitle'>Нещодавно ви дивилися</p>
+        <BooksCoversCarousel info={resentBooks[1]} id='recent'></BooksCoversCarousel>
         <News top='5.2vw' news={news}></News>
         <ResentlyViewed></ResentlyViewed>
     </main>

@@ -3,7 +3,7 @@ import { Outlet, Link } from 'react-router-dom';
 import { ScrollingText, Header, Footer, Category, News, ResentlyViewed, Path } from './main';
 
 export function CartCategory(props) {
-    return <Link to={props.link} style={{ color: props.color, backgroundColor: props.background, width: '39.16vw', height: '3.23vw', borderRadius: '3.125vw', border: 'none', outline: 'none', padding: '0.72916vw 1.5625vw', cursor: 'pointer', textDecoration: 'none', textAlign: 'center' }}>
+    return <Link to={props.link} style={{ color: props.color, backgroundColor: props.background, width: '39.16vw', height: '3.23vw', borderRadius: '3.125vw', border: 'none', outline: 'none', padding: '0.72916vw 1.5625vw', cursor: 'pointer', textDecoration: 'none', textAlign: 'center' }} className='cartCategory'>
         <p className='big' style={{ margin: '0' }}>{props.text}</p>
     </Link>
 }
@@ -17,16 +17,16 @@ export function CartNav(props) {
 
 export function AddToCart(props) {
     return <button style={{ border: '0.052vw solid #B53535', height: '2.6041vw', borderRadius: '0.52vw', cursor: 'pointer', marginLeft: props.mLeft, marginRight: props.mRight, backgroundColor: '#FFFFFF', display: 'flex', alignItems: 'center', padding: '0 0 0 0.52vw', width: '9.3678vw' }} className='cartButton'>
-        <img src={props.image} alt='cart icon' style={{ marginRight: '0.5vw', width: '1.614vw' }}></img>
+        <img src={props.image} alt='cart icon' style={{ marginRight: '0.5vw', width: '1.614vw' }} className='addToCartIcon'></img>
         <p className='cartButtonP'>{props.text}</p>
     </button>
 }
 
 export function EmptyCart(props) {
     return <div className='emptyCart'>
-        <h3 style={{ color: '#2C2C2C', marginTop: '4vw', marginBottom: '0.72916vw' }}>У Вашому «Кошику» ще немає жодного товару.</h3>
-        <p className='small' style={{ color: '#686868', padding: '0.52vw', margin: '0' }}>Щоб додати будь-який товар до «Кошика», необхідно натиснути на кнопку <span style={{display: 'inline-block', verticalAlign: 'middle'}}><AddToCart text={props.text} image={props.image} mLeft='0.52vw' mRight='0.52vw' /></span> , яка розташована поруч з обраним Вами товаром.</p>
-        <p style={{ color: '#2C2C2C', margin: '0.677vw 0 1.2wv 0' }}>Товарні розділи нашого магазину:</p>
+        <h3 style={{ color: '#2C2C2C', marginTop: '4vw', marginBottom: '0.72916vw' }} id='cartH3'>У Вашому «Кошику» ще немає жодного товару.</h3>
+        <p className='small' style={{ color: '#686868', padding: '0.52vw', margin: '0' }}>Щоб додати будь-який товар до «Кошика», необхідно натиснути на кнопку <span style={{ display: 'inline-block', verticalAlign: 'middle' }}><AddToCart text={props.text} image={props.image} mLeft='0.52vw' mRight='0.52vw' /></span> , яка розташована поруч з обраним Вами товаром.</p>
+        <p style={{ color: '#2C2C2C', margin: '0.677vw 0 1.2wv 0' }} id='cartPSections'>Товарні розділи нашого магазину:</p>
         <ul style={{ color: '#2C2C2C', margin: '0 0 1.875vw 0' }}>
             <li>Книги</li>
             <li>Електронні книги</li>
@@ -62,12 +62,12 @@ export function Cart() {
         <ScrollingText />
         <Header></Header>
         <div className='categoriesWrapper'>
-            <Category link='#' name='Художні'></Category>
-            <Category link='#' name='Прикладні'></Category>
-            <Category link='#' name='Дитячі'></Category>
-            <Category link='#' name='Спецпропозиції'></Category>
-            <Category link='#' name='eBooks'></Category>
-            <Category link='#' name='Анонси КСД'></Category>
+            <Category link='/Fiction' name='Художні'></Category>
+            <Category link='/Practical' name='Прикладні'></Category>
+            <Category link='/Children' name='Дитячі'></Category>
+            <Category link='/Special' name='Спецпропозиції'></Category>
+            <Category link='/eBooks' name='eBooks'></Category>
+            <Category link='/Special/AnnouncementsKSD' name='Анонси КСД'></Category>
         </div>
         <Path width='79.16vw' mTop='1.25vw'></Path>
         <Outlet></Outlet>

@@ -19,7 +19,7 @@ export function Header() {
         <Link to='/' id='logo'><img src='/logo.png' alt='logo' style={{ width: '100%' }} /></Link>
         <div className='search'>
             <input type='text' placeholder='Пошук товарів, категорій' style={{ height: '1.1458vw' }} id='searchInput' />
-            <button id='searchButton' style={{ width: '2.5vw', aspectRatio: '1 / 1', backgroundColor: '#B53535', borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><img src='/search.png' alt='search icon' style={{ width: '0.9375vw', aspectRatio: '1 / 1' }} id='searchImg'/></button>
+            <button id='searchButton' style={{ width: '2.5vw', aspectRatio: '1 / 1', backgroundColor: '#B53535', borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}><img src='/search.png' alt='search icon' style={{ width: '0.9375vw', aspectRatio: '1 / 1' }} id='searchImg' /></button>
         </div>
         <div id='headerIcons'>
             <Link to='/Profile/' style={{ width: '1.5625vw' }} className='headerIcon'><img src='/user.png' alt='user icon' style={{ width: '100%' }} /></Link>
@@ -96,14 +96,14 @@ export function Navigation(props) {
 }
 
 export function Separator(props) {
-    return <div style={{ width: '100%', height: '4.64vw', backgroundColor: props.color, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    return <div className='separator' style={{ width: '100%', height: '4.64vw', backgroundColor: props.color, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <h2 style={{ color: '#FFFFFF', margin: '0' }}>{props.text}</h2>
     </div>
 }
 
 export function NewsCard(props) {
-    return <Link to={props.link} style={{ width: '49.16vw', height: '6.77vw', padding: '0.52vw', display: 'flex', gap: '3.125vw', textDecoration: 'none' }}>
-        <img src={props.image} alt='news image' style={{ border: '0.1vw solid #B53535', borderRadius: '1vw', aspectRatio: '1 / 1', width: '5.208vw' }}></img>
+    return <Link className='newsCard' to={props.link} style={{ width: '49.16vw', height: '6.77vw', padding: '0.52vw', display: 'flex', gap: '3.125vw', textDecoration: 'none' }}>
+        <img src={props.image} alt='news image' className='newsImg' style={{ border: '0.1vw solid #B53535', borderRadius: '1vw', aspectRatio: '1 / 1', width: '5.208vw' }}></img>
         <div>
             <p className='newsText' style={{ margin: '0', marginBottom: '1.0416vw' }}>{props.date}</p>
             <p className='newsTitle' style={{ margin: '0', marginBottom: '0.52vw' }}>{props.title}</p>
@@ -115,9 +115,9 @@ export function NewsCard(props) {
 
 export function News(props) {
     return <section style={{ position: 'relative', marginTop: props.top }}>
-        <img src='/newsPerson.png' alt='Person Shopping' style={{ position: 'absolute', top: '17.2vw', left: '67.7vw', zIndex: '2', width: '25.2vw' }}></img>
+        <img src='/newsPerson.png' alt='Person Shopping' id='newsPerson' style={{ position: 'absolute', top: '17.2vw', left: '67.7vw', zIndex: '2', width: '25.2vw' }}></img>
         <Separator color='#B53535' text="Новини КСД"></Separator>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.52vw', justifyContent: 'center', width: '49.16vw', margin: '0 auto', marginTop: '1.615vw' }}>
+        <div className='newsCards' style={{ display: 'flex', flexDirection: 'column', gap: '0.52vw', justifyContent: 'center', width: '49.16vw', margin: '0 auto', marginTop: '1.615vw' }}>
             {props.news.map((item) => <NewsCard image={item.image} date={item.date} title={item.title} description={item.description} raters={item.raters} rating={item.rating} link={item.link}></NewsCard>)}
         </div>
 
@@ -165,7 +165,7 @@ export function BooksCoversCarousel(props) {
     };
 
     return (
-        <div style={{ position: 'relative', height: '19.79vw', width: props.info.width, margin: '0 auto' }}>
+        <div className="booksCoversCarousel" style={{ position: 'relative', height: '19.79vw', width: props.info.width, margin: '0 auto' }} id={props.id}>
             <button onClick={handlePrev} style={{ position: 'absolute', left: '0', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', zIndex: 2, outline: 'none' }} onFocus={(e) => e.target.style.outline = 'none'}>
                 <img src="/left.png" alt="Previous" style={{ width: '0.89vw', height: '1.71875vw' }} />
             </button>
@@ -206,47 +206,69 @@ const resentBooks = [
 export function ResentlyViewed() {
     return <section style={{ marginTop: '4vw' }}>
         <Separator color='#B53535' text="Нещодавно ви дивилися"></Separator>
-        <BooksCoversCarousel info={resentBooks[0]}></BooksCoversCarousel>
+        <BooksCoversCarousel info={resentBooks[0]} id='recent'></BooksCoversCarousel>
     </section>
 }
 
 export function Footer() {
-    return <footer style={{ position: 'relative', marginTop: '3.593vw'}}>
+    function handleFooter(e) {
+        const content = e.currentTarget.closest('.footerSection').querySelector('.footerCategoryContent');
+        if (content.classList.contains('open')) {
+            content.style.height = '0px';
+            content.style.opacity = '0';
+            content.classList.remove('open');
+        } else {
+            content.style.height = content.scrollHeight + 'px';
+            content.style.opacity = '1';
+            content.classList.add('open');
+        }
+    }
+    return <footer style={{ position: 'relative', marginTop: '3.593vw' }}>
         <img src='/Bag.png' alt='Bag' style={{ position: 'absolute', bottom: '0', right: '0', width: '24.21875vw' }}></img>
         <div className='footerTopContainer' style={{ marginBottom: '4.6875vw' }}>
             <div className='footerContainer'>
                 <div className='footerSection' style={{ width: '21.4vw' }}>
                     <div style={{ display: 'flex', alignItems: 'center', height: '2.7vw' }}>
-                        <img src='/tabler-icon-truck-delivery.png' alt='iconTruck' style={{ marginRight: '0.52vw', height: '2.7vw' }}></img>
+                        <img src='/tabler-icon-truck-delivery.png' alt='iconTruck' style={{ marginRight: '0.52vw', height: '2.7vw' }} className='footerIcon'></img>
                         <h3>Способи доставки</h3>
+                        <button style={{ outline: 'none', border: 'none', background: 'transparent', width: 'fit-content', padding: '0' }} onClick={handleFooter}><img src='/arrowdown.png' alt='arrow down' className='footerArrowDown' style={{ display: 'none' }}></img></button>
+
                     </div>
-                    <p><Link to='https://novaposhta.ua' className='footerLink'>Відділення Нової пошти</Link></p>
-                    <p><Link to='https://novaposhta.ua' className='footerLink'>Поштомат Нової пошти</Link></p>
-                    <p><Link to='https://ua.meest.com' className='footerLink'>Кур'єр Meest</Link></p>
-                    <p><Link to='https://www.ukrposhta.ua' className='footerLink'>Відділення Укрпошти</Link></p>
-                    <p><Link to='/FreeDelivery' className='footerLink'>Безкоштовна доставка*</Link></p>
-                    <img src='/UKR.png' alt='iconVisa' style={{ marginTop: '2.395vw', width: '12.3958vw' }}></img>
+                    <div className='footerCategoryContent'>
+                        <p><Link to='https://novaposhta.ua' className='footerLink'>Відділення Нової пошти</Link></p>
+                        <p><Link to='https://novaposhta.ua' className='footerLink'>Поштомат Нової пошти</Link></p>
+                        <p><Link to='https://ua.meest.com' className='footerLink'>Кур'єр Meest</Link></p>
+                        <p><Link to='https://www.ukrposhta.ua' className='footerLink'>Відділення Укрпошти</Link></p>
+                        <p><Link to='/FreeDelivery' className='footerLink'>Безкоштовна доставка*</Link></p>
+                        <img src='/UKR.png' alt='iconVisa' style={{ marginTop: '2.395vw', width: '12.3958vw' }} className='bigImgFooter'></img>
+                    </div>
                 </div>
 
                 <div className='footerSection' style={{ width: '12.5vw' }}>
                     <div style={{ display: 'flex', alignItems: 'center', height: '2.7vw' }}>
-                        <img src='/tabler-icon-home.png' alt='iconHome' style={{ marginRight: '0.52vw', height: '2.7vw' }}></img>
+                        <img src='/tabler-icon-home.png' alt='iconHome' style={{ marginRight: '0.52vw', height: '2.7vw' }} className='footerIcon'></img>
                         <h3>Про КСД</h3>
+                        <button style={{ outline: 'none', border: 'none', background: 'transparent', width: 'fit-content', padding: '0' }} onClick={handleFooter}><img src='/arrowdown.png' alt='arrow down' className='footerArrowDown' style={{ display: 'none' }}></img></button>
                     </div>
-                    <p><Link to='/News' className='footerLink'>Новини</Link></p>
-                    <p><Link to='/Dovidgest' className='footerLink'>Книжковий довіджест</Link></p>
-                    <p><Link to='/Special/AnnouncementsKSD' className='footerLink'>Анонси</Link></p>
+                    <div className='footerCategoryContent'>
+                        <p><Link to='/News' className='footerLink'>Новини</Link></p>
+                        <p><Link to='/Dovidgest' className='footerLink'>Книжковий довіджест</Link></p>
+                        <p><Link to='/Special/AnnouncementsKSD' className='footerLink'>Анонси</Link></p>
+                    </div>
                 </div>
 
                 <div className='footerSection' style={{ width: '20.1vw' }}>
                     <div style={{ display: 'flex', alignItems: 'center', height: '2.7vw' }}>
-                        <img src='/tabler-icon-address-book.png' alt='iconAddress' style={{ marginRight: '0.52vw', height: '2.7vw' }}></img>
+                        <img src='/tabler-icon-address-book.png' alt='iconAddress' style={{ marginRight: '0.52vw', height: '2.7vw' }} className='footerIcon'></img>
                         <h3>Контакти</h3>
+                        <button style={{ outline: 'none', border: 'none', background: 'transparent', width: 'fit-content', padding: '0' }} onClick={handleFooter}><img src='/arrowdown.png' alt='arrow down' className='footerArrowDown' style={{ display: 'none' }}></img></button>
                     </div>
-                    <p>Адреса: «Книжковий Клуб», а/с 84, Харків, 61001</p>
-                    <p>Тел.: <a href='tel:0800301090' className='footerLink'>0 800 301 090</a></p>
-                    <p>Web: <a href='https://bookclub.ua' target='_blank'>bookclub.ua</a></p>
-                    <p><Link to='/BookShops' className='footerLink'>Книгарні КСД</Link></p>
+                    <div className='footerCategoryContent'>
+                        <p className='footerLink'>Адреса: «Книжковий Клуб», а/с 84, Харків, 61001</p>
+                        <p>Тел.: <a href='tel:0800301090' className='footerLink'>0 800 301 090</a></p>
+                        <p>Web: <a href='https://bookclub.ua' target='_blank'>bookclub.ua</a></p>
+                        <p><Link to='/BookShops' className='footerLink'>Книгарні КСД</Link></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -255,46 +277,53 @@ export function Footer() {
             <div className='footerContainer'>
                 <div className='footerSection' style={{ width: '19.53vw' }}>
                     <div style={{ display: 'flex', alignItems: 'center', height: '2.7vw' }}>
-                        <img src='/tabler-icon-cash-banknote.png' alt='iconBanknote' style={{ marginRight: '0.52vw', height: '2.7vw' }}></img>
+                        <img src='/tabler-icon-cash-banknote.png' alt='iconBanknote' style={{ marginRight: '0.52vw', height: '2.7vw' }} className='footerIcon'></img>
                         <h3>Способи оплати</h3>
+                        <button style={{ outline: 'none', border: 'none', background: 'transparent', width: 'fit-content', padding: '0' }} onClick={handleFooter}><img src='/arrowdown.png' alt='arrow down' className='footerArrowDown' style={{ display: 'none' }}></img></button>
                     </div>
-                    <p><Link to='/OnlinePayment' className='footerLink'>Оплата картою онлайн</Link></p>
-                    <p><Link to='/OnDeliveryPayment' className='footerLink'>Оплата на момент отримання</Link></p>
-                    <img src='/Visa.png' alt='Visa' style={{ width: '12.3958vw' }}></img>
+                    <div className='footerCategoryContent'>
+                        <p><Link to='/OnlinePayment' className='footerLink'>Оплата картою онлайн</Link></p>
+                        <p><Link to='/OnDeliveryPayment' className='footerLink'>Оплата на момент отримання</Link></p>
+                        <img src='/Visa.png' alt='Visa' style={{ width: '12.3958vw' }} className='bigImgFooter'></img>
+                    </div>
+
                 </div>
 
                 <div className='footerSection' style={{ width: '16.979vw' }}>
                     <div style={{ display: 'flex', alignItems: 'center', height: '2.7vw' }}>
-                        <img src='/tabler-icon-question-mark.png' alt='iconQuestion' style={{ marginRight: '0.52vw', height: '2.7vw' }}></img>
+                        <img src='/tabler-icon-question-mark.png' alt='iconQuestion' style={{ marginRight: '0.52vw', height: '2.7vw' }} className='footerIcon'></img>
                         <h3>Є питання?</h3>
+                        <button style={{ outline: 'none', border: 'none', background: 'transparent', width: 'fit-content', padding: '0' }} onClick={handleFooter}><img src='/arrowdown.png' alt='arrow down' className='footerArrowDown' style={{ display: 'none' }}></img></button>
                     </div>
-                    <p><Link to='/FAQ' className='footerLink'>Як замовити?</Link></p>
-                    <p><Link to='/FAQ' className='footerLink'>Доставка, оплата</Link></p>
-                    <p><Link to='/FAQ' className='footerLink'>Налаштування</Link></p>
-                    <p><Link to='/FAQ' className='footerLink'>Порядок повернення товарів</Link></p>
-                    <p><Link to='/FAQ' className='footerLink'>Постійним клієнтом</Link></p>
+                    <div className='footerCategoryContent'>
+                        <p><Link to='/FAQ' className='footerLink'>Як замовити?</Link></p>
+                        <p><Link to='/FAQ' className='footerLink'>Доставка, оплата</Link></p>
+                        <p><Link to='/FAQ' className='footerLink'>Налаштування</Link></p>
+                        <p><Link to='/FAQ' className='footerLink'>Порядок повернення товарів</Link></p>
+                        <p><Link to='/FAQ' className='footerLink'>Постійним клієнтом</Link></p>
+                    </div>
                 </div>
 
                 <div className='footerSection' style={{ width: '10.73vw' }}>
-                    <div style={{ display: 'flex', gap: '0.72vw', marginBottom: '1.25vw' }}>
+                    <div style={{ display: 'flex', gap: '0.72vw', marginBottom: '1.25vw' }} className='footerSocials'>
                         <a href='https://www.instagram.com/'>
-                            <img src='/instagram.png' alt='instagram' style={{ width: '1.5625vw', aspectRatio: '1 / 1' }}></img>
+                            <img src='/instagram.png' alt='instagram' style={{ width: '1.5625vw', aspectRatio: '1 / 1' }} className='footerSocial'></img>
                         </a>
                         <a href='https://web.telegram.org'>
-                            <img src='/tg.png' alt='telegram' style={{ width: '1.5625vw', aspectRatio: '1 / 1' }}></img>
+                            <img src='/tg.png' alt='telegram' style={{ width: '1.5625vw', aspectRatio: '1 / 1' }} className='footerSocial'></img>
                         </a>
                         <a href='https://www.viber.com'>
-                            <img src='/viber.png' alt='viber' style={{ width: '1.5625vw', aspectRatio: '1 / 1' }}></img>
+                            <img src='/viber.png' alt='viber' style={{ width: '1.5625vw', aspectRatio: '1 / 1' }} className='footerSocial'></img>
                         </a>
                         <a href='https://twitter.com'>
-                            <img src='/twitter.png' alt='twitter' style={{ width: '1.5625vw', aspectRatio: '1 / 1' }}></img>
+                            <img src='/twitter.png' alt='twitter' style={{ width: '1.5625vw', aspectRatio: '1 / 1' }} className='footerSocial'></img>
                         </a>
                         <a href='https://www.tiktok.com'>
-                            <img src='/tiktok.png' alt='tiktok' style={{ width: '1.5625vw', aspectRatio: '1 / 1' }}></img>
+                            <img src='/tiktok.png' alt='tiktok' style={{ width: '1.5625vw', aspectRatio: '1 / 1' }} className='footerSocial'></img>
                         </a>
                     </div>
 
-                    <img src='/BottegaVerde.png' alt='BottegaVerde' style={{ width: '9.21875vw' }} />
+                    <img src='/BottegaVerde.png' alt='BottegaVerde' style={{ width: '9.21875vw' }} id='footerPartner' />
                 </div>
             </div>
         </div>
@@ -327,14 +356,14 @@ export function Path(props) {
 
         return (
             <span key={path} style={{ display: 'flex', alignItems: 'center' }}>
-                <img src='/pathIcon.png' alt="Path icon" style={{ width: '0.83vw', height: '0.83vw', marginRight: '0.52vw', marginLeft: '0.52vw' }} />
+                <img src='/pathIcon.png' alt="Path icon" style={{ width: '0.83vw', height: '0.83vw', marginRight: '0.52vw', marginLeft: '0.52vw' }} className='pathIcon' />
                 <Link to={path} className='pathText'>{label}</Link>
             </span>
         );
     });
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center', width: props.width, padding: '0.52vw', margin: '0 auto', marginTop: props.mTop }}>
+        <div style={{ display: 'flex', alignItems: 'center', width: props.width, padding: '0.52vw', margin: '0 auto', marginTop: props.mTop }} className='pathDiv'>
             <Link to="/" className='pathText'>{pathMap['']}</Link>
             {fullPath}
         </div>

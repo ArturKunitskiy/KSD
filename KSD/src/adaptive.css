@@ -11,6 +11,60 @@
 }
 
 @media (max-width: 768px) {
+
+    p,
+    li,
+    td {
+        font-size: 3.129vw;
+    }
+
+    .big {
+        font-size: 3.911vw;
+    }
+
+    h3 {
+        font-size: 4.172vw;
+    }
+
+    .small {
+        font-size: 2.8683vw;
+    }
+
+    h2 {
+        font-size: 4.6936vw;
+    }
+
+    .newsText {
+        font-size: 2.6vw;
+    }
+
+    .newsTitle,
+    .subTitle {
+        font-size: 2.8683vw !important;
+    }
+
+    .newsRating {
+        font-size: 2.346vw;
+    }
+
+    .inputText,
+    .subscribeButton,
+    .checkInput,
+    .formInput,
+    .saveButton,
+    .addBonusText {
+        font-size: 1.6949vw !important;
+    }
+
+    .cartButtonP {
+        font-size: 2.6vw;
+        height: 6.5189vw !important;
+        width: 16.7vw;
+        border-radius: 0 1.3vw 1.3vw 0;
+        padding: 1.3vw;
+        padding-top: 2.5vw;
+    }
+
     .bagsImg {
         display: none;
     }
@@ -24,6 +78,7 @@
         display: flex;
         flex-direction: column;
         margin-top: 0;
+        position: relative;
     }
 
     #headerIcons {
@@ -61,7 +116,7 @@
 
     #menuToggle:checked~#burgerMenu {
         visibility: visible;
-        left: 34.81vw;
+        left: 34.8vw;
     }
 
     .menuButton {
@@ -97,7 +152,7 @@
 
     #burgerMenu {
         display: flex;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 100vw;
         width: 65.18vw;
@@ -109,6 +164,8 @@
         z-index: 11;
         visibility: hidden;
         transition: .5s ease-in-out;
+        height: 100vh;
+        overflow-y: scroll;
     }
 
     .scrollText {
@@ -171,7 +228,8 @@
         padding-left: 1.82529vw;
     }
 
-    .title {
+    .title,
+    .questionTitle {
         font-size: 3.9113vw;
         margin-top: 4.172vw !important;
         margin-bottom: 4.5632vw;
@@ -198,27 +256,550 @@
         padding: 1.3vw 5.2151vw;
     }
 
-   .categoriesWrapper .categoryText:last-of-type{
+    .categoriesWrapper .categoryText:last-of-type {
         width: 39.6818vw;
     }
-}
 
-
-@media (min-width: 663px) and (max-width: 768px) {
-    .cartButton {
-        width: 9.75vw !important;
+    #ufo {
+        width: 39.11vw;
     }
-}
 
-@media (min-width: 468px) and (max-width: 662px) {
-    .cartButton {
-        width: 9.55vw !important;
+    #errorButton {
+        width: 54vw;
+        padding-top: 2vw !important;
     }
-}
 
-
-@media (max-width: 467px) {
-    .cartButton {
-        width: 9.75vw !important;
+    .wrapper {
+        width: 89.96vw;
     }
+
+    .pathText {
+        font-size: 1.6949vw;
+    }
+
+    .pathIcon {
+        width: 3.129vw !important;
+        height: 3.129vw !important;
+    }
+
+    .cartCategory {
+        width: 44vw !important;
+        height: 7.82268vw !important;
+        border-radius: 3.911vw !important;
+        padding: 1.825vw 2vw !important;
+    }
+
+    .separator {
+        height: 9.256844vw !important;
+    }
+
+    #newsPerson {
+        display: none;
+    }
+
+    .addToCartIcon {
+        width: 3.911vw !important;
+    }
+
+    .cartButton {
+
+        height: 6.5189vw !important;
+        border-radius: 1.3vw !important;
+        width: fit-content !important;
+    }
+
+    .newsImg {
+        width: 19.5567vw !important;
+        height: 19.5567vw !important;
+        border-radius: 3.9vw !important;
+        border-width: 0.26vw !important;
+    }
+
+    .newsCards {
+        width: 89.96vw !important;
+        gap: 2.6vw !important;
+        margin-top: 9.3911vw !important;
+    }
+
+    .newsCard {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    #cartH3 {
+        margin-bottom: 2vw !important;
+    }
+
+    #cartPSections {
+        margin-top: 2.6vw;
+        margin-bottom: 3.911vw;
+    }
+
+    .footerIcon {
+        width: 6.518vw !important;
+        height: auto !important;
+    }
+
+    .bigImgFooter {
+        height: 5.997vw !important;
+        width: auto !important;
+    }
+
+    .footerSection {
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footerSection div:first-of-type {
+        margin-bottom: 3.2594vw !important;
+        height: auto !important;
+        gap: 1.3vw;
+    }
+
+    .footerSection div:first-of-type h3 {
+        margin: 0 !important;
+    }
+
+    .footerSocial {
+        width: 7.822vw !important;
+    }
+
+    .footerSocials {
+        gap: 2.6vw !important;
+    }
+
+    #footerPartner {
+        width: 27.9vw !important;
+    }
+
+    .footerArrowDown {
+        display: block !important;
+        width: 5.3455vw;
+    }
+
+    .footerSection p {
+        margin: 1.9556vw 0 !important;
+        font-size: 3.911vw;
+    }
+
+    .footerContainer {
+        width: 55.541vw !important;
+        gap: 5.2151vw;
+    }
+
+    .footerCategoryContent {
+        transition: 0.2s ease-in-out;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+    }
+
+    #profileWrapper {
+        width: 89.96vw !important;
+    }
+
+    .pathDiv {
+        width: 89.96vw !important;
+        padding: 1.3vw !important;
+    }
+
+    .profileNavIcon {
+        width: 3.129vw !important;
+        margin-right: 1.3vw !important;
+    }
+
+    .profileNavText {
+        font-size: 2vw !important;
+    }
+
+    .profileNav {
+        width: 24.25vw !important;
+        height: 27.1186vw !important;
+        margin-right: 0.52151vw !important;
+    }
+
+    .subscribeBlock {
+        width: 100%;
+    }
+
+    #subscription {
+        width: 89.96vw !important;
+        flex-direction: column;
+        gap: 2.6vw;
+        margin-bottom: 13vw;
+        margin-top: 7.82268vw !important;
+    }
+
+    .subscribeInput {
+        font-size: 1.69vw !important;
+        width: 65.18vw !important;
+        height: 4.823vw !important;
+        border-radius: 1.3vw !important;
+        padding-left: 5.2151vw !important;
+        margin-right: 1.9556vw !important;
+    }
+
+    #iconGmail {
+        width: 2.6vw !important;
+        margin-left: 1.3vw !important;
+    }
+
+    .subscribeButton {
+        width: 22.94vw !important;
+        height: 4.82398vw !important;
+        border-radius: 1.3vw !important;
+    }
+
+    .subscribeInputWrapper {
+        justify-content: center !important;
+    }
+
+    #orderButton {
+        width: 18.644vw !important;
+        padding-top: 1.3vw !important;
+        margin-top: 2.6vw !important;
+    }
+
+    #nameLabel {
+        display: none !important;
+    }
+
+    .imgIconUserGrey {
+        width: 3.129vw !important;
+        height: 3.129vw !important;
+        margin-right: 1.3vw !important;
+    }
+
+    .formInput {
+        border-radius: 1.3vw !important;
+        width: 65.18vw !important;
+        height: 4.82398vw !important;
+        padding-left: 1.3vw !important;
+        margin-bottom: 1.3vw !important;
+    }
+
+    #name {
+        margin-top: 3.911vw;
+    }
+
+    .saveButton {
+        border-radius: 1.3vw !important;
+        width: 65.18vw !important;
+        height: 4.82398vw !important;
+        margin-top: 1.9556vw;
+    }
+
+    #orderUfo {
+        width: 46.1538vw !important;
+    }
+
+    #ordersH {
+        margin-top: 0 !important;
+    }
+
+    #orderPTitle {
+        font-size: 2.3468vw !important;
+        margin-top: 2.6vw !important;
+    }
+
+    #orderP {
+        font-size: 1.5645vw !important;
+    }
+
+    #ordersWrapper {
+        width: 46.1538vw !important;
+    }
+
+    #wishlistPlus {
+        width: 3.9113vw !important;
+        height: 3.9113vw !important;
+        left: 61.2777vw !important;
+        top: 0 !important;
+    }
+
+    .wishlist {
+        border-radius: 1.3vw !important;
+        width: 65.18vw !important;
+        height: 4.82398vw !important;
+        font-size: 1.6949vw !important;
+        padding-left: 1.3vw !important;
+    }
+
+    #authorizeTitle {
+        font-size: 2vw !important;
+        text-align: center;
+        width: 65.18vw !important;
+    }
+
+    .contactImage {
+        width: 6.5189vw !important;
+    }
+
+    .contactText {
+        font-size: 2vw !important;
+    }
+
+    #contactsWrapper {
+        gap: 2.6vws;
+        width: 35.462vw !important;
+    }
+
+    #topThreeP {
+        width: 89.96vw !important;
+    }
+
+    .topThreeTitle {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .sortWrapper {
+        gap: 1vw !important;
+        width: 65.18vw !important;
+    }
+
+    .sortButton,
+    .button {
+        font-size: 3.129vw !important;
+    }
+
+    #showAndSort {
+        flex-wrap: wrap;
+    }
+
+    .sortButton {
+        height: 5.7366vw !important;
+        border-radius: 1.3vw;
+    }
+
+    .genreBookCard {
+        padding: 6.5189vw 1.3vw 1.3vw 1.3vw !important;
+    }
+
+    .genreBookImg {
+        width: 19.5567vw !important;
+        height: auto !important;
+    }
+
+    .genreBookInfo {
+        width: 42.37288vw !important;
+    }
+
+    .starsWrapper {
+        width: 18.2529vw !important;
+        gap: 1.3vw;
+    }
+
+    .starsWrapper img {
+        width: 2.6vw !important;
+        height: 2.6vw !important;
+    }
+
+    .bookRatingGenre {
+        width: 35.9843vw !important;
+    }
+
+    .genreRatingP {
+        height: 3.2594vw !important;
+    }
+
+    .genreBookDescription {
+        width: 42.37288vw !important;
+    }
+
+    .priceWrap {
+        width: 22.9465vw !important;
+    }
+
+    .forAdultsWarning {
+        font-size: 2.6vw !important;
+        width: 66.62vw !important;
+    }
+
+    .forAdultsIcon {
+        width: 6.5189vw !important;
+        height: 6.5189vw !important;
+        top: 16.4276vw !important;
+    }
+
+    .button {
+        height: 5.7366vw !important;
+        padding: 0.65vw 2.6vw !important;
+        width: 7.17vw !important;
+        border-radius: 1.3vw !important;
+    }
+
+    .secondRightImg,
+    .rightButton {
+        width: 3.129vw !important;
+    }
+
+    .pagination {
+        gap: 1vw !important;
+    }
+
+    .questionTitle,
+    .answer {
+        width: 89.96vw !important;
+    }
+
+    .questionAnswer:last-of-type {
+        margin-top: 7.822vw !important;
+    }
+
+    .questionAnswer:first-of-type {
+        margin-bottom: 7.822vw !important;
+    }
+
+    .oneBookwrapper {
+        width: 100% !important;
+    }
+
+    .oneBookImg {
+        width: 28.292vw !important;
+    }
+
+    .tool {
+        font-size: 2vw !important;
+        height: 2.216vw !important;
+        line-height: 2.1vw !important;
+    }
+
+    .toolImg {
+        width: 3.129vw !important;
+    }
+
+    .tools {
+        width: 28.292vw !important;
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 3.52vw !important;
+        margin-top: 3.911vw !important;
+    }
+
+    .oneBookSection {
+        padding-top: 3.911vw !important;
+        margin-bottom: 5.2151vw !important;
+    }
+
+    #coin {
+        width: 2.6vw !important;
+        height: 2.6vw !important;
+    }
+
+    .addBonus {
+        height: 4.8239vw !important;
+        width: 19.687vw !important;
+        border-radius: 1.3vw !important;
+        padding: 1.3vw !important;
+    }
+
+    #ksdPrice {
+        font-size: 2.3468vw !important;
+    }
+
+    .bookInfo {
+        width: 56.7144vw !important;
+    }
+
+    #yourAndKsd {
+        margin-right: 1.694vw !important;
+    }
+
+    .bookInfo .title {
+        margin-right: 1.694vw !important;
+    }
+
+    .bookDescription {
+        font-size: 3.129vw !important;
+        width: 89.96vw !important;
+
+    }
+
+    .descriptionSection {
+        width: 89.96vw !important;
+        padding-top: 3.911vw !important;
+        margin-bottom: 3.911vw !important;
+    }
+
+    .descriptionReview:first-of-type {
+        margin-top: 3.911vw !important;
+    }
+
+    .descriptionReview p:first-of-type {
+        width: 76.92vw !important;
+        margin-left: 11.734vw !important;
+    }
+
+    td {
+        width: 44vw !important;
+    }
+
+    table {
+        margin-top: 2.6vw;
+    }
+
+    .aboutAuthorSection {
+        padding-top: 3.911vw !important;
+        margin-bottom: 3.911vw !important;
+    }
+
+    .aboutAuthorSection p {
+        width: 100% !important;
+    }
+
+    .reviewsHeadline {
+        width: 89.96vw !important;
+        padding: 1.3vw !important;
+    }
+
+    .reviewsHeadline:first-of-type {
+        margin-bottom: 3.911vw !important;
+    }
+
+    .warningImg {
+        width: 5.2151vw !important;
+        height: 5.2151vw !important;
+    }
+
+    #warningText {
+        width: 78.2268vw !important;
+    }
+
+    .shareProducts p {
+        margin-top: 3.65vw !important;
+        margin-bottom: 1.82529vw !important;
+    }
+
+    .shareProducts div {
+        gap: 3.911vw !important;
+    }
+
+    .shareProducts img {
+        width: 6.518vw !important;
+        height: 6.518vw !important;
+    }
+
+    #booksRecentTitle {
+        width: 89.96vw !important;
+    }
+
+    .review {
+        border-radius: 1.3vw !important;
+        padding: 2.6vw 5.2151vw !important;
+        margin-bottom: 3.911vw !important;
+    }
+
+    .review img {
+        width: 3.129vw !important;
+        height: 3.129vw !important;
+    }
+
+    .reviewText {
+        margin-top: 5.2151vw !important;
+        margin-bottom: 3.52vw !important;
+    }
+
 }
