@@ -131,12 +131,15 @@ export function BooksCoversCarousel(props) {
     React.useEffect(() => {
         if (typeof window !== 'undefined') {
             const Flickity = require('flickity');
+
+            const isMobile = window.innerWidth <= 768;
+
             flktyRef.current = new Flickity(carouselRef.current, {
                 groupCells: 5,
                 freeScroll: false,
                 wrapAround: true,
                 prevNextButtons: false,
-                pageDots: false,
+                pageDots: isMobile,
                 cellAlign: 'left',
                 contain: true,
                 imagesLoaded: true,
@@ -166,18 +169,18 @@ export function BooksCoversCarousel(props) {
 
     return (
         <div className="booksCoversCarousel" style={{ position: 'relative', height: '19.79vw', width: props.info.width, margin: '0 auto' }} id={props.id}>
-            <button onClick={handlePrev} style={{ position: 'absolute', left: '0', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', zIndex: 2, outline: 'none' }} onFocus={(e) => e.target.style.outline = 'none'}>
+            <button onClick={handlePrev} style={{ position: 'absolute', left: '0', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', zIndex: 2, outline: 'none' }} onFocus={(e) => e.target.style.outline = 'none'} className='carouselButton'>
                 <img src="/left.png" alt="Previous" style={{ width: '0.89vw', height: '1.71875vw' }} />
             </button>
 
             <div ref={carouselRef} className="books-covers-carousel" style={{ height: '100%', width: props.info.carouselWidth, margin: '0 auto' }}>
                 {props.info.covers.map((item, index) => (
                     <div key={index} className="book-cover-cell" style={{ height: '100%', margin: '0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Link to={item.link}><img src={item.cover} alt={item.cover} style={{ width: 'auto', marginRight: item.mRight, height: item.height }} /></Link>
+                        <Link to={item.link}><img src={item.cover} alt={item.cover} style={{ width: 'auto', marginRight: item.mRight, height: item.height }} className='booksCoverCarouselImg'/></Link>
                     </div>
                 ))}
             </div>
-            <button onClick={handleNext} style={{ position: 'absolute', right: '0', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', zIndex: 10, outline: 'none' }} onFocus={(e) => e.target.style.outline = 'none'}>
+            <button onClick={handleNext} style={{ position: 'absolute', right: '0', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', zIndex: 10, outline: 'none' }} onFocus={(e) => e.target.style.outline = 'none'} className='carouselButton'>
                 <img src='/right.png' alt="Next" style={{ width: '0.89vw', height: '1.71875vw' }} />
             </button>
         </div>
@@ -215,11 +218,9 @@ export function Footer() {
         const content = e.currentTarget.closest('.footerSection').querySelector('.footerCategoryContent');
         if (content.classList.contains('open')) {
             content.style.height = '0px';
-            content.style.opacity = '0';
             content.classList.remove('open');
         } else {
             content.style.height = content.scrollHeight + 'px';
-            content.style.opacity = '1';
             content.classList.add('open');
         }
     }

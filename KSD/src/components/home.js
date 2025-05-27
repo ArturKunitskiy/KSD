@@ -6,7 +6,7 @@ import 'flickity/css/flickity.css';
 import { ResentlyViewed } from './main';
 
 export function ForClients(props) {
-    return <div style={{ width: '24.16vw', height: '7.6vw', borderRadius: '1.5625vw', border: '0.1vw solid rgba(0, 0, 0, 0.5)', display: 'flex', alignItems: 'center', padding: '0.729vw 2.8645vw' }}>
+    return <div style={{ width: '24.16vw', height: '7.6vw', borderRadius: '1.5625vw', border: '0.1vw solid rgba(0, 0, 0, 0.5)', display: 'flex', alignItems: 'center', padding: '0.729vw 2.8645vw' }} className='forClients'>
         <img src={props.image} alt={props.altern} style={{ width: '3.177vw' }}></img>
         <div style={{ width: '13.8vw', marginLeft: '1.3vw' }}>
             <p className='offerTitle' style={{ margin: '0', marginBottom: '0.52vw' }}>{props.title}</p>
@@ -21,13 +21,13 @@ function New() {
         let path = `Digest`;
         navigate(path);
     }
-    return <div style={{ backgroundImage: "url('new.png')", backgroundRepeat: 'no-repeat', width: '54.16vw', height: '26vw', borderRadius: '1.5625vw', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    return <div style={{ backgroundImage: "url('new.png')", backgroundRepeat: 'no-repeat', width: '54.16vw', height: '26vw', borderRadius: '1.5625vw', display: 'flex', alignItems: 'center', justifyContent: 'center' }} id='newCard'>
         <div>
             <h2 style={{ color: 'white', margin: '0', marginBottom: '0.364vw', textAlign: 'center' }}>Книжковий дайджест КСД</h2>
             <p style={{ fontSize: '1.875vw', color: 'white', display: 'block', margin: '0', textAlign: 'center' }}>Ваша щомісячна порція новинок ;)</p>
-            <div style={{ width: '14.27vw', height: '5.2vw', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', margin: '0 auto', marginTop: '1.5652vw', position: 'relative' }}>
-                <img src='/hand.png' alt='hand' style={{ marginBottom: '-5.2vw', marginLeft: '8.851vw', zIndex: 2, width: '3.59vw', aspectRatio: '1 / 1' }} ></img>
-                <button className='big' onClick={routeChange} style={{ display: 'block', width: '14.27vw', height: '3.125vw', backgroundColor: '#FFFFFF', border: '0.1vw solid #3C3C3B', outline: 'none', borderRadius: '3.125vw', cursor: 'pointer' }}>Гортати</button>
+            <div style={{ width: '14.27vw', height: '5.2vw', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', margin: '0 auto', marginTop: '1.5652vw', position: 'relative' }} >
+                <img src='/hand.png' alt='hand' style={{ marginBottom: '-5.2vw', marginLeft: '8.851vw', zIndex: 2, width: '3.59vw', aspectRatio: '1 / 1' }} id='newHandImg'></img>
+                <button className='big' onClick={routeChange} style={{ display: 'block', width: '14.27vw', height: '3.125vw', backgroundColor: '#FFFFFF', border: '0.1vw solid #3C3C3B', outline: 'none', borderRadius: '3.125vw', cursor: 'pointer' }} id='newButton'>Гортати</button>
             </div>
         </div>
     </div>
@@ -36,8 +36,8 @@ function New() {
 export function CarouselCard(props) {
     return <div style={{ width: 'auto', marginRight: props.mRight || '0' }}>
         <Link to={props.link} className='carouselCard' style={{ textDecoration: 'none' }}>
-            <p style={{ fontSize: '0.729vw ', lineHeight: '0.625vw', backgroundColor: '#B53535', color: '#FFFFFF', padding: '0.3vw 0.729vw 0.2vw 0.729vw', display: props.specialDisplay, borderRadius: '3.125vw', zIndex: '2', position: 'absolute', marginTop: '-0.52vw', marginLeft: '3.9vw' }}>{props.special}</p>
-            <img src={props.cover} alt='book cover' style={{width: '7.5vw'}}></img>
+            <p className='special' style={{ fontSize: '0.729vw ', lineHeight: '0.625vw', backgroundColor: '#B53535', color: '#FFFFFF', padding: '0.3vw 0.729vw 0.2vw 0.729vw', display: props.specialDisplay, borderRadius: '3.125vw', zIndex: '2', position: 'absolute', marginTop: '-0.52vw', marginLeft: '3.9vw' }}>{props.special}</p>
+            <img src={props.cover} alt='book cover' style={{ width: '7.5vw' }} className='carouselBookCover'></img>
             <p style={{
                 color: '#B53535', margin: '0', maxHeight: '2.7vw', maxWidth: '12.24vw', display: '-webkit-box', WebkitLineClamp: 2,
                 WebkitBoxOrient: 'vertical', overflow: 'hidden', textOverflow: 'ellipsis'
@@ -58,12 +58,15 @@ export function Carousel(props) {
     React.useEffect(() => {
         if (typeof window !== 'undefined') {
             const Flickity = require('flickity');
+
+            const isMobile = window.innerWidth <= 768;
+
             flktyRef.current = new Flickity(carouselRef.current, {
                 groupCells: 3,
                 freeScroll: false,
                 wrapAround: true,
                 prevNextButtons: false,
-                pageDots: false,
+                pageDots: isMobile,
                 cellAlign: 'left',
                 contain: true,
                 imagesLoaded: true,
@@ -92,8 +95,8 @@ export function Carousel(props) {
     };
 
     return (
-        <div style={{ position: 'relative', height: '22.916vw' }}>
-            <button onClick={handlePrev} style={{ position: 'absolute', left: '0', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', zIndex: 2, outline: 'none' }} onFocus={(e) => e.target.style.outline = 'none'}>
+        <div style={{ position: 'relative', height: '22.916vw' }} className='homeCarousel'>
+            <button onClick={handlePrev} style={{ position: 'absolute', left: '0', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', zIndex: 2, outline: 'none' }} onFocus={(e) => e.target.style.outline = 'none'} className='carouselButton'>
                 <img src="/left.png" alt="Previous" style={{ width: '0.89vw', height: '1.71875vw' }} />
             </button>
 
@@ -104,7 +107,7 @@ export function Carousel(props) {
             </div>
 
             <button
-                onClick={handleNext} style={{ position: 'absolute', right: '0', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', zIndex: 10, outline: 'none' }} onFocus={(e) => e.target.style.outline = 'none'}>
+                onClick={handleNext} style={{ position: 'absolute', right: '0', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', zIndex: 10, outline: 'none' }} onFocus={(e) => e.target.style.outline = 'none'} className='carouselButton'>
                 <img src='/right.png' alt="Next" style={{ width: '0.89vw', height: '1.71875vw' }} />
             </button>
         </div>
@@ -112,9 +115,9 @@ export function Carousel(props) {
 }
 
 export function BooksSection(props) {
-    return <section style={{ paddingTop: '1.614vw', marginTop: '3.177vw', borderTop: '0.052vw solid #2C2C2C' }}>
+    return <section style={{ paddingTop: '1.614vw', marginTop: '3.177vw', borderTop: '0.052vw solid #2C2C2C' }} className='booksSection'>
         <h2 style={{ color: '#B53535', margin: '0', marginBottom: '1.614vw', width: '100%', textAlign: 'center' }}>{props.info.title}</h2>
-        <p style={{ width: '34.114vw', whiteSpace: 'pre-line', textAlign: 'center', color: '#3C3C3B', margin: '0 auto 3.645vw auto' }}>
+        <p style={{ width: '34.114vw', whiteSpace: 'pre-line', textAlign: 'center', color: '#3C3C3B', margin: '0 auto 3.645vw auto' }} className='bookSectionP'>
             {props.info.description.parts.map((part, index) => (
                 <span key={index} style={{ color: part.color }}>
                     {part.text}
@@ -227,15 +230,15 @@ export function Home() {
     ]
     return <main>
         <img src='/homeBags.png' alt='bags' style={{ position: 'absolute', top: '143.54vw', left: '4.16vw', width: '26.6vw' }} className='bagsImg'></img>
-        <img src='/womanShopping.png' alt='woman shopping' style={{ position: 'absolute', top: '238.54vw', left: '21.979vw', width: '22.6vw' }}></img>
+        <img src='/womanShopping.png' alt='woman shopping' style={{ position: 'absolute', top: '238.54vw', left: '21.979vw', width: '22.6vw' }} id='womanShopping'></img>
         <div className='wrapper'>
             <Navigation id='menu'></Navigation>
-            <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'center', flexWrap: 'wrap' }} id='homeWrapper'>
                 <New></New>
                 <section style={{ marginTop: '1.5652vw', position: 'relative' }}>
-                    <img src='/forClientsPerson.png' alt='Person Standing' style={{ position: 'absolute', top: '4.16vw', left: '-5.2vw', zIndex: '2', width: '11.875vw' }}></img>
+                    <img src='/forClientsPerson.png' alt='Person Standing' style={{ position: 'absolute', top: '4.16vw', left: '-5.2vw', zIndex: '2', width: '11.875vw' }} id='forClientsPerson'></img>
                     <h2 style={{ margin: '0', marginBottom: '1.5652vw' }}>Клієнтам КСД</h2>
-                    <div style={{ width: '49.58vw', display: 'flex', justifyContent: 'space-between', marginLeft: '2.2916vw' }}>
+                    <div style={{ width: '49.58vw', display: 'flex', justifyContent: 'space-between', marginLeft: '2.2916vw' }} id='forClientsWrapper'>
                         <ForClients image='/coinIcon.png' altern='Pig Coin Image' title='КСДкоїни' text='Збирайте віртуальні монетки за кожне замовлення у КСД і обмінюйте на бонуси'></ForClients>
                         <ForClients image='/giftIcon.png' altern='Bonus Gift Image' title='Бонуси' text='Додаткова знижка на наступні покупки, читайте більше і заощаджуйте'></ForClients>
                     </div>

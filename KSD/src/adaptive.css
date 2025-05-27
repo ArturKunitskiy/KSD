@@ -14,7 +14,8 @@
 
     p,
     li,
-    td {
+    td,
+    .offerTitle {
         font-size: 3.129vw;
     }
 
@@ -126,7 +127,7 @@
         height: 5.6vw;
         cursor: pointer;
         z-index: 12;
-        transition: top .2s ease-in-out, left .2s ease-in-out;
+        transition: top 0.2s ease-in-out, left 0.2s ease-in-out;
     }
 
     .menuButton>span,
@@ -137,7 +138,7 @@
         width: 5.6vw;
         height: 0.26vw;
         background-color: #686868;
-        transition-duration: 0.5s;
+        transition-duration: 0.2s;
     }
 
     .menuButton>span::before {
@@ -163,7 +164,7 @@
         padding-top: 27.249vw;
         z-index: 11;
         visibility: hidden;
-        transition: .5s ease-in-out;
+        transition: .2s ease-in-out;
         height: 100vh;
         overflow-y: scroll;
     }
@@ -269,7 +270,8 @@
         padding-top: 2vw !important;
     }
 
-    .wrapper {
+    .wrapper,
+    #homeWrapper {
         width: 89.96vw;
     }
 
@@ -389,10 +391,9 @@
     }
 
     .footerCategoryContent {
-        transition: 0.2s ease-in-out;
+        transition: height 0.2s ease-in;
         height: 0;
         overflow: hidden;
-        opacity: 0;
     }
 
     #profileWrapper {
@@ -802,4 +803,169 @@
         margin-bottom: 3.52vw !important;
     }
 
+    #newCard {
+        width: 100% !important;
+        height: 43vw !important;
+        border-radius: 3.911vw !important;
+        margin-top: 1.3vw;
+    }
+
+    #newCard p {
+        font-size: 2.6vw !important;
+    }
+
+    #newButton {
+        height: 8.344198vw !important;
+        width: 27.64vw !important;
+        border-radius: 7.82268vw !important;
+        margin-top: 3vw !important;
+    }
+
+    #newHandImg {
+        width: 6vw !important;
+        height: 6vw !important;
+        margin-left: 18vw !important;
+        margin-bottom: -13vw !important;
+    }
+
+    #newCard div div {
+        height: 8.344198vw !important;
+        margin-top: 4vw !important;
+    }
+
+    #forClientsWrapper {
+        width: 89.96vw !important;
+        flex-direction: column;
+        gap: 2.6vw !important;
+        margin: 0 !important;
+        align-items: center;
+    }
+
+    .forClients {
+        width: 65.189vw !important;
+        height: 19vw !important;
+        border-radius: 3.911vw !important;
+        padding: 1.8252vw 2.6vw !important;
+    }
+
+    .forClients img {
+        width: 7.82268vw !important;
+        height: 7.82268vw !important;
+    }
+
+    .forClients div {
+        width: 51.49vw !important;
+    }
+
+    #forClientsPerson {
+        width: 22.29465vw !important;
+        top: 10.43vw !important;
+        left: -3.911vw !important;
+    }
+
+    .booksSection {
+        margin-top: 5.2151vw !important;
+        padding-top: 5.2151vw !important;
+    }
+
+    .bookSectionP {
+        width: 56.3233vw !important;
+        white-space: unset !important;
+    }
+
+    .homeCarousel {
+        height: 52.151vw !important;
+    }
+
+
+    .carouselButton {
+        display: none;
+    }
+
+    .homeCarousel p {
+        max-width: 26.4667vw !important;
+        max-height: 6.5189vw !important;
+    }
+
+    .flickity-viewport {
+        height: 45.6323vw !important;
+    }
+
+    .carousel.flickity-enabled.is-draggable {
+        height: 52vw !important;
+        width: 100% !important;
+    }
+
+    .carouselBookCover {
+        height: 25.5541vw !important;
+        width: auto !important;
+
+    }
+
+    .special {
+        font-size: 1.8252vw !important;
+        line-height: 1.5vw !important;
+        padding: 0.52vw 1.825vw !important;
+        border-radius: 1.3vw !important;
+        margin-left: 9.7783vw !important;
+    }
+
+    .carouselCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 5.2151vw !important;
+        margin-top: 23.468vw;
+    }
+
+    .carouselCard p {
+        text-align: center;
+    }
+
+    .flickity-page-dot {
+        width: 3.129vw !important;
+        height: 3.129vw !important;
+        opacity: 1;
+        background: #DA9A9A !important;
+        margin: 0 1.49934vw !important;
+    }
+
+    .flickity-page-dot.is-selected {
+        background: #B53535 !important;
+    }
+
+    .flickity-page-dot:focus {
+        box-shadow: none !important;
+    }
+
+    .flickity-page-dots {
+        bottom: 0 !important;
+    }
+
+    .booksCoversCarousel {
+        width: 89.96vw !important;
+        height: 34.81vw !important;
+        margin-top: 5.2151vw !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .booksCoversCarousel img {
+        height: 22.94vw !important;
+        width: auto;
+    }
+
+    .booksCoverCarouselImg {
+        margin-right: 4vw !important;
+    }
+
+    .books-covers-carousel.flickity-enabled.is-draggable {
+        width: 100% !important;
+    }
+
+    #womanShopping {
+        width: 37.28vw !important;
+        left: -17.6vw !important;
+        top: 515fvw !important;
+    }
 }
