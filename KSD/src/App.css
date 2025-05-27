@@ -283,6 +283,10 @@ footer {
     color: #3C3C3B;
     text-decoration: underline;
 }
+.footerBottomContainer
+{
+    margin-top: 3.125vw;
+}
 
 /*////////////////////////////////////////////////////////////////*/
 .carouselCard {
